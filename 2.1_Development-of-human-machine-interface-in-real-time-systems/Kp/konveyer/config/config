@@ -1,0 +1,8 @@
+[general]
+pvss_path = "C:/Siemens/Automation/WinCC_OA/3.18"
+proj_path = "C:/Users/Dmitriy/Desktop/Artamonov_Smirnov_KONVEYER"
+proj_version = "3.18"
+langs = "en_US.utf8"
+langs = "ru_RU.utf8"
+[ui]
+activeIconTheme = ""
