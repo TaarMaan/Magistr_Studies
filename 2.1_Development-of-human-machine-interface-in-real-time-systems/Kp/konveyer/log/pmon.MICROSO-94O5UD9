@@ -1,0 +1,218 @@
+WCCILpmon    (1), 2019.05.10 15:29:03.670, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2019.05.10 15:29:08.478, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 15:29:08.520, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 15:30:26.118, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from ::1, stopping the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 15:30:26.119, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 15:31:10.861, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 15:31:10.863, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 15:31:34.204, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCILdata(1) at index 1
+WCCILpmon    (1), 2019.05.10 15:31:34.242, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILdata.exe -PROJ Conveyor -pmonIndex 1 
+WCCILpmon    (1), 2019.05.10 15:31:38.746, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 15:31:38.748, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 15:32:19.724, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2019.05.10 15:32:19.764, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 2 -num 0
+WCCILpmon    (1), 2019.05.10 15:32:20.066, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 3 -num 1
+WCCILpmon    (1), 2019.05.10 15:32:20.268, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 4 -num 2
+WCCILpmon    (1), 2019.05.10 15:32:20.470, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 5 -num 3
+WCCILpmon    (1), 2019.05.10 15:32:20.673, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 6 -num 4
+WCCILpmon    (1), 2019.05.10 15:32:20.975, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 7 -num 5
+WCCILpmon    (1), 2019.05.10 15:32:24.133, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 15:32:24.654, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILproxy.exe -PROJ Conveyor -pmonIndex 9 
+WCCILpmon    (1), 2019.05.10 15:32:25.239, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 15:32:25.498, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 15:32:25.699, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 15:32:28.500, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2019.05.10 16:02:24.717, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.10 16:02:24.719, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 16:02:26.737, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 16:02:26.739, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 16:02:26.840, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 16:02:26.841, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 16:02:35.647, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 16:02:35.649, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 16:06:44.325, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2019.05.10 16:06:44.326, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:44.326, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:44.327, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:44.328, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:44.328, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:44.328, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:44.329, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:44.329, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:50.401, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:50.501, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:56.558, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 16:06:57.258, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2019.05.10 16:35:29.230, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2019.05.10 16:35:29.233, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILdata.exe -PROJ Conveyor -pmonIndex 1 
+WCCILpmon    (1), 2019.05.10 16:35:29.927, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 2 -num 0
+WCCILpmon    (1), 2019.05.10 16:35:30.129, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 3 -num 1
+WCCILpmon    (1), 2019.05.10 16:35:30.331, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 4 -num 2
+WCCILpmon    (1), 2019.05.10 16:35:30.533, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 5 -num 3
+WCCILpmon    (1), 2019.05.10 16:35:30.735, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 6 -num 4
+WCCILpmon    (1), 2019.05.10 16:35:30.937, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 7 -num 5
+WCCILpmon    (1), 2019.05.10 16:35:34.067, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 16:35:34.468, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILproxy.exe -PROJ Conveyor -pmonIndex 9 
+WCCILpmon    (1), 2019.05.10 16:35:34.870, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 16:35:35.073, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 16:35:35.274, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 16:35:38.003, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2019.05.10 17:05:34.487, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.10 17:05:34.490, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 17:05:36.506, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 17:05:36.508, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 17:05:36.609, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 17:05:36.611, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 17:08:21.562, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 17:08:21.565, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 17:35:35.353, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.10 17:35:35.356, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 17:35:37.272, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 17:35:37.275, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 17:35:37.475, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 17:35:37.477, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 17:36:05.395, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 17:36:05.398, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 18:05:36.253, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.10 18:05:36.256, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 18:05:38.156, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 18:05:38.158, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 18:05:38.373, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 18:05:38.375, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 18:10:04.991, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 18:10:04.994, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 18:35:37.136, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.10 18:35:37.138, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 18:35:39.155, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 18:35:39.157, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 18:35:39.258, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 18:35:39.260, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 18:35:45.955, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 18:35:45.958, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 18:56:33.015, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2019.05.10 18:56:33.016, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.017, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.017, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.019, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.019, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.019, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:33.020, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:39.080, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:39.181, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:45.238, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 18:56:45.338, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2019.05.10 18:57:00.391, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2019.05.10 18:57:00.391, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2019.05.10 18:57:00.392, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2019.05.10 22:28:48.284, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2019.05.10 22:28:49.544, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2019.05.10 22:28:49.560, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILdata.exe -PROJ Conveyor -pmonIndex 1 
+WCCILpmon    (1), 2019.05.10 22:28:50.466, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 2 -num 0
+WCCILpmon    (1), 2019.05.10 22:28:50.767, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 3 -num 1
+WCCILpmon    (1), 2019.05.10 22:28:50.969, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 4 -num 2
+WCCILpmon    (1), 2019.05.10 22:28:51.171, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 5 -num 3
+WCCILpmon    (1), 2019.05.10 22:28:51.373, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 6 -num 4
+WCCILpmon    (1), 2019.05.10 22:28:51.575, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 7 -num 5
+WCCILpmon    (1), 2019.05.10 22:28:54.679, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 22:28:54.987, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILproxy.exe -PROJ Conveyor -pmonIndex 9 
+WCCILpmon    (1), 2019.05.10 22:28:55.589, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 22:28:55.792, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 22:28:55.993, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 22:28:59.096, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2019.05.10 22:58:55.419, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.10 22:58:55.421, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.10 22:58:57.422, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 22:58:57.424, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.10 22:58:57.525, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.10 22:58:57.527, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.10 22:59:05.463, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.10 22:59:05.466, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.10 23:25:45.757, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2019.05.10 23:25:45.758, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:45.758, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:45.759, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:45.759, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:45.760, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:45.760, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:45.760, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:45.761, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:51.846, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:51.946, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:57.904, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.10 23:25:58.805, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2019.05.10 23:26:01.123, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2019.05.10 23:26:01.123, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2019.05.10 23:26:01.124, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2019.05.11 20:00:32.808, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2019.05.11 20:00:35.383, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2019.05.11 20:00:35.387, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILdata.exe -PROJ Conveyor -pmonIndex 1 
+WCCILpmon    (1), 2019.05.11 20:00:36.088, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 2 -num 0
+WCCILpmon    (1), 2019.05.11 20:00:36.359, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 3 -num 1
+WCCILpmon    (1), 2019.05.11 20:00:36.560, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 4 -num 2
+WCCILpmon    (1), 2019.05.11 20:00:36.762, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 5 -num 3
+WCCILpmon    (1), 2019.05.11 20:00:36.964, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 6 -num 4
+WCCILpmon    (1), 2019.05.11 20:00:37.166, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAvalarch.exe -PROJ Conveyor -pmonIndex 7 -num 5
+WCCILpmon    (1), 2019.05.11 20:00:40.280, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.11 20:00:40.699, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILproxy.exe -PROJ Conveyor -pmonIndex 9 
+WCCILpmon    (1), 2019.05.11 20:00:41.101, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.11 20:00:41.504, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.11 20:00:41.805, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.11 20:00:47.906, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2019.05.11 20:30:41.359, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.11 20:30:41.362, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.11 20:30:43.262, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 20:30:43.265, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.11 20:30:43.365, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 20:30:43.367, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.11 20:33:22.631, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.11 20:33:22.634, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.11 21:00:42.732, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.11 21:00:42.735, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.11 21:00:44.751, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 21:00:44.753, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.11 21:00:44.853, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 21:00:44.855, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.11 21:01:06.885, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.11 21:01:06.888, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.11 21:30:43.747, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.11 21:30:43.750, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.11 21:30:45.766, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 21:30:45.768, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.11 21:30:46.069, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 21:30:46.071, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.11 21:37:07.875, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.11 21:37:07.878, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.11 22:00:45.220, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.11 22:00:45.223, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.11 22:00:47.139, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 22:00:47.142, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.11 22:00:47.343, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 22:00:47.345, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.11 22:01:17.779, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.11 22:01:17.782, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.11 22:30:46.084, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2019.05.11 22:30:46.087, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILevent.exe -PROJ Conveyor -pmonIndex 8 
+WCCILpmon    (1), 2019.05.11 22:30:48.104, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 22:30:48.106, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOActrl.exe -PROJ Conveyor -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2019.05.11 22:30:48.207, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2019.05.11 22:30:48.209, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCILsim.exe -PROJ Conveyor -pmonIndex 11 
+WCCILpmon    (1), 2019.05.11 22:30:54.057, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2019.05.11 22:30:54.060, SYS,  INFO,        1, Manager Start, D:\winccoa\bin\WCCOAui.exe -PROJ Conveyor -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2019.05.11 22:33:48.078, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2019.05.11 22:33:48.079, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:48.080, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:48.080, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:48.081, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:48.081, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:48.082, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:48.082, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:48.082, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:54.285, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:33:54.485, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:34:00.443, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2019.05.11 22:34:00.643, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2019.05.11 22:34:25.473, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2019.05.11 22:34:25.473, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2019.05.11 22:34:25.474, SYS,  INFO,        2, Manager Stop

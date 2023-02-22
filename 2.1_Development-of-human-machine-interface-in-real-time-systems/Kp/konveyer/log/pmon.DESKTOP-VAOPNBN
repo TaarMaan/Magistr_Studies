@@ -1,0 +1,152 @@
+WCCILpmon    (1), 2021.06.21 13:42:59.567, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2021.06.21 13:42:59.698, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILdata.exe -PROJ Conveyor1_save_save9 -pmonIndex 1 
+WCCILpmon    (1), 2021.06.21 13:43:00.979, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2021.06.21 13:43:01.321, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2021.06.21 13:43:01.649, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2021.06.21 13:43:01.872, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2021.06.21 13:43:02.095, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2021.06.21 13:43:02.424, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2021.06.21 13:43:05.797, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILevent.exe -PROJ Conveyor1_save_save9 -pmonIndex 8 
+WCCILpmon    (1), 2021.06.21 13:43:07.276, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILproxy.exe -PROJ Conveyor1_save_save9 -pmonIndex 9 
+WCCILpmon    (1), 2021.06.21 13:43:07.610, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOActrl.exe -PROJ Conveyor1_save_save9 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2021.06.21 13:43:07.941, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILsim.exe -PROJ Conveyor1_save_save9 -pmonIndex 11 
+WCCILpmon    (1), 2021.06.21 13:43:08.282, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2021.06.21 13:43:10.620, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2021.06.21 14:03:14.190, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2021.06.21 14:03:14.190, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:14.190, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:14.191, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:14.191, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:14.192, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:14.192, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:14.192, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:14.193, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:18.442, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:18.551, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:20.629, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:03:20.737, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2021.06.21 14:03:20.738, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2021.06.21 14:11:49.874, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2021.06.21 14:11:50.062, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILdata.exe -PROJ Conveyor1_save_save9 -pmonIndex 1 
+WCCILpmon    (1), 2021.06.21 14:11:51.500, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2021.06.21 14:11:51.837, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2021.06.21 14:11:52.257, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2021.06.21 14:11:52.492, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2021.06.21 14:11:52.934, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2021.06.21 14:11:53.278, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2021.06.21 14:11:56.668, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILevent.exe -PROJ Conveyor1_save_save9 -pmonIndex 8 
+WCCILpmon    (1), 2021.06.21 14:11:58.371, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILproxy.exe -PROJ Conveyor1_save_save9 -pmonIndex 9 
+WCCILpmon    (1), 2021.06.21 14:11:58.751, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOActrl.exe -PROJ Conveyor1_save_save9 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2021.06.21 14:11:59.119, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILsim.exe -PROJ Conveyor1_save_save9 -pmonIndex 11 
+WCCILpmon    (1), 2021.06.21 14:11:59.451, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2021.06.21 14:12:01.317, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2021.06.21 14:30:54.448, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2021.06.21 14:30:54.449, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:54.449, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:54.450, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:54.450, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:54.450, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:54.451, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:54.452, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:54.452, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:58.683, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:30:58.793, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:31:00.839, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:31:01.312, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2021.06.21 14:31:01.312, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:31:01.417, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2021.06.21 14:31:09.745, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2021.06.21 14:31:09.745, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2021.06.21 14:31:09.746, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2021.06.21 14:41:22.996, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2021.06.21 14:41:23.133, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILdata.exe -PROJ Conveyor1_save_save9 -pmonIndex 1 
+WCCILpmon    (1), 2021.06.21 14:41:24.529, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2021.06.21 14:41:24.872, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2021.06.21 14:41:25.214, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2021.06.21 14:41:25.467, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2021.06.21 14:41:25.809, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2021.06.21 14:41:26.260, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2021.06.21 14:41:29.621, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILevent.exe -PROJ Conveyor1_save_save9 -pmonIndex 8 
+WCCILpmon    (1), 2021.06.21 14:41:31.060, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILproxy.exe -PROJ Conveyor1_save_save9 -pmonIndex 9 
+WCCILpmon    (1), 2021.06.21 14:41:31.392, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOActrl.exe -PROJ Conveyor1_save_save9 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2021.06.21 14:41:31.639, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILsim.exe -PROJ Conveyor1_save_save9 -pmonIndex 11 
+WCCILpmon    (1), 2021.06.21 14:41:31.981, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2021.06.21 14:41:34.072, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2021.06.21 14:46:22.448, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2021.06.21 14:46:22.448, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:22.449, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:22.449, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:22.449, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:22.450, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:22.450, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:22.451, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:22.451, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:26.694, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:26.805, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:28.868, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 14:46:29.847, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2021.06.21 14:46:29.847, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2021.06.21 14:55:03.926, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2021.06.21 14:55:04.065, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILdata.exe -PROJ Conveyor1_save_save9 -pmonIndex 1 
+WCCILpmon    (1), 2021.06.21 14:55:05.550, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2021.06.21 14:55:05.901, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2021.06.21 14:55:06.235, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2021.06.21 14:55:06.628, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2021.06.21 14:55:06.975, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2021.06.21 14:55:07.321, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2021.06.21 14:55:10.675, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILevent.exe -PROJ Conveyor1_save_save9 -pmonIndex 8 
+WCCILpmon    (1), 2021.06.21 14:55:12.207, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILproxy.exe -PROJ Conveyor1_save_save9 -pmonIndex 9 
+WCCILpmon    (1), 2021.06.21 14:55:12.486, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOActrl.exe -PROJ Conveyor1_save_save9 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2021.06.21 14:55:12.825, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILsim.exe -PROJ Conveyor1_save_save9 -pmonIndex 11 
+WCCILpmon    (1), 2021.06.21 14:55:13.160, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2021.06.21 14:55:15.013, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2021.06.21 15:00:34.923, SYS,  INFO,      165, maxLogFileSize limit reached (10 MB). Renamed the logfile D:\Magistratura\Conveyor1_save_save9\log\\PVSS_II.log
+WCCILpmon    (1), 2021.06.21 15:01:04.946, SYS,  INFO,      165, maxLogFileSize limit reached (10 MB). Renamed the logfile D:\Magistratura\Conveyor1_save_save9\log\\PVSS_II.log
+WCCILpmon    (1), 2021.06.21 15:02:03.693, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2021.06.21 15:02:03.705, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2021.06.21 15:05:58.166, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2021.06.21 15:05:58.166, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.167, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.167, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.168, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.168, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.169, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.169, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.170, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:05:58.170, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:06:02.441, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:06:02.551, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:06:04.588, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:06:04.917, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2021.06.21 15:06:04.917, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2021.06.21 15:21:20.441, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2021.06.21 15:21:20.670, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2021.06.21 15:21:20.680, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILdata.exe -PROJ Conveyor1_save_save9 -pmonIndex 1 
+WCCILpmon    (1), 2021.06.21 15:21:22.137, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2021.06.21 15:21:22.466, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2021.06.21 15:21:22.799, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2021.06.21 15:21:23.068, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2021.06.21 15:21:23.410, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2021.06.21 15:21:23.741, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2021.06.21 15:21:27.234, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILevent.exe -PROJ Conveyor1_save_save9 -pmonIndex 8 
+WCCILpmon    (1), 2021.06.21 15:21:28.673, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILproxy.exe -PROJ Conveyor1_save_save9 -pmonIndex 9 
+WCCILpmon    (1), 2021.06.21 15:21:28.938, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOActrl.exe -PROJ Conveyor1_save_save9 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2021.06.21 15:21:29.274, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCILsim.exe -PROJ Conveyor1_save_save9 -pmonIndex 11 
+WCCILpmon    (1), 2021.06.21 15:21:29.607, SYS,  INFO,        1, Manager Start, D:\Magistratura\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2021.06.21 15:21:33.097, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2021.06.21 15:25:31.345, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2021.06.21 15:25:31.345, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:31.346, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:31.346, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:31.346, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:31.347, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:31.347, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:31.347, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:31.348, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:35.560, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:35.671, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:37.697, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2021.06.21 15:25:37.919, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2021.06.21 15:25:46.144, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2021.06.21 15:25:46.144, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2021.06.21 15:25:46.144, SYS,  INFO,        2, Manager Stop

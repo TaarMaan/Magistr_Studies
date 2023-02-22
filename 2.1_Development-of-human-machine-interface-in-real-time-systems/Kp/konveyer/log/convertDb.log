@@ -1,0 +1,1353 @@
+ 
+WinCC OA Database Utility
+"-------------------------------------------------------------
+D:\\Magistratura\\bin\\WCCOAtoolConvertDb.exe -config D:\\Magistratura\\Conveyor1_save_save9\\config\\config -sim 1 -yes 
+-------------------------------------------------------------
+PVSS_II           : D:\\Magistratura\\config\\config
+PVSS_II_PROJ      : 3.18
+-------------------------------------------------------------
+"Convert Database from version "3.15" to version "3.18"
+Database matches with versions from "3.15" to "3.16"
+System id will be file: upgrade\upgradeTo_03160000.ctl added to script list.
+file: upgrade\upgradeTo_03170000.ctl added to script list.
+file: upgrade\upgradeTo_03180000.ctl added to script list.
+WCCOAtoolConvertDb(1), 2021.06.21 13:42:35.796, SYS,  SEVERE,     54, Unexpected state, DoConvertDb, systemCall, D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -ignoreNonExistingDps -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.16\update_dps.txt exitCode: 55
+WCCOAtoolConvertDb(1), 2021.06.21 13:42:37.777, SYS,  SEVERE,     54, Unexpected state, DoConvertDb, systemCall, D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -ignoreNonExistingDps -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.17\update_dps.txt exitCode: 55
+WCCOAtoolConvertDb(1), 2021.06.21 13:42:39.732, SYS,  SEVERE,     54, Unexpected state, DoConvertDb, systemCall, D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -ignoreNonExistingDps -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.18\update_dps.txt exitCode: 55
+WCCOAtoolConvertDb(1), 2021.06.21 13:42:41.893,	DBG,	-------------------------------------------------------
+WCCOAtoolConvertDb(1), 2021.06.21 13:42:41.893,	DBG,	DB succesfully converted!
+WCCOActrl  -proj Conveyor1_save_save9  -LoadNoCtrlLib -noUserCtrlExt -log +stderr -log -file upgrade\\upgradeTo_03170000.ctl"
+"D:\\Magistratura\\bin\\WCCOActrl  -proj Conveyor1_save_save9  -LoadNoCtrlLib -noUserCtrlExt -log +stderr -log -file upgrade\\upgradeTo_03180000.ctl"
+"ru_RU.utf8" ("ru-RU") 
+  [10001]	"en_US.utf8" ("en-US") {Active}{Para}{Meta}
+========================================================
+[2021.06.21;13:42:28:605 ] move from D:\Magistratura\Conveyor1_save_save9\db\wincc_oa to D:\Magistratura\Conveyor1_save_save9\db\old
+[2021.06.21;13:42:28:606 ] copy from D:\Magistratura\dbdfiles\version_3.18\ConfHist.dbd to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\
+[2021.06.21;13:42:28:606 ] D:\Magistratura\bin\initdb -y ConfHist
+Raima Database Manager 4.5 [Build 17]
+Database Initialization Utility
+Copyright (C) 1984-1997, Raima Corporation, All Rights Reserved
+
+ConfHist initialized
+
+[2021.06.21;13:42:28:747 ] D:\Magistratura\bin\WCCOAtoolRevise -proj Conveyor1_save_save9 D:\Magistratura\Conveyor1_save_save9\db\old\ConfHist ConfHist
+
+
+########################################################
+D:\Magistratura\bin\WCCOAtoolRevise.exe -proj Conveyor1_save_save9 D:\Magistratura\Conveyor1_save_save9\db\old\ConfHist ConfHist  Started at : 2021.06.21;13:42:28:889 
+########################################################
+WCCOAtoolRevise(1), 2021.06.21 13:42:28.929: "3.15" does not match with manager version: "3.18" !!
+[2021.06.21;13:42:28:948 ] Copy from D:\Magistratura\dbdfiles\version_3.18\dbwork.dbd to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\..\ rc: 1
+
+
+[2021.06.21;13:42:28:950 ] ------------------------------------------------------
+[2021.06.21;13:42:28:950 ] D:\Magistratura\bin\initdb -y D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\ConfHist
+[2021.06.21;13:42:28:950 ] ------------------------------------------------------
+Raima Database Manager 4.5 [Build 17]
+Database Initialization Utility
+Copyright (C) 1984-1997, Raima Corporation, All Rights Reserved
+
+D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\ConfHist initialized
+
+
+
+[2021.06.21;13:42:29:810 ] ------------------------------------------------------
+[2021.06.21;13:42:29:810 ] D:\Magistratura\bin\dbrev -q D:\Magistratura\Conveyor1_save_save9\db\old\ConfHist D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\ConfHist
+[2021.06.21;13:42:29:810 ] ------------------------------------------------------
+Raima Database Manager 4.5 [Build 17]
+Database Restructure Utility
+Copyright (C) 1984-1997, Raima Corporation, All Rights Reserved
+
+
+dbrev compilation complete
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\bitvar.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\bit32var.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\charvar.db containing 972 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\intvar.db containing 382 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\uintvar.db containing 16 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\floatvar.db containing 406 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\textvar.db containing 1657 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\timevar.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dynvar.db containing 3364 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dpidvar.db containing 730 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\lngvar.db containing 44 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\ulngvar.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\bit64va.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\smooth.db containing 127 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\smthattr.db containing 127 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\userrng.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\userrngi.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\rngrec.db containing 34 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\pvssrng.db containing 34 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\peradr.db containing 148 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dflvalh.db containing 16 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\conv.db containing 33 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\sconvi.db containing 33 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\sconv.db containing 33 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\sconvatt.db containing 165 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\archinfo.db containing 291 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\archproc.db containing 215 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\archclass.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\alertcl.db containing 21 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\alertrr.db containing 192 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\alertval.db containing 218 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\genattr.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\genconf.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dpauth.db containing 54 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\distinfo.db containing 148 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dpfunc.db containing 76 records
+
+dbrev completed, successful restructure
+-------------------------------------------------------
+[2021.06.21;13:42:32:550 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\alertcl.db
+[2021.06.21;13:42:32:558 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\alertcl.key
+[2021.06.21;13:42:32:559 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\alertrr.db
+[2021.06.21;13:42:32:560 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\alertval.db
+[2021.06.21;13:42:32:572 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\alertval.key
+[2021.06.21;13:42:32:572 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\archclass.db
+[2021.06.21;13:42:32:583 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\archclass.key
+[2021.06.21;13:42:32:583 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\archinfo.db
+[2021.06.21;13:42:32:592 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\archinfo.key
+[2021.06.21;13:42:32:594 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\archproc.db
+[2021.06.21;13:42:32:594 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\bit32var.db
+[2021.06.21;13:42:32:595 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\bit64va.db
+[2021.06.21;13:42:32:595 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\bitvar.db
+[2021.06.21;13:42:32:595 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\charvar.db
+[2021.06.21;13:42:32:595 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\ConfHist.dbd
+[2021.06.21;13:42:32:595 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\conv.db
+[2021.06.21;13:42:32:624 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\conv.key
+[2021.06.21;13:42:32:624 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dflvalh.db
+[2021.06.21;13:42:32:658 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dflvalh.key
+[2021.06.21;13:42:32:667 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\distdrv.key
+[2021.06.21;13:42:32:667 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\distinfo.db
+[2021.06.21;13:42:32:682 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\distinfo.key
+[2021.06.21;13:42:32:682 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dpauth.db
+[2021.06.21;13:42:32:713 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dpauth.key
+[2021.06.21;13:42:32:713 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dpfunc.db
+[2021.06.21;13:42:32:725 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dpfunc.key
+[2021.06.21;13:42:32:726 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dpidvar.db
+[2021.06.21;13:42:32:726 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\dynvar.db
+[2021.06.21;13:42:32:726 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\floatvar.db
+[2021.06.21;13:42:32:726 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\genattr.db
+[2021.06.21;13:42:32:726 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\genconf.db
+[2021.06.21;13:42:32:747 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\genconf.key
+[2021.06.21;13:42:32:747 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\intvar.db
+[2021.06.21;13:42:32:747 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\lngvar.db
+[2021.06.21;13:42:32:747 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\peradr.db
+[2021.06.21;13:42:32:778 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\peradr.key
+[2021.06.21;13:42:32:778 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\pvssrng.db
+[2021.06.21;13:42:32:794 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\pvssrng.key
+[2021.06.21;13:42:32:794 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\rngrec.db
+[2021.06.21;13:42:32:794 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\sconv.db
+[2021.06.21;13:42:32:794 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\sconvatt.db
+[2021.06.21;13:42:32:794 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\sconvi.db
+[2021.06.21;13:42:32:795 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\smooth.db
+[2021.06.21;13:42:32:807 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\smooth.key
+[2021.06.21;13:42:32:808 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\smthattr.db
+[2021.06.21;13:42:32:808 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\textvar.db
+[2021.06.21;13:42:32:808 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\timevar.db
+[2021.06.21;13:42:32:808 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\uintvar.db
+[2021.06.21;13:42:32:809 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\ulngvar.db
+[2021.06.21;13:42:32:809 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\userrng.db
+[2021.06.21;13:42:32:824 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\userrng.key
+[2021.06.21;13:42:32:824 ] remove converted file D:\Magistratura\Conveyor1_save_save9\db\old\\userrngi.db
+[2021.06.21;13:42:32:824 ] -------------------------------------
+[2021.06.21;13:42:32:824 ] restore files that need no conversion
+[2021.06.21;13:42:32:824 ] -------------------------------------
+
+
+[2021.06.21;13:42:32:825 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\0000000000 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\0000000000
+[2021.06.21;13:42:32:825 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\al0000000000 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\al0000000000
+[2021.06.21;13:42:32:826 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\alertdir.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\alertdir.db
+[2021.06.21;13:42:32:826 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\AlertDir.dbd to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\AlertDir.dbd
+[2021.06.21;13:42:32:882 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\alertdir.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\alertdir.key
+[2021.06.21;13:42:32:882 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\aliasId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\aliasId.db
+[2021.06.21;13:42:32:891 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\aliasId.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\aliasId.key
+[2021.06.21;13:42:32:892 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\alliving to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\alliving
+[2021.06.21;13:42:32:892 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\aloverflow to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\aloverflow
+[2021.06.21;13:42:32:892 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\alsave to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\alsave
+[2021.06.21;13:42:32:893 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\ancient to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\ancient
+[2021.06.21;13:42:32:893 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\attrId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\attrId.db
+[2021.06.21;13:42:32:893 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgacstat.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgacstat.db
+[2021.06.21;13:42:32:899 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgacstat.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgacstat.key
+[2021.06.21;13:42:32:900 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgavgpp.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgavgpp.db
+[2021.06.21;13:42:32:908 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgavgpp.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgavgpp.key
+[2021.06.21;13:42:32:909 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgdpel.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgdpel.db
+[2021.06.21;13:42:32:910 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bglcstat.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bglcstat.db
+[2021.06.21;13:42:32:916 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bglcstat.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bglcstat.key
+[2021.06.21;13:42:32:916 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgldpel.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgldpel.db
+[2021.06.21;13:42:32:917 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgoastat.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgoastat.db
+[2021.06.21;13:42:32:933 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgoastat.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgoastat.key
+[2021.06.21;13:42:32:934 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgolstat.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgolstat.db
+[2021.06.21;13:42:32:961 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgolstat.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgolstat.key
+[2021.06.21;13:42:32:962 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\BgStatus.dbd to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\BgStatus.dbd
+[2021.06.21;13:42:32:962 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgudpel.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgudpel.db
+[2021.06.21;13:42:32:963 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bguint.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bguint.db
+[2021.06.21;13:42:32:983 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bguint.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bguint.key
+[2021.06.21;13:42:32:983 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgupdfv.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgupdfv.db
+[2021.06.21;13:42:32:991 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\bgupdfv.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\bgupdfv.key
+[2021.06.21;13:42:32:993 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\cnsTree.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\cnsTree.db
+[2021.06.21;13:42:32:993 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\cnsView.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\cnsView.db
+[2021.06.21;13:42:32:994 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\confId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\confId.db
+[2021.06.21;13:42:33:000 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\confId.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\confId.key
+[2021.06.21;13:42:33:000 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\dbase.status to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\dbase.status
+[2021.06.21;13:42:33:001 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\dbase.touch to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\dbase.touch
+[2021.06.21;13:42:33:001 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\dbdir.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\dbdir.db
+[2021.06.21;13:42:33:002 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\DbDir.dbd to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\DbDir.dbd
+[2021.06.21;13:42:33:016 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\dbdir.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\dbdir.key
+[2021.06.21;13:42:33:017 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\dpId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\dpId.db
+[2021.06.21;13:42:33:025 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\dpId.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\dpId.key
+[2021.06.21;13:42:33:026 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\elId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\elId.db
+[2021.06.21;13:42:33:026 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\empty to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\empty
+[2021.06.21;13:42:33:027 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\event.status to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\event.status
+[2021.06.21;13:42:33:027 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\fixId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\fixId.db
+[2021.06.21;13:42:33:033 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\fixId.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\fixId.key
+[2021.06.21;13:42:33:033 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\lastval to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\lastval
+[2021.06.21;13:42:33:034 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\objName.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\objName.db
+[2021.06.21;13:42:33:034 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\objNameTxt.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\objNameTxt.db
+[2021.06.21;13:42:33:034 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\pvssGlobal.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\pvssGlobal.db
+[2021.06.21;13:42:33:034 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\save to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\save
+[2021.06.21;13:42:33:035 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\sysId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\sysId.db
+[2021.06.21;13:42:33:050 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\sysId.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\sysId.key
+[2021.06.21;13:42:33:051 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\TypeAndId.dbd to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\TypeAndId.dbd
+[2021.06.21;13:42:33:051 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\typeId.db to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\typeId.db
+[2021.06.21;13:42:33:058 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\typeId.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\typeId.key
+[2021.06.21;13:42:33:059 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\VA_0000 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\VA_0000
+[2021.06.21;13:42:33:060 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\VA_0001 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\VA_0001
+[2021.06.21;13:42:33:060 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\VA_0002 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\VA_0002
+[2021.06.21;13:42:33:061 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\VA_0003 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\VA_0003
+[2021.06.21;13:42:33:061 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\VA_0004 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\VA_0004
+[2021.06.21;13:42:33:062 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\VA_0005 to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\VA_0005
+[2021.06.21;13:42:33:086 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\viewId.key to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\viewId.key
+[2021.06.21;13:42:33:086 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\vista.log to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\vista.log
+[2021.06.21;13:42:33:086 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\vista.taf to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\vista.taf
+[2021.06.21;13:42:33:100 ] move from D:\Magistratura\Conveyor1_save_save9\db\old\wccoaone.taf to D:\Magistratura\Conveyor1_save_save9\db\wincc_oa\wccoaone.taf
+WCCILdata    (0), 2021.06.21 13:42:33.219: "3.15" does not match with manager version: "3.18" !!
+WCCILdata    (0), 2021.06.21 13:42:33.238, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCILdata    (0), 2021.06.21 13:42:33.243, SYS,  WARNING,   106, Database repair, DataManager, repairDBase (ignore), Database has not been repaired, status file is being deleted afer exiting PVSS
+WCCILdata    (0), 2021.06.21 13:42:33.246, SYS,  INFO,        0, , (Re)Opening databases in single user mode without transaction logging.
+WCCILdata    (0), 2021.06.21 13:42:34.295, SYS,  INFO,        0, , Initialize archive smoothing
+WCCILdata    (0), 2021.06.21 13:42:34.302, SYS,  INFO,        0, , Initialize archive smoothing
+WCCILdata    (0), 2021.06.21 13:42:34.302, SYS,  INFO,        0, , Loading DpIdentification
+WCCILdata    (0), 2021.06.21 13:42:34.348, SYS,  INFO,        0, , Initializing last value cache
+WCCILdata    (0), 2021.06.21 13:42:34.416, SYS,  INFO,        0, , Loading internal datapoints
+WCCILdata    (0), 2021.06.21 13:42:34.417, SYS,  WARNING,    33, General error in Data Manager, DataManDpIntern, loadInternalDp, Internal DPE not found: _DataManager.DataBase.Check:_original.._value
+WCCILdata    (0), 2021.06.21 13:42:34.417, SYS,  INFO,        0, , Initializing ID history
+WCCILdata    (0), 2021.06.21 13:42:34.418, SYS,  INFO,        0, , Initializing Alert history
+WCCILdata    (0), 2021.06.21 13:42:34.455, SYS,  INFO,        0, , Initializing Alert Class cache
+WCCILdata    (0), 2021.06.21 13:42:34.460, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCILdata    (0), 2021.06.21 13:42:34.496, SYS,  INFO,        0, , Initializing Value Archives
+WCCILdata    (0), 2021.06.21 13:42:34.500, SYS,  INFO,        0, , ValueArchive will be used...
+WCCILdata    (0), 2021.06.21 13:42:34.500, IMPL, SEVERE,     54, Unexpected state, DataManDpIntern, refreshDiskStatus, Cannot stat 'C:/Users/Vova/Desktop/qwe/Conveyor1_save_save9/db'
+WCCILdata    (0), 2021.06.21 13:42:34.811, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:34.922, SYS,  INFO,        0, , Manager (SYS: 1 Event -num 0 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:35.171, SYS,  INFO,      103, User names/passwords initialized
+WCCILdata    (0), 2021.06.21 13:42:35.177, SYS,  INFO,        4, Connected to (SYS: 1 Driver -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:35.200, SYS,  INFO,        0, , Manager (SYS: 1 Driver -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:35.565, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:35.567, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:35.634, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:35.746, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:35.748, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:35.781, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:35.917, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:35.919, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:37.130, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:37.274, SYS,  INFO,        4, Connected to (SYS: 1 Ctrl -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:37.284, SYS,  INFO,        0, , Manager (SYS: 1 Ctrl -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:37.367, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Ctrl -num 1 CONN: 1), Connection closed
+WCCILdata    (0), 2021.06.21 13:42:37.506, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:37.518, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:37.579, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:37.724, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:37.741, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:37.773, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:38.019, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:38.021, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0WCCILsim     (1), 2021.06.21 13:42:41.736, SYS,  INFO,      170, Signal SIGTERM received - exiting ...
+WCCILsim     (1), 2021.06.21 13:42:41.768, SYS,  INFO,      181, Closing connection to (SYS: 1 Data -num 0 CONN: 1)
+WCCILsim     (1), 2021.06.21 13:42:41.768, SYS,  INFO,      181, Closing connection to (SYS: 1 Event -num 0 CONN: 1)
+WCCILsim     (1), 2021.06.21 13:42:41.768, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Data -num 0 CONN: 1), Connection closed
+WCCILsim     (1), 2021.06.21 13:42:41.768, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Event -num 0 CONN: 1), Connection closed
+WCCILsim     (1), 2021.06.21 13:42:41.768, SYS,  INFO,        2, Manager Stop
+9.484, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:39.548, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:39.687, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:39.699, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:39.730, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:39.854, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:39.871, SYS,  INFO,        0, , Manager (SYS: 1 Ascii -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:41.426, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILdata    (0), 2021.06.21 13:42:41.587, SYS,  INFO,        4, Connected to (SYS: 1 Ctrl -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILdata    (0), 2021.06.21 13:42:41.589, SYS,  INFO,        0, , Manager (SYS: 1 Ctrl -num 1 CONN: 1) initialised
+WCCILdata    (0), 2021.06.21 13:42:41.716, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Ctrl -num 1 CONN: 1), Connection closed
+WCCILdata    (0), 2021.06.21 13:42:41.768, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Driver -num 1 CONN: 1), Connection closed
+WCCILdata    (0), 2021.06.21 13:42:41.877, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Event -num 0 CONN: 1), Connection closed
+WCCILdata    (0), 2021.06.21 13:42:41.878, SYS,  INFO,        0, , Loading DpIdentification
+WCCILdata    (0), 2021.06.21 13:42:41.881, SYS,  INFO,        2, Manager Stop
+ (0), 2021.06.21 13:42:39.488, SYS,  WARNING,   105, Invalid license, DESKTOP-VAOPNBN: No license found, Running as demo version, ascii
+WCCILevent   (0), 2021.06.21 13:42:39.489, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILevent   (0), 2021.06.21 13:42:39.548, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILevent   (0), 2021.06.21 13:42:39.715, SYS,  WARNING,   105, Invalid license, DESKTOP-VAOPNBN: No license found, Running as demo version, ascii
+WCCILevent   (0), 2021.06.21 13:42:39.715, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILevent   (0), 2021.06.21 13:42:39.730, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILevent   (0), 2021.06.21 13:42:39.888, SYS,  WARNING,   105, Invalid license, DESKTOP-VAOPNBN: No license found, Running as demo version, ascii
+WCCILevent   (0), 2021.06.21 13:42:39.888, SYS,  INFO,        4, Connected to (SYS: 1 Ascii -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILevent   (0), 2021.06.21 13:42:41.426, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1 Ascii -num 1 CONN: 1), Connection reset by peer (10054)
+WCCILevent   (0), 2021.06.21 13:42:41.613, SYS,  WARNING,   105, Invalid license, DESKTOP-VAOPNBN: No license found, Running as demo version, ctrl
+WCCILevent   (0), 2021.06.21 13:42:41.614, SYS,  INFO,        4, Connected to (SYS: 1 Ctrl -num 1 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCILevent   (0), 2021.06.21 13:42:41.710, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Ctrl -num 1 CONN: 1), Connection closed
+WCCILevent   (0), 2021.06.21 13:42:41.768, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Driver -num 1 CONN: 1), Connection closed
+WCCILevent   (0), 2021.06.21 13:42:41.773, SYS,  INFO,        2, Manager Stop, received signal 15, exiting
+WCCILevent   (0), 2021.06.21 13:42:41.877, SYS,  INFO,        2, Manager Stop, start cleanup
+WCCILevent   (0), 2021.06.21 13:42:41.877, SYS,  INFO,      181, Closing connection to (SYS: 1 Data -num 0 CONN: 1)
+WCCILevent   (0), 2021.06.21 13:42:41.877, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Data -num 0 CONN: 1), Connection closed
+WCCILevent   (0), 2021.06.21 13:42:41.885, SYS,  INFO,        2, Manager Stop
+to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:35.921, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAascii   (1), 2021.06.21 13:42:35.921, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAascii   (1), 2021.06.21 13:42:35.937, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:35.940, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAascii   (1), 2021.06.21 13:42:35.940, SYS,  INFO,      103, User names/passwords initialized
+processing file D:\Magistratura\dbdfiles\version_3.16\update_configs.txt
+DpAuth (22): Values for _System.Auth.SessionToken sent.
+DpAuth (43): Values for _System.Auth.SessionTokenInterface sent.
+AlertValue (49): Values for _ArchivDisk.FreeKB sent.
+AlertValue (56): Values for _ArchivDisk_2.FreeKB sent.
+DpValue (58): Values for km_temp.labelsetRef sent.
+DpValue (61): Values for rf_temp.labelsetRef sent.
+DpAuth (83): Values for _WinUserAdmin. sent.
+DpValue (85): Values for _SysMgm_DriverS7.Title sent.
+DpValue (86): Values for _SysMgm_DriverS7.Description sent.
+DpValue (87): Values for _SysMgm_DriverS7.Icon sent.
+DpValue (88): Values for _SysMgm_DriverS7.ViewPermission sent.
+DpValue (89): Values for _SysMgm_DriverS7.Items.Titles sent.
+DpValue (90): Values for _SysMgm_DriverS7.Items.Descriptions sent.
+DpValue (91): Values for _SysMgm_DriverS7.Items.IconsSmall sent.
+DpValue (92): Values for _SysMgm_DriverS7.Items.IconsLarge sent.
+DpValue (93): Values for _SysMgm_DriverS7.Items.OwnActionScripts sent.
+DpValue (94): Values for _SysMgm_DriverS7.Items.Filenames sent.
+DpValue (95): Values for _SysMgm_DriverS7.Items.Dollars sent.
+DpValue (96): Values for _SysMgm_DriverS7.Items.ViewPermissions sent.
+DpValue (97): Values for _SysMgm_DriverS7.Items.RunPermissions sent.
+DpValue (98): Values for _SysMgm_DriverS7.Items.ViewPermissionsOwn sent.
+DpValue (99): Values for _SysMgm_DriverS7.Items.RunPermissionsOwn sent.
+DpValue (102): Values for _SysMgm_DriverS7.Items.ActionScripts sent.
+DpValue (104): Values for _SysMgm_Settings.Title sent.
+DpValue (105): Values for _SysMgm_Settings.Description sent.
+DpValue (106): Values for _SysMgm_Settings.Icon sent.
+DpValue (107): Values for _SysMgm_Settings.ViewPermission sent.
+DpValue (108): Values for _SysMgm_Settings.Items.Titles sent.
+DpValue (109): Values for _SysMgm_Settings.Items.Descriptions sent.
+DpValue (110): Values for _SysMgm_Settings.Items.IconsSmall sent.
+DpValue (111): Values for _SysMgm_Settings.Items.IconsLarge sent.
+DpValue (112): Values for _SysMgm_Settings.Items.OwnActionScripts sent.
+DpValue (113): Values for _SysMgm_Settings.Items.Filenames sent.
+DpValue (114): Values for _SysMgm_Settings.Items.Dollars sent.
+DpValue (115): Values for _SysMgm_Settings.Items.ViewPermissions sent.
+DpValue (116): Values for _SysMgm_Settings.Items.RunPermissions sent.
+DpValue (117): Values for _SysMgm_Settings.Items.ViewPermissionsOwn sent.
+DpValue (118): Values for _SysMgm_Settings.Items.RunPermissionsOwn sent.
+DpValue (119): Values for _SysMgm_Settings.Items.ActionScripts sent.
+DpValue (120): Values for _SysMgm_Settings.Items.ExtendKonstruktor sent.
+DpValue (121): Values for _SysMgm_SmartSCADA.Title sent.
+DpValue (122): Values for _SysMgm_SmartSCADA.Description sent.
+DpValue (123): Values for _SysMgm_SmartSCADA.Icon sent.
+DpValue (124): Values for _SysMgm_SmartSCADA.ViewPermission sent.
+DpValue (125): Values for _SysMgm_SmartSCADA.Items.Titles sent.
+DpValue (126): Values for _SysMgm_SmartSCADA.Items.Descriptions sent.
+DpValue (127): Values for _SysMgm_SmartSCADA.Items.IconsSmall sent.
+DpValue (128): Values for _SysMgm_SmartSCADA.Items.IconsLarge sent.
+DpValue (129): Values for _SysMgm_SmartSCADA.Items.OwnActionScripts sent.
+DpValue (130): Values for _SysMgm_SmartSCADA.Items.Filenames sent.
+DpValue (131): Values for _SysMgm_SmartSCADA.Items.Dollars sent.
+DpValue (132): Values for _SysMgm_SmartSCADA.Items.ViewPermissions sent.
+DpValue (133): Values for _SysMgm_SmartSCADA.Items.RunPermissions sent.
+DpValue (134): Values for _SysMgm_SmartSCADA.Items.ViewPermissionsOwn sent.
+DpValue (135): Values for _SysMgm_SmartSCADA.Items.RunPermissionsOwn sent.
+DpValue (139): Values for _SysMgm_SmartSCADA.Items.ActionScripts sent.
+DbArchiveInfo (143): Values for _SystemUseNotification_0001. sent.
+DpAuth (149): Values for _Users.AreaIds sent.
+DpAuth (154): Values for _Users.AreaPermissions sent.
+DpAuth (159): Values for _Users.Comment sent.
+DpAuth (164): Values for _Users.Enabled sent.
+DpAuth (169): Values for _Users.ForceSet sent.
+DpAuth (174): Values for _Users.FullName sent.
+DpAuth (179): Values for _Users.GroupIds sent.
+DpAuth (184): Values for _Users.Language sent.
+DpAuth (189): Values for _Users.OSIDs sent.
+DpAuth (194): Values for _Users.Password sent.
+DpAuth (199): Values for _Users.PermissionDes sent.
+DpAuth (204): Values for _Users.PermissionSet sent.
+DpAuth (209): Values for _Users.UserId sent.
+DpAuth (214): Values for _Users.UserName sent.
+DpAuth (219): Values for _Users.PrimaryGroupOSID sent.
+DpAuth (224): Values for _Users.DomainName sent.
+DpAuth (229): Values for _Areas.AreaIds sent.
+DpAuth (234): Values for _Areas.AreaPermissions sent.
+DpAuth (239): Values for _Areas.Comment sent.
+DpAuth (244): Values for _Areas.Enabled sent.
+DpAuth (249): Values for _Areas.ForceSet sent.
+DpAuth (254): Values for _Areas.FullName sent.
+DpAuth (259): Values for _Areas.GroupIds sent.
+DpAuth (264): Values for _Areas.Language sent.
+DpAuth (269): Values for _Areas.OSIDs sent.
+DpAuth (274): Values for _Areas.Password sent.
+DpAuth (279): Values for _Areas.PermissionDes sent.
+DpAuth (284): Values for _Areas.PermissionSet sent.
+DpAuth (289): Values for _Areas.UserId sent.
+DpAuth (294): Values for _Areas.UserName sent.
+DpAuth (299): Values for _Areas.PrimaryGroupOSID sent.
+DpAuth (304): Values for _Areas.DomainName sent.
+DpAuth (309): Values for _Groups.AreaIds sent.
+DpAuth (314): Values for _Groups.AreaPermissions sent.
+DpAuth (319): Values for _Groups.Comment sent.
+DpAuth (324): Values for _Groups.Enabled sent.
+DpAuth (329): Values for _Groups.ForceSet sent.
+DpAuth (334): Values for _Groups.FullName sent.
+DpAuth (339): Values for _Groups.GroupIds sent.
+DpAuth (344): Values for _Groups.Language sent.
+DpAuth (349): Values for _Groups.OSIDs sent.
+DpAuth (354): Values for _Groups.Password sent.
+DpAuth (359): Values for _Groups.PermissionDes sent.
+DpAuth (364): Values for _Groups.PermissionSet sent.
+DpAuth (369): Values for _Groups.UserId sent.
+DpAuth (374): Values for _Groups.UserName sent.
+DpAuth (379): Values for _Groups.PrimaryGroupOSID sent.
+DpAuth (384): Values for _Groups.DomainName sent.
+DpAuth (391): Values for _SysMgm_Settings. sent.
+DpAuth (397): Values for _S7PlusConfig.PublicKey sent.
+DpValue (401): Values for _AC_General.CNSUserDataKey sent.
+DpValue (403): Values for _WF_AuthCheckPlugin.FullName sent.
+DpValue (404): Values for _WF_AuthCheckPlugin.WizardKey sent.
+DpValue (405): Values for _WF_AuthCheckPlugin.Description sent.
+DpValue (406): Values for _WF_AuthCheckPlugin.Icon sent.
+DpValue (407): Values for _WF_AuthCheckPlugin.PanelEnable sent.
+DpValue (408): Values for _WF_AuthCheckPlugin.Navi.Keys sent.
+DpValue (409): Values for _WF_AuthCheckPlugin.Navi.PanelsPath sent.
+DpValue (410): Values for _WF_AuthCheckPlugin.Navi.Dollars sent.
+DpValue (411): Values for _WF_AuthCheckPlugin.Navi.Names sent.
+DpValue (412): Values for _WF_AuthCheckPlugin.Navi.Descriptions sent.
+DpValue (413): Values for _WF_AuthCheckPlugin.Navi.Icons sent.
+DpValue (414): Values for _WF_AuthCheckPlugin.Navi.ViewPermissions sent.
+DpValue (415): Values for _WF_AuthCheckPlugin.Navi.HelpKeyWord sent.
+DpValue (416): Values for _WF_AuthCheckPlugin.Navi.Functions.Save sent.
+DpValue (417): Values for _WF_AuthCheckPlugin.Navi.Functions.IsChanged sent.
+DpValue (420): Values for _WF_AuthCheckPlugin.Navi.Functions.MenuPointClick sent.
+DpValue (422): Values for _SysMgm_Permission.Title sent.
+DpValue (423): Values for _SysMgm_Permission.Description sent.
+DpValue (424): Values for _SysMgm_Permission.Icon sent.
+DpValue (425): Values for _SysMgm_Permission.ViewPermission sent.
+DpValue (426): Values for _SysMgm_Permission.Items.Titles sent.
+DpValue (427): Values for _SysMgm_Permission.Items.Descriptions sent.
+DpValue (428): Values for _SysMgm_Permission.Items.IconsSmall sent.
+DpValue (429): Values for _SysMgm_Permission.Items.IconsLarge sent.
+DpValue (430): Values for _SysMgm_Permission.Items.OwnActionScripts sent.
+DpValue (431): Values for _SysMgm_Permission.Items.Filenames sent.
+DpValue (432): Values for _SysMgm_Permission.Items.Dollars sent.
+DpValue (433): Values for _SysMgm_Permission.Items.ViewPermissions sent.
+DpValue (434): Values for _SysMgm_Permission.Items.RunPermissions sent.
+DpValue (435): Values for _SysMgm_Permission.Items.ViewPermissionsOwn sent.
+DpValue (436): Values for _SysMgm_Permission.Items.RunPermissionsOwn sent.
+DpValue (439): Values for _SysMgm_Permission.Items.ActionScripts sent.
+DpAuth (459): Values for _ACM_Api. sent.
+DpAuth (478): Values for _ACM_Ascii. sent.
+DpAuth (497): Values for _ACM_Ctrl. sent.
+DpAuth (516): Values for _ACM_Device. sent.
+DpAuth (535): Values for _ACM_Dist. sent.
+DpAuth (554): Values for _ACM_Driver. sent.
+DpAuth (573): Values for _ACM_Report. sent.
+DpAuth (592): Values for _ACM_Ui. sent.
+DpAuth (592): create _ACM_Redu..
+DpAuth (611): Values for _ACM_Redu. sent.
+DpAuth (632): Values for _AC_General. sent.
+DpValue (634): Values for _SysMgm_Communication.Index sent.
+DpValue (635): Values for _SysMgm_DB.Index sent.
+DpValue (636): Values for _SysMgm_Diagnostics.Index sent.
+DpValue (637): Values for _SysMgm_Driver.Index sent.
+DpValue (638): Values for _SysMgm_DriverIec.Index sent.
+DpValue (639): Values for _SysMgm_DriverOpc.Index sent.
+DpValue (640): Values for _SysMgm_DriverS7.Index sent.
+DpValue (641): Values for _SysMgm_Permission.Index sent.
+DpValue (642): Values for _SysMgm_Reporting.Index sent.
+DpValue (643): Values for _SysMgm_Settings.Index sent.
+DpValue (643): Values for _SysMgm_SmartSCADA.Index sent.
+Waiting for last response from eventmanager...
+Scanning of file D:\Magistratura\dbdfiles\version_3.16\update_configs.txt is finished (0)
+End of Program
+[2021.06.21;13:42:37:133 ] D:\Magistratura\bin\WCCOActrl  -proj Conveyor1_save_save9  -LoadNoCtrlLib -noUserCtrlExt -log +stderr -log -file upgrade\upgradeTo_03160000.ctl
+WCCOActrl    (0), 2021.06.21 13:42:37.265, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOActrl    (0), 2021.06.21 13:42:37.267, SYS,  INFO,        1, Manager Start, upgrade\upgradeTo_03160000.ctl
+WCCOActrl    (0), 2021.06.21 13:42:37.267, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOActrl    (0), 2021.06.21 13:42:37.273, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOActrl    (1), 2021.06.21 13:42:37.284, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOActrl    (1), 2021.06.21 13:42:37.284, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOActrl    (1), 2021.06.21 13:42:37.285, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOActrl    (1), 2021.06.21 13:42:37.287, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (1), 2021.06.21 13:42:37.287, SYS,  INFO,      103, User names/passwords initialized
+WCCOActrl    (1), 2021.06.21 13:42:37.288, PARAM,WARNING,     7, Datapoint does not exist, OaUserTable, OaUserTable, _Deleted_Users.UserId
+WCCOActrl    (1), 2021.06.21 13:42:37.337, SYS,  INFO,        0, , Version Upgrade, upgradeTo_03160000.ctl started by root
+WCCOActrl    (1), 2021.06.21 13:42:37.367, CTRL, INFO,        0, , _OPCPvssServer DPT already changed, nothing to do.
+WCCOActrl    (1), 2021.06.21 13:42:37.367, SYS,  INFO,        0, , Version Upgrade, upgradeTo_03160000.ctl done by root
+WCCOActrl    (1), 2021.06.21 13:42:37.367, SYS,  INFO,      181, Closing connection to (SYS: 1 Data -num 0 CONN: 1)
+WCCOActrl    (1), 2021.06.21 13:42:37.367, SYS,  INFO,      181, Closing connection to (SYS: 1 Event -num 0 CONN: 1)
+WCCOActrl    (1), 2021.06.21 13:42:37.367, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Data -num 0 CONN: 1), Connection closed
+WCCOActrl    (1), 2021.06.21 13:42:37.368, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Event -num 0 CONN: 1), Connection closed
+WCCOActrl    (1), 2021.06.21 13:42:37.371, SYS,  INFO,        2, Manager Stop
+[2021.06.21;13:42:37:381 ] D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.17\update_dptypes.txt
+WCCOAascii   (0), 2021.06.21 13:42:37.498, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOAascii   (0), 2021.06.21 13:42:37.501, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAascii   (0), 2021.06.21 13:42:37.506, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:37.520, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAascii   (1), 2021.06.21 13:42:37.520, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAascii   (1), 2021.06.21 13:42:37.521, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:37.523, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAascii   (1), 2021.06.21 13:42:37.523, SYS,  INFO,      103, User names/passwords initialized
+processing file D:\Magistratura\dbdfiles\version_3.17\update_dptypes.txt
+
+modifying type _DataManager:
+DpType (72): Modify msg for type _DataManager sent.
+
+modifying type _OPCUAServer:
+DpType (124): Modify msg for type _OPCUAServer sent.
+
+modifying type _OPCUA:
+DpType (140): Modify msg for type _OPCUA sent.
+
+deleted elements:
+_SNMPAgent.Status.SanorsState
+_SNMPAgent.Status.LastSanorsError
+DpType (173): Modify msg for type _SNMPAgent sent.
+
+modifying type _SNMPV3Entity:
+DpType (222): Modify msg for type _SNMPV3Entity sent.
+DpType (285): Create msg for type _PROFIsafe sent.
+DpType (320): Create msg for type _MqttConnection sent.
+DpType (323): Create msg for type _MqttConfig sent.
+
+modifying type _ReduManager:
+DpType (361): Modify msg for type _ReduManager sent.
+
+deleted elements:
+_OPCAEPvssServer.SimpleEvents
+_OPCAEPvssServer.SimpleEvents.EventCategoryNames
+_OPCAEPvssServer.SimpleEvents.AlertDps
+DpType (375): Modify msg for type _OPCAEPvssServer sent.
+
+modifying type _BacnetDevice:
+DpType (400): Modify msg for type _BacnetDevice sent.
+
+modifying type _System:
+DpType (450): Modify msg for type _System sent.
+DpType (460): Create msg for type _CommandChannel sent.
+
+modifying type _RDBArchive:
+DpType (509): Modify msg for type _RDBArchive sent.
+DpType (525): Create msg for type _DatabaseState sent.
+
+modifying type _Event:
+DpType (538): Modify msg for type _Event sent.
+DpType (587): Create msg for type _NGA_Backend sent.
+DpType (600): Create msg for type _NGA_BackendProfile sent.
+DpType (642): Create msg for type _NGA_Group sent.
+DpType (647): Create msg for type _NGA sent.
+
+deleted elements:
+_Mod_Plc.Endianity
+DpType (672): Modify msg for type _Mod_Plc sent.
+Waiting for last response from eventmanager...
+Scanning of file D:\Magistratura\dbdfiles\version_3.17\update_dptypes.txt is finished (0)
+End of Program
+[2021.06.21;13:42:37:581 ] D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -ignoreNonExistingDps -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.17\update_dps.txt
+WCCOAascii   (0), 2021.06.21 13:42:37.714, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOAascii   (0), 2021.06.21 13:42:37.718, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAascii   (0), 2021.06.21 13:42:37.723, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:37.744, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAascii   (1), 2021.06.21 13:42:37.744, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAascii   (1), 2021.06.21 13:42:37.755, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:37.758, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAascii   (1), 2021.06.21 13:42:37.759, SYS,  INFO,      103, User names/passwords initialized
+processing file D:\Magistratura\dbdfiles\version_3.17\update_dps.txt
+Datapoint/DpId (3): create _Deleted_Users.
+Datapoint/DpId (4): Datapoint _mp__Watchdog already defined with ID 488
+Datapoint/DpId (5): Datapoint _Watchdog_WCCILevent_0 already defined with ID 489
+Datapoint/DpId (6): Datapoint _Watchdog_WCCILevent_0_2 already defined with ID 490
+Datapoint/DpId (7): Datapoint _dt__Watchdog already defined with ID 491
+Datapoint/DpId (8): create _CommandChannel.
+Datapoint/DpId (9): create _DatabaseState.
+Datapoint/DpId (10): create _DatabaseState_2.
+Datapoint/DpId (11): create _NGA.
+Datapoint/DpId (12): create _NGA_P_InfluxDB_Profile.
+Datapoint/DpId (13): create _NGA_B_InfluxDB.
+Datapoint/DpId (14): create _NGA_G_EVENT.
+Datapoint/DpId (15): create _NGA_G_ALERT.
+Datapoint/DpId (16): create _Stat_event_0_to_data_120.
+Datapoint/DpId (17): create _Stat_Configs_data_120.
+Datapoint/DpId (18): create _Stat_2_Configs_data_120.
+Datapoint/DpId (19): create _Stat_2_event_0_to_data_120.
+Waiting for last response from eventmanager...
+Scanning of file D:\Magistratura\dbdfiles\version_3.17\update_dps.txt is finished (55)
+End of Program
+doAsciiIn returned warning code: 55
+[2021.06.21;13:42:37:777 ] D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -ignoreNonExistingDps -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.17\update_configs.txt
+WCCOAascii   (0), 2021.06.21 13:42:38.007, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOAascii   (0), 2021.06.21 13:42:38.012, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAascii   (0), 2021.06.21 13:42:38.018, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:38.024, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAascii   (1), 2021.06.21 13:42:38.024, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAascii   (1), 2021.06.21 13:42:38.026, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:38.029, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAascii   (1), 2021.06.21 13:42:38.029, SYS,  INFO,      103, User names/passwords initialized
+WCCOAascii   (1), 2021.06.21 13:42:38.030, SYS,  INFO,      102, Waiting for user names/passwords
+processing file D:\Magistratura\dbdfiles\version_3.17\update_configs.txt
+DpValue (4): Values for _SysMgm_DriverOpc.Title sent.
+DpValue (5): Values for _SysMgm_DriverOpc.Description sent.
+DpValue (6): Values for _SysMgm_DriverOpc.ViewPermission sent.
+DpValue (7): Values for _SysMgm_DriverOpc.Items.Titles sent.
+DpValue (8): Values for _SysMgm_DriverOpc.Items.Descriptions sent.
+DpValue (9): Values for _SysMgm_DriverOpc.Items.IconsSmall sent.
+DpValue (10): Values for _SysMgm_DriverOpc.Items.IconsLarge sent.
+DpValue (11): Values for _SysMgm_DriverOpc.Items.OwnActionScripts sent.
+DpValue (12): Values for _SysMgm_DriverOpc.Items.Filenames sent.
+DpValue (13): Values for _SysMgm_DriverOpc.Items.Dollars sent.
+DpValue (14): Values for _SysMgm_DriverOpc.Items.ViewPermissions sent.
+DpValue (15): Values for _SysMgm_DriverOpc.Items.RunPermissions sent.
+DpValue (16): Values for _SysMgm_DriverOpc.Items.ViewPermissionsOwn sent.
+DpValue (17): Values for _SysMgm_DriverOpc.Items.RunPermissionsOwn sent.
+DpValue (18): Values for _SysMgm_DriverOpc.Items.ActionScripts sent.
+DpValue (21): Values for _SysMgm_DriverOpc.Items.ExtendKonstruktor sent.
+DpValue (23): Values for _SysMgm_Settings.Title sent.
+DpValue (24): Values for _SysMgm_Settings.Description sent.
+DpValue (25): Values for _SysMgm_Settings.Icon sent.
+DpValue (26): Values for _SysMgm_Settings.ViewPermission sent.
+DpValue (27): Values for _SysMgm_Settings.Index sent.
+DpValue (28): Values for _SysMgm_Settings.Items.Titles sent.
+DpValue (29): Values for _SysMgm_Settings.Items.Descriptions sent.
+DpValue (30): Values for _SysMgm_Settings.Items.IconsSmall sent.
+DpValue (31): Values for _SysMgm_Settings.Items.IconsLarge sent.
+DpValue (32): Values for _SysMgm_Settings.Items.OwnActionScripts sent.
+DpValue (33): Values for _SysMgm_Settings.Items.Filenames sent.
+DpValue (34): Values for _SysMgm_Settings.Items.Dollars sent.
+DpValue (35): Values for _SysMgm_Settings.Items.ViewPermissions sent.
+DpValue (36): Values for _SysMgm_Settings.Items.RunPermissions sent.
+DpValue (37): Values for _SysMgm_Settings.Items.ViewPermissionsOwn sent.
+DpValue (38): Values for _SysMgm_Settings.Items.RunPermissionsOwn sent.
+DpValue (39): Values for _SysMgm_Settings.Items.ActionScripts sent.
+DpValue (42): Values for _SysMgm_Settings.Items.ExtendKonstruktor sent.
+DpValue (44): Values for _SysMgm_Communication.Items.ViewPermissionsOwn sent.
+DpValue (45): Values for _SysMgm_DriverS7.Title sent.
+DpValue (46): Values for _SysMgm_DriverS7.Description sent.
+DpValue (47): Values for _SysMgm_DriverS7.Icon sent.
+DpValue (48): Values for _SysMgm_DriverS7.ViewPermission sent.
+DpValue (49): Values for _SysMgm_DriverS7.Index sent.
+DpValue (50): Values for _SysMgm_DriverS7.Items.Titles sent.
+DpValue (51): Values for _SysMgm_DriverS7.Items.Descriptions sent.
+DpValue (52): Values for _SysMgm_DriverS7.Items.IconsSmall sent.
+DpValue (53): Values for _SysMgm_DriverS7.Items.IconsLarge sent.
+DpValue (54): Values for _SysMgm_DriverS7.Items.OwnActionScripts sent.
+DpValue (55): Values for _SysMgm_DriverS7.Items.Filenames sent.
+DpValue (56): Values for _SysMgm_DriverS7.Items.Dollars sent.
+DpValue (57): Values for _SysMgm_DriverS7.Items.ViewPermissions sent.
+DpValue (58): Values for _SysMgm_DriverS7.Items.RunPermissions sent.
+DpValue (59): Values for _SysMgm_DriverS7.Items.ViewPermissionsOwn sent.
+DpValue (60): Values for _SysMgm_DriverS7.Items.RunPermissionsOwn sent.
+DpValue (61): Values for _SysMgm_DriverS7.Items.ActionScripts sent.
+DpValue (62): Values for _SysMgm_Driver.Title sent.
+DpValue (63): Values for _SysMgm_Driver.Description sent.
+DpValue (64): Values for _SysMgm_Driver.Icon sent.
+DpValue (65): Values for _SysMgm_Driver.ViewPermission sent.
+DpValue (66): Values for _SysMgm_Driver.Items.Titles sent.
+DpValue (67): Values for _SysMgm_Driver.Items.Descriptions sent.
+DpValue (68): Values for _SysMgm_Driver.Items.IconsSmall sent.
+DpValue (69): Values for _SysMgm_Driver.Items.IconsLarge sent.
+DpValue (70): Values for _SysMgm_Driver.Items.OwnActionScripts sent.
+DpValue (71): Values for _SysMgm_Driver.Items.Filenames sent.
+DpValue (72): Values for _SysMgm_Driver.Items.Dollars sent.
+DpValue (73): Values for _SysMgm_Driver.Items.ViewPermissions sent.
+DpValue (74): Values for _SysMgm_Driver.Items.RunPermissions sent.
+DpValue (75): Values for _SysMgm_Driver.Items.ViewPermissionsOwn sent.
+DpValue (76): Values for _SysMgm_Driver.Items.RunPermissionsOwn sent.
+DpValue (77): Values for _SysMgm_Driver.Items.ActionScripts sent.
+DpValue (80): Values for _SysMgm_Driver.Items.ExtendKonstruktor sent.
+DpValue (81): Values for _SysMgm_DB.Items.ViewPermissionsOwn sent.
+DpValue (84): Values for _SysMgm_DB.Items.RunPermissionsOwn sent.
+AlertValue (92): Values for _ReduManager.Status.Reason sent.
+AlertValue (101): Values for _ReduManager_2.Status.Reason sent.
+AlertValue (103): Values for _mp__Watchdog.Blocking sent.
+AlertValue (104): Values for _Watchdog_WCCILevent_0.Blocking sent.
+AlertValue (107): Values for _Watchdog_WCCILevent_0_2.Blocking sent.
+DpValue (109): Values for _dt__Watchdog.Leaf sent.
+DpValue (112): Values for _dt__Watchdog.DynamicAttribute sent.
+DpAuth (120): Values for _Deleted_Users. sent.
+DpValue DPE UserManagement was added to _System DPT (124): Values for _System.Auth.UserManagement sent.
+DpAuth - added DPE UserManagement to DPT _System (147): Values for _System.Auth.UserManagement sent.
+DpAuth - _System.Auth.DpType (169): Values for _System.Auth.DpType sent.
+DpAuth - _System.Auth.Dp (191): Values for _System.Auth.Dp sent.
+DpAuth - _System.Auth.DpAlias (213): Values for _System.Auth.DpAlias sent.
+DpAuth - _System.Auth.DpAuth (235): Values for _System.Auth.DpAuth sent.
+DpAuth (256): Values for _Users. sent.
+DpAuth (276): Values for _Deleted_Users. sent.
+DpAuth (296): Values for _Groups. sent.
+DpAuth (316): Values for _Areas. sent.
+DpAuth (338): Values for _CommandChannel.PublicKey sent.
+AlertValue (342): Values for _DatabaseState.ConfigurationDB.ErrorCount sent.
+AlertValue (346): Values for _DatabaseState.ConfigurationDB.RecordCount sent.
+AlertValue (349): Values for _DatabaseState.alliving.ErrorCount sent.
+AlertValue (353): Values for _DatabaseState.alliving.RecordCount sent.
+AlertValue (356): Values for _DatabaseState.aloverflow.ErrorCount sent.
+AlertValue (360): Values for _DatabaseState.aloverflow.RecordCount sent.
+AlertValue (363): Values for _DatabaseState.lastval.ErrorCount sent.
+AlertValue (367): Values for _DatabaseState.lastval.RecordCount sent.
+AlertValue (370): Values for _DatabaseState.NewestAlertArchive.ErrorCount sent.
+AlertValue (374): Values for _DatabaseState.NewestAlertArchive.RecordCount sent.
+AlertValue (377): Values for _DatabaseState_2.ConfigurationDB.ErrorCount sent.
+AlertValue (381): Values for _DatabaseState_2.ConfigurationDB.RecordCount sent.
+AlertValue (384): Values for _DatabaseState_2.alliving.ErrorCount sent.
+AlertValue (388): Values for _DatabaseState_2.alliving.RecordCount sent.
+AlertValue (391): Values for _DatabaseState_2.aloverflow.ErrorCount sent.
+AlertValue (395): Values for _DatabaseState_2.aloverflow.RecordCount sent.
+AlertValue (398): Values for _DatabaseState_2.lastval.ErrorCount sent.
+AlertValue (402): Values for _DatabaseState_2.lastval.RecordCount sent.
+AlertValue (405): Values for _DatabaseState_2.NewestAlertArchive.ErrorCount sent.
+AlertValue (411): Values for _DatabaseState_2.NewestAlertArchive.RecordCount sent.
+AlertValue (417): Values for _Event.License.cmLicenseInvalid sent.
+Aliases/Comments (418): created/deleted comment for _Event.License.cmLicenseInvalid.
+NGA (423): Values for _NGA.diskCapacityInBytes sent.
+NGA (424): Values for _NGA.limitDiskCapacity sent.
+NGA (425): Values for _NGA.monitor.bufferDiskSpaceUsed sent.
+NGA (426): Values for _NGA_P_InfluxDB_Profile.sendDpWithId sent.
+NGA (427): Values for _NGA_P_InfluxDB_Profile.sendDpWithName sent.
+NGA (428): Values for _NGA_P_InfluxDB_Profile.sendDpWithAlias sent.
+NGA (429): Values for _NGA_P_InfluxDB_Profile.supportsMonthsAndYears sent.
+NGA (430): Values for _NGA_P_InfluxDB_Profile.modifiableRetention sent.
+NGA (431): Values for _NGA_P_InfluxDB_Profile.modifiableSegmentDuration sent.
+NGA (432): Values for _NGA_P_InfluxDB_Profile.oraNameRestrictions sent.
+NGA (433): Values for _NGA_P_InfluxDB_Profile.manualSegmentSwitch sent.
+NGA (434): Values for _NGA_P_InfluxDB_Profile.startStopDBProcess sent.
+NGA (435): Values for _NGA_P_InfluxDB_Profile.dbSpecific sent.
+NGA (436): Values for _NGA_P_InfluxDB_Profile.autogenGroupNameInDB sent.
+NGA (437): Values for _NGA_B_InfluxDB.general.active sent.
+NGA (438): Values for _NGA_B_InfluxDB.general.pluginName sent.
+NGA (439): Values for _NGA_B_InfluxDB.general.backendProcCtrl sent.
+NGA (440): Values for _NGA_B_InfluxDB.general.backendProcMgmt sent.
+NGA (441): Values for _NGA_B_InfluxDB.general.profile sent.
+NGA (442): Values for _NGA_B_InfluxDB.comm.zmqAddress sent.
+NGA (443): Values for _NGA_B_InfluxDB.comm.sendDpeWithName sent.
+NGA (444): Values for _NGA_B_InfluxDB.comm.sendDpeWithId sent.
+NGA (445): Values for _NGA_B_InfluxDB.comm.sendDpeWithAlias sent.
+NGA (446): Values for _NGA_B_InfluxDB.comm.splitSize sent.
+NGA (447): Values for _NGA_B_InfluxDB.buffering.bufferFilesLocation sent.
+NGA (448): Values for _NGA_B_InfluxDB.buffering.bufferFilesPrefix sent.
+NGA (449): Values for _NGA_B_InfluxDB.buffering.bufferingLevel sent.
+NGA (450): Values for _NGA_B_InfluxDB.buffering.memoryBufferSize sent.
+NGA (451): Values for _NGA_B_InfluxDB.buffering.blockSize sent.
+NGA (452): Values for _NGA_B_InfluxDB.buffering.timeoutUntilBlockIsWrittenToDisk sent.
+NGA (453): Values for _NGA_B_InfluxDB.buffering.processOldBlocksAtStartup sent.
+NGA (454): Values for _NGA_B_InfluxDB.timing.sendTimeout sent.
+NGA (455): Values for _NGA_B_InfluxDB.timing.maxBufferTime sent.
+NGA (456): Values for _NGA_B_InfluxDB.timing.waitForDBWrite sent.
+NGA (457): Values for _NGA_B_InfluxDB.timing.timeToWaitForFinishingAsyncOperInMilisecs sent.
+NGA (458): Values for _NGA_B_InfluxDB.database.connection sent.
+NGA (459): Values for _NGA_B_InfluxDB.database.user sent.
+NGA (460): Values for _NGA_B_InfluxDB.database.password sent.
+NGA (461): Values for _NGA_B_InfluxDB.database.dbSpecific sent.
+NGA (462): Values for _NGA_B_InfluxDB.database.dbProcControl sent.
+NGA (463): Values for _NGA_B_InfluxDB.database.dbProcMgmt sent.
+NGA (464): Values for _NGA_B_InfluxDB.monitor.backendConnectedToDB sent.
+NGA (465): Values for _NGA_B_InfluxDB.monitor.backendConnectedToFrontend sent.
+NGA (466): Values for _NGA_B_InfluxDB.monitor.currentDiskBufferSize sent.
+NGA (467): Values for _NGA_B_InfluxDB.monitor.currentMemoryBufferSize sent.
+NGA (468): Values for _NGA_B_InfluxDB.monitor.bufferGrowthIndicator sent.
+NGA (469): Values for _NGA_G_EVENT.backend sent.
+NGA (470): Values for _NGA_G_EVENT.active sent.
+NGA (471): Values for _NGA_G_EVENT.groupName sent.
+NGA (472): Values for _NGA_G_EVENT.groupPriority sent.
+NGA (473): Values for _NGA_G_EVENT.storage.retentionInterval sent.
+NGA (474): Values for _NGA_G_EVENT.storage.retentionFactor sent.
+NGA (475): Values for _NGA_G_EVENT.storage.segmentDurationInterval sent.
+NGA (476): Values for _NGA_G_EVENT.storage.segmentDurationFactor sent.
+NGA (477): Values for _NGA_G_ALERT.backend sent.
+NGA (478): Values for _NGA_G_ALERT.active sent.
+NGA (479): Values for _NGA_G_ALERT.groupName sent.
+NGA (480): Values for _NGA_G_ALERT.isAlert sent.
+NGA (481): Values for _NGA_G_ALERT.groupPriority sent.
+NGA (482): Values for _NGA_G_ALERT.storage.retentionInterval sent.
+NGA (483): Values for _NGA_G_ALERT.storage.retentionFactor sent.
+NGA (484): Values for _NGA_G_ALERT.storage.segmentDurationInterval sent.
+NGA (485): Values for _NGA_G_ALERT.storage.segmentDurationFactor sent.
+Waiting for last response from eventmanager...
+Scanning of file D:\Magistratura\dbdfiles\version_3.17\update_configs.txt is finished (0)
+End of Program
+[2021.06.21;13:42:39:002 ] D:\Magistratura\bin\WCCOActrl  -proj Conveyor1_save_save9  -LoadNoCtrlLib -noUserCtrlExt -log +stderr -log -file upgrade\upgradeTo_03170000.ctl
+WCCOActrl    (0), 2021.06.21 13:42:39.164, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOActrl    (0), 2021.06.21 13:42:39.167, SYS,  INFO,        1, Manager Start, upgrade\upgradeTo_03170000.ctl
+WCCOActrl    (0), 2021.06.21 13:42:39.167, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOActrl    (0), 2021.06.21 13:42:39.174, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOActrl    (1), 2021.06.21 13:42:39.181, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOActrl    (1), 2021.06.21 13:42:39.181, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOActrl    (1), 2021.06.21 13:42:39.199, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOActrl    (1), 2021.06.21 13:42:39.201, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (1), 2021.06.21 13:42:39.202, SYS,  INFO,      103, User names/passwords initialized
+WCCOActrl    (1), 2021.06.21 13:42:39.203, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (1), 2021.06.21 13:42:39.300, SYS,  INFO,        0, , Version Upgrade, upgradeTo_03170000.ctl started by root
+WCCOActrl    (1), 2021.06.21 13:42:39.346, SYS,  INFO,        0, , Version Upgrade, upgradeTo_03170000.ctl done by root
+WCCOActrl    (1), 2021.06.21 13:42:39.346, SYS,  INFO,      181, Closing connection to (SYS: 1 Data -num 0 CONN: 1)
+WCCOActrl    (1), 2021.06.21 13:42:39.346, SYS,  INFO,      181, Closing connection to (SYS: 1 Event -num 0 CONN: 1)
+WCCOActrl    (1), 2021.06.21 13:42:39.346, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Data -num 0 CONN: 1), Connection closed
+WCCOActrl    (1), 2021.06.21 13:42:39.346, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Event -num 0 CONN: 1), Connection closed
+WCCOActrl    (1), 2021.06.21 13:42:39.358, SYS,  INFO,        2, Manager Stop
+[2021.06.21;13:42:39:367 ] D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.18\update_dptypes.txt
+WCCOAascii   (0), 2021.06.21 13:42:39.470, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOAascii   (0), 2021.06.21 13:42:39.473, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAascii   (0), 2021.06.21 13:42:39.481, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:39.487, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAascii   (1), 2021.06.21 13:42:39.487, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAascii   (1), 2021.06.21 13:42:39.488, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:39.490, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAascii   (1), 2021.06.21 13:42:39.490, SYS,  INFO,      103, User names/passwords initialized
+WCCOAascii   (1), 2021.06.21 13:42:39.492, SYS,  INFO,      102, Waiting for user names/passwords
+processing file D:\Magistratura\dbdfiles\version_3.18\update_dptypes.txt
+
+modifying type _DataManager:
+DpType (73): Modify msg for type _DataManager sent.
+
+modifying type _OPCUAServer:
+DpType (127): Modify msg for type _OPCUAServer sent.
+
+modifying type _OPCUASubscription:
+DpType (160): Modify msg for type _OPCUASubscription sent.
+
+modifying type _SNMPManager:
+DpType (275): Modify msg for type _SNMPManager sent.
+
+modifying type _NGA_Backend:
+DpType (645): Modify msg for type _NGA_Backend sent.
+
+modifying type _NGA_BackendProfile:
+DpType (661): Modify msg for type _NGA_BackendProfile sent.
+
+modifying type _NGA_Group:
+DpType (707): Modify msg for type _NGA_Group sent.
+
+modifying type _NGA:
+DpType (715): Modify msg for type _NGA sent.
+
+modifying type _EIPConn:
+DpType (762): Modify msg for type _EIPConn sent.
+DpType (773): Create msg for type _EIPTagset sent.
+DpType (779): Create msg for type _Dashboard sent.
+DpType (787): Create msg for type _WebUI_Settings sent.
+DpType (789): Create msg for type _WebUI_User_Settings sent.
+
+deleted elements:
+_IEC61850_RCB.Config.ReserveTms
+_IEC61850_RCB.Config.OptionalFields
+_IEC61850_RCB.Config.OptionalFields.SequenceNumber
+_IEC61850_RCB.Config.OptionalFields.ReportTimeStamp
+_IEC61850_RCB.Config.OptionalFields.ReasonForInclusion
+_IEC61850_RCB.Config.OptionalFields.DataSetName
+_IEC61850_RCB.Config.OptionalFields.DataReference
+_IEC61850_RCB.Config.OptionalFields.BufferOverflow
+_IEC61850_RCB.Config.OptionalFields.EntryID
+_IEC61850_RCB.Config.OptionalFields.ConfigRevision
+_IEC61850_RCB.Config.OptionalFields.Segmentation
+_IEC61850_RCB.Config.TriggerOptions
+_IEC61850_RCB.Config.TriggerOptions.DataChange
+_IEC61850_RCB.Config.TriggerOptions.QualityChange
+_IEC61850_RCB.Config.TriggerOptions.DataUpdate
+_IEC61850_RCB.Config.TriggerOptions.Integrity
+_IEC61850_RCB.Config.TriggerOptions.GeneralInterrogation
+_IEC61850_RCB.Config.ReduConfig
+_IEC61850_RCB.Config.ReduRcb
+_IEC61850_RCB.RCBInfo.ResvTmsExistence
+_IEC61850_RCB.RCBInfo.SubSequenceNumber
+_IEC61850_RCB.RCBInfo.MoreSegmentsFollow
+_IEC61850_RCB.BrowsedConfig.OptionalFields
+_IEC61850_RCB.BrowsedConfig.OptionalFields.SequenceNumber
+_IEC61850_RCB.BrowsedConfig.OptionalFields.ReportTimeStamp
+_IEC61850_RCB.BrowsedConfig.OptionalFields.ReasonForInclusion
+_IEC61850_RCB.BrowsedConfig.OptionalFields.DataSetName
+_IEC61850_RCB.BrowsedConfig.OptionalFields.DataReference
+_IEC61850_RCB.BrowsedConfig.OptionalFields.BufferOverflow
+_IEC61850_RCB.BrowsedConfig.OptionalFields.EntryID
+_IEC61850_RCB.BrowsedConfig.OptionalFields.ConfigRevision
+_IEC61850_RCB.BrowsedConfig.OptionalFields.Segmentation
+_IEC61850_RCB.BrowsedConfig.TriggerOptions
+_IEC61850_RCB.BrowsedConfig.TriggerOptions.DataChange
+_IEC61850_RCB.BrowsedConfig.TriggerOptions.QualityChange
+_IEC61850_RCB.BrowsedConfig.TriggerOptions.DataUpdate
+_IEC61850_RCB.BrowsedConfig.TriggerOptions.Integrity
+_IEC61850_RCB.BrowsedConfig.TriggerOptions.GeneralInterrogation
+DpType (833): Modify msg for type _IEC61850_RCB sent.
+
+modifying type _S7PlusConnection:
+DpType (910): Modify msg for type _S7PlusConnection sent.
+
+modifying type _VarTrend:
+DpType (935): Modify msg for type _VarTrend sent.
+DpType (945): Create msg for type _VarTrendSettings sent.
+Waiting for last response from eventmanager...
+Scanning of file D:\Magistratura\dbdfiles\version_3.18\update_dptypes.txt is finished (0)
+End of Program
+[2021.06.21;13:42:39:550 ] D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -ignoreNonExistingDps -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.18\update_dps.txt
+WCCOAascii   (0), 2021.06.21 13:42:39.678, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOAascii   (0), 2021.06.21 13:42:39.681, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAascii   (0), 2021.06.21 13:42:39.687, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:39.702, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAascii   (1), 2021.06.21 13:42:39.702, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAascii   (1), 2021.06.21 13:42:39.714, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:39.716, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAascii   (1), 2021.06.21 13:42:39.717, SYS,  INFO,      103, User names/passwords initialized
+WCCOAascii   (1), 2021.06.21 13:42:39.718, SYS,  INFO,      102, Waiting for user names/passwords
+processing file D:\Magistratura\dbdfiles\version_3.18\update_dps.txt
+Datapoint/DpId (3): Datapoint _Deleted_Users already defined with ID 20584
+Datapoint/DpId (4): Datapoint _mp__Watchdog already defined with ID 488
+Datapoint/DpId (5): Datapoint _Watchdog_WCCILevent_0 already defined with ID 489
+Datapoint/DpId (6): Datapoint _Watchdog_WCCILevent_0_2 already defined with ID 490
+Datapoint/DpId (7): Datapoint _dt__Watchdog already defined with ID 491
+Datapoint/DpId (8): Datapoint _CommandChannel already defined with ID 20585
+Datapoint/DpId (9): Datapoint _DatabaseState already defined with ID 20586
+Datapoint/DpId (10): Datapoint _DatabaseState_2 already defined with ID 20587
+Datapoint/DpId (11): Datapoint _NGA already defined with ID 20588
+Datapoint/DpId (12): Datapoint _NGA_P_InfluxDB_Profile already defined with ID 20589
+Datapoint/DpId (13): Datapoint _NGA_B_InfluxDB already defined with ID 20590
+Datapoint/DpId (14): Datapoint _NGA_G_EVENT already defined with ID 20591
+Datapoint/DpId (15): Datapoint _NGA_G_ALERT already defined with ID 20592
+Datapoint/DpId (16): create _NGA_B_PostgreSQLBackend.
+Datapoint/DpId (17): create _NGA_P_PostgreSQLBackend_Profile.
+Datapoint/DpId (18): create _NGA_G_EVENT_PG.
+Datapoint/DpId (19): create _NGA_B_PostgreSQLBackend_2.
+Datapoint/DpId (20): create _NGA_G_EVENT_PG_2.
+Datapoint/DpId (21): Datapoint _Stat_event_0_to_data_120 already defined with ID 20593
+Datapoint/DpId (22): Datapoint _Stat_Configs_data_120 already defined with ID 20594
+Datapoint/DpId (23): Datapoint _Stat_2_Configs_data_120 already defined with ID 20595
+Datapoint/DpId (24): Datapoint _Stat_2_event_0_to_data_120 already defined with ID 20596
+Datapoint/DpId (25): create _WebUI_Settings.
+Datapoint/DpId (26): create _WF_ngaDatabase.
+Datapoint/DpId (27): create _WF_ngaRuntime.
+Datapoint/DpId (28): create _WF_VarTrend.
+Datapoint/DpId (29): create _VarTrendSettings.
+Waiting for last response from eventmanager...
+Scanning of file D:\Magistratura\dbdfiles\version_3.18\update_dps.txt is finished (55)
+End of Program
+doAsciiIn returned warning code: 55
+[2021.06.21;13:42:39:732 ] D:\Magistratura\bin\WCCOAascii  -proj Conveyor1_save_save9  -inactivateAlert -ignoreNonExistingDps -yes -log +stderr -log -file -in D:\Magistratura\dbdfiles\version_3.18\update_configs.txt
+WCCOAascii   (0), 2021.06.21 13:42:39.844, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOAascii   (0), 2021.06.21 13:42:39.847, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAascii   (0), 2021.06.21 13:42:39.853, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:39.871, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAascii   (1), 2021.06.21 13:42:39.871, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAascii   (1), 2021.06.21 13:42:39.887, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOAascii   (1), 2021.06.21 13:42:39.889, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAascii   (1), 2021.06.21 13:42:39.890, SYS,  INFO,      103, User names/passwords initialized
+WCCOAascii   (1), 2021.06.21 13:42:39.891, SYS,  INFO,      102, Waiting for user names/passwords
+processing file D:\Magistratura\dbdfiles\version_3.18\update_configs.txt
+DpValue (4): Values for _SysMgm_DriverOpc.Title sent.
+DpValue (5): Values for _SysMgm_DriverOpc.Description sent.
+DpValue (6): Values for _SysMgm_DriverOpc.ViewPermission sent.
+DpValue (7): Values for _SysMgm_DriverOpc.Items.Titles sent.
+DpValue (8): Values for _SysMgm_DriverOpc.Items.Descriptions sent.
+DpValue (9): Values for _SysMgm_DriverOpc.Items.IconsSmall sent.
+DpValue (10): Values for _SysMgm_DriverOpc.Items.IconsLarge sent.
+DpValue (11): Values for _SysMgm_DriverOpc.Items.OwnActionScripts sent.
+DpValue (12): Values for _SysMgm_DriverOpc.Items.Filenames sent.
+DpValue (13): Values for _SysMgm_DriverOpc.Items.Dollars sent.
+DpValue (14): Values for _SysMgm_DriverOpc.Items.ViewPermissions sent.
+DpValue (15): Values for _SysMgm_DriverOpc.Items.RunPermissions sent.
+DpValue (16): Values for _SysMgm_DriverOpc.Items.ViewPermissionsOwn sent.
+DpValue (17): Values for _SysMgm_DriverOpc.Items.RunPermissionsOwn sent.
+DpValue (18): Values for _SysMgm_DriverOpc.Items.ActionScripts sent.
+DpValue (21): Values for _SysMgm_DriverOpc.Items.ExtendKonstruktor sent.
+AlertValue (27): Values for _mp_SSC_KPI_Instance.enabled sent.
+DpValue (29): Values for _SysMgm_Settings.Title sent.
+DpValue (30): Values for _SysMgm_Settings.Description sent.
+DpValue (31): Values for _SysMgm_Settings.Icon sent.
+DpValue (32): Values for _SysMgm_Settings.ViewPermission sent.
+DpValue (33): Values for _SysMgm_Settings.Index sent.
+DpValue (34): Values for _SysMgm_Settings.Items.Titles sent.
+DpValue (35): Values for _SysMgm_Settings.Items.Descriptions sent.
+DpValue (36): Values for _SysMgm_Settings.Items.IconsSmall sent.
+DpValue (37): Values for _SysMgm_Settings.Items.IconsLarge sent.
+DpValue (38): Values for _SysMgm_Settings.Items.OwnActionScripts sent.
+DpValue (39): Values for _SysMgm_Settings.Items.Filenames sent.
+DpValue (40): Values for _SysMgm_Settings.Items.Dollars sent.
+DpValue (41): Values for _SysMgm_Settings.Items.ViewPermissions sent.
+DpValue (42): Values for _SysMgm_Settings.Items.RunPermissions sent.
+DpValue (43): Values for _SysMgm_Settings.Items.ViewPermissionsOwn sent.
+DpValue (44): Values for _SysMgm_Settings.Items.RunPermissionsOwn sent.
+DpValue (45): Values for _SysMgm_Settings.Items.ActionScripts sent.
+DpValue (48): Values for _SysMgm_Settings.Items.ExtendKonstruktor sent.
+DpValue (50): Values for _SysMgm_Communication.Items.ViewPermissionsOwn sent.
+DpValue (51): Values for _SysMgm_DriverS7.Title sent.
+DpValue (52): Values for _SysMgm_DriverS7.Description sent.
+DpValue (53): Values for _SysMgm_DriverS7.Icon sent.
+DpValue (54): Values for _SysMgm_DriverS7.ViewPermission sent.
+DpValue (55): Values for _SysMgm_DriverS7.Index sent.
+DpValue (56): Values for _SysMgm_DriverS7.Items.Titles sent.
+DpValue (57): Values for _SysMgm_DriverS7.Items.Descriptions sent.
+DpValue (58): Values for _SysMgm_DriverS7.Items.IconsSmall sent.
+DpValue (59): Values for _SysMgm_DriverS7.Items.IconsLarge sent.
+DpValue (60): Values for _SysMgm_DriverS7.Items.OwnActionScripts sent.
+DpValue (61): Values for _SysMgm_DriverS7.Items.Filenames sent.
+DpValue (62): Values for _SysMgm_DriverS7.Items.Dollars sent.
+DpValue (63): Values for _SysMgm_DriverS7.Items.ViewPermissions sent.
+DpValue (64): Values for _SysMgm_DriverS7.Items.RunPermissions sent.
+DpValue (65): Values for _SysMgm_DriverS7.Items.ViewPermissionsOwn sent.
+DpValue (66): Values for _SysMgm_DriverS7.Items.RunPermissionsOwn sent.
+DpValue (67): Values for _SysMgm_DriverS7.Items.ActionScripts sent.
+DpValue (68): Values for _SysMgm_Driver.Title sent.
+DpValue (69): Values for _SysMgm_Driver.Description sent.
+DpValue (70): Values for _SysMgm_Driver.Icon sent.
+DpValue (71): Values for _SysMgm_Driver.ViewPermission sent.
+DpValue (72): Values for _SysMgm_Driver.Items.Titles sent.
+DpValue (73): Values for _SysMgm_Driver.Items.Descriptions sent.
+DpValue (74): Values for _SysMgm_Driver.Items.IconsSmall sent.
+DpValue (75): Values for _SysMgm_Driver.Items.IconsLarge sent.
+DpValue (76): Values for _SysMgm_Driver.Items.OwnActionScripts sent.
+DpValue (77): Values for _SysMgm_Driver.Items.Filenames sent.
+DpValue (78): Values for _SysMgm_Driver.Items.Dollars sent.
+DpValue (79): Values for _SysMgm_Driver.Items.ViewPermissions sent.
+DpValue (80): Values for _SysMgm_Driver.Items.RunPermissions sent.
+DpValue (81): Values for _SysMgm_Driver.Items.ViewPermissionsOwn sent.
+DpValue (82): Values for _SysMgm_Driver.Items.RunPermissionsOwn sent.
+DpValue (83): Values for _SysMgm_Driver.Items.ActionScripts sent.
+DpValue (86): Values for _SysMgm_Driver.Items.ExtendKonstruktor sent.
+DpValue (88): Values for _SysMgm_DB.Title sent.
+DpValue (89): Values for _SysMgm_DB.Description sent.
+DpValue (90): Values for _SysMgm_DB.Icon sent.
+DpValue (91): Values for _SysMgm_DB.ViewPermission sent.
+DpValue (92): Values for _SysMgm_DB.Index sent.
+DpValue (93): Values for _SysMgm_DB.Items.Titles sent.
+DpValue (94): Values for _SysMgm_DB.Items.Descriptions sent.
+DpValue (95): Values for _SysMgm_DB.Items.IconsSmall sent.
+DpValue (96): Values for _SysMgm_DB.Items.IconsLarge sent.
+DpValue (97): Values for _SysMgm_DB.Items.OwnActionScripts sent.
+DpValue (98): Values for _SysMgm_DB.Items.Filenames sent.
+DpValue (99): Values for _SysMgm_DB.Items.Dollars sent.
+DpValue (100): Values for _SysMgm_DB.Items.ViewPermissions sent.
+DpValue (101): Values for _SysMgm_DB.Items.RunPermissions sent.
+DpValue (102): Values for _SysMgm_DB.Items.ViewPermissionsOwn sent.
+DpValue (103): Values for _SysMgm_DB.Items.RunPermissionsOwn sent.
+DpValue (105): Values for _SysMgm_DB.Items.ActionScripts sent.
+DpValue (106): Values for _SysMgm_Reporting.Title sent.
+DpValue (107): Values for _SysMgm_Reporting.Description sent.
+DpValue (108): Values for _SysMgm_Reporting.Icon sent.
+DpValue (109): Values for _SysMgm_Reporting.ViewPermission sent.
+DpValue (110): Values for _SysMgm_Reporting.Items.Titles sent.
+DpValue (111): Values for _SysMgm_Reporting.Items.Descriptions sent.
+DpValue (112): Values for _SysMgm_Reporting.Items.IconsSmall sent.
+DpValue (113): Values for _SysMgm_Reporting.Items.IconsLarge sent.
+DpValue (114): Values for _SysMgm_Reporting.Items.OwnActionScripts sent.
+DpValue (115): Values for _SysMgm_Reporting.Items.Filenames sent.
+DpValue (116): Values for _SysMgm_Reporting.Items.Dollars sent.
+DpValue (117): Values for _SysMgm_Reporting.Items.ViewPermissions sent.
+DpValue (118): Values for _SysMgm_Reporting.Items.RunPermissions sent.
+DpValue (119): Values for _SysMgm_Reporting.Items.ViewPermissionsOwn sent.
+DpValue (120): Values for _SysMgm_Reporting.Items.RunPermissionsOwn sent.
+DpValue (122): Values for _SysMgm_Reporting.Items.ActionScripts sent.
+DpValue (123): Values for _WF_VarTrend.FullName sent.
+DpValue (124): Values for _WF_VarTrend.WizardKey sent.
+DpValue (125): Values for _WF_VarTrend.Description sent.
+DpValue (126): Values for _WF_VarTrend.Icon sent.
+DpValue (127): Values for _WF_VarTrend.PanelEnable sent.
+DpValue (128): Values for _WF_VarTrend.Navi.Keys sent.
+DpValue (129): Values for _WF_VarTrend.Navi.PanelsPath sent.
+DpValue (130): Values for _WF_VarTrend.Navi.Dollars sent.
+DpValue (131): Values for _WF_VarTrend.Navi.Names sent.
+DpValue (132): Values for _WF_VarTrend.Navi.Descriptions sent.
+DpValue (133): Values for _WF_VarTrend.Navi.Icons sent.
+DpValue (134): Values for _WF_VarTrend.Navi.ViewPermissions sent.
+DpValue (135): Values for _WF_VarTrend.Navi.HelpKeyWord sent.
+DpValue (136): Values for _WF_VarTrend.Navi.Functions.Save sent.
+DpValue (137): Values for _WF_VarTrend.Navi.Functions.IsChanged sent.
+DpValue (139): Values for _WF_VarTrend.Navi.Functions.MenuPointClick sent.
+DpValue (140): Values for _VarTrendSettings.UserPermission sent.
+DpValue (141): Values for _VarTrendSettings.ScreenshotPath sent.
+DpValue (142): Values for _VarTrendSettings.CSVExportPath sent.
+DpValue (143): Values for _VarTrendSettings.PrintSettings.usePrintSettings sent.
+DpValue (144): Values for _VarTrendSettings.PrintSettings.visibleElements sent.
+DpValue (145): Values for _VarTrendSettings.PrintSettings.TrendColor sent.
+DpValue (146): Values for _VarTrendSettings.PrintSettings.GridColor sent.
+DpValue (149): Values for _VarTrendSettings.PrintSettings.GridLineStyle sent.
+AlertValue (157): Values for _ReduManager.Status.Reason sent.
+AlertValue (166): Values for _ReduManager_2.Status.Reason sent.
+AlertValue (168): Values for _mp__Watchdog.Blocking sent.
+AlertValue (169): Values for _Watchdog_WCCILevent_0.Blocking sent.
+AlertValue (172): Values for _Watchdog_WCCILevent_0_2.Blocking sent.
+DpValue (174): Values for _dt__Watchdog.Leaf sent.
+DpValue (177): Values for _dt__Watchdog.DynamicAttribute sent.
+DpAuth (185): Values for _Deleted_Users. sent.
+DpValue DPE UserManagement was added to _System DPT (189): Values for _System.Auth.UserManagement sent.
+DpAuth - added DPE UserManagement to DPT _System (212): Values for _System.Auth.UserManagement sent.
+DpAuth - _System.Auth.DpType (234): Values for _System.Auth.DpType sent.
+DpAuth - _System.Auth.Dp (256): Values for _System.Auth.Dp sent.
+DpAuth - _System.Auth.DpAlias (278): Values for _System.Auth.DpAlias sent.
+DpAuth - _System.Auth.DpAuth (300): Values for _System.Auth.DpAuth sent.
+DpAuth (321): Values for _Users. sent.
+DpAuth (341): Values for _Deleted_Users. sent.
+DpAuth (361): Values for _Groups. sent.
+DpAuth (381): Values for _Areas. sent.
+DpAuth (401): Values for _CommandChannel.PublicKey sent.
+DpAuth (423): Values for _WebUI_Settings.jwtKeyString sent.
+AlertValue (427): Values for _DatabaseState.ConfigurationDB.ErrorCount sent.
+AlertValue (431): Values for _DatabaseState.ConfigurationDB.RecordCount sent.
+AlertValue (434): Values for _DatabaseState.alliving.ErrorCount sent.
+AlertValue (438): Values for _DatabaseState.alliving.RecordCount sent.
+AlertValue (441): Values for _DatabaseState.aloverflow.ErrorCount sent.
+AlertValue (445): Values for _DatabaseState.aloverflow.RecordCount sent.
+AlertValue (448): Values for _DatabaseState.lastval.ErrorCount sent.
+AlertValue (452): Values for _DatabaseState.lastval.RecordCount sent.
+AlertValue (455): Values for _DatabaseState.NewestAlertArchive.ErrorCount sent.
+AlertValue (459): Values for _DatabaseState.NewestAlertArchive.RecordCount sent.
+AlertValue (462): Values for _DatabaseState_2.ConfigurationDB.ErrorCount sent.
+AlertValue (466): Values for _DatabaseState_2.ConfigurationDB.RecordCount sent.
+AlertValue (469): Values for _DatabaseState_2.alliving.ErrorCount sent.
+AlertValue (473): Values for _DatabaseState_2.alliving.RecordCount sent.
+AlertValue (476): Values for _DatabaseState_2.aloverflow.ErrorCount sent.
+AlertValue (480): Values for _DatabaseState_2.aloverflow.RecordCount sent.
+AlertValue (483): Values for _DatabaseState_2.lastval.ErrorCount sent.
+AlertValue (487): Values for _DatabaseState_2.lastval.RecordCount sent.
+AlertValue (490): Values for _DatabaseState_2.NewestAlertArchive.ErrorCount sent.
+AlertValue (496): Values for _DatabaseState_2.NewestAlertArchive.RecordCount sent.
+AlertValue (502): Values for _Event.License.cmLicenseInvalid sent.
+DpAuth (527): Values for _Event.License.FixedShield sent.
+DpAuth (549): Values for _Event_2.License.FixedShield sent.
+DpValue (551): Values for _NGA.limitAlertQuerySize sent.
+DpValue (552): Values for _NGA.limitEventQuerySize sent.
+DpValue (553): Values for _NGA_B_PostgreSQLBackend.general.active sent.
+DpValue (554): Values for _NGA_B_PostgreSQLBackend.general.pluginName sent.
+DpValue (555): Values for _NGA_B_PostgreSQLBackend.general.backendProcCtrl sent.
+DpValue (556): Values for _NGA_B_PostgreSQLBackend.general.profile sent.
+DpValue (557): Values for _NGA_B_PostgreSQLBackend.comm.zmqAddress sent.
+DpValue (558): Values for _NGA_B_PostgreSQLBackend.comm.sendDpeWithName sent.
+DpValue (559): Values for _NGA_B_PostgreSQLBackend.comm.sendDpeWithId sent.
+DpValue (560): Values for _NGA_B_PostgreSQLBackend.comm.sendDpeWithAlias sent.
+DpValue (561): Values for _NGA_B_PostgreSQLBackend.comm.splitSize sent.
+DpValue (562): Values for _NGA_B_PostgreSQLBackend.buffering.bufferFilesLocation sent.
+DpValue (563): Values for _NGA_B_PostgreSQLBackend.buffering.bufferFilesPrefix sent.
+DpValue (564): Values for _NGA_B_PostgreSQLBackend.buffering.bufferingLevel sent.
+DpValue (565): Values for _NGA_B_PostgreSQLBackend.buffering.memoryBufferSize sent.
+DpValue (566): Values for _NGA_B_PostgreSQLBackend.buffering.blockSize sent.
+DpValue (567): Values for _NGA_B_PostgreSQLBackend.buffering.timeoutUntilBlockIsWrittenToDisk sent.
+DpValue (568): Values for _NGA_B_PostgreSQLBackend.buffering.processOldBlocksAtStartup sent.
+DpValue (569): Values for _NGA_B_PostgreSQLBackend.timing.sendTimeout sent.
+DpValue (570): Values for _NGA_B_PostgreSQLBackend.timing.maxBufferTime sent.
+DpValue (571): Values for _NGA_B_PostgreSQLBackend.timing.waitForDBWrite sent.
+DpValue (572): Values for _NGA_B_PostgreSQLBackend.timing.timeToWaitForFinishingAsyncOperInMilisecs sent.
+DpValue (573): Values for _NGA_B_PostgreSQLBackend.database.connection sent.
+DpValue (574): Values for _NGA_B_PostgreSQLBackend.database.user sent.
+DpValue (575): Values for _NGA_B_PostgreSQLBackend.database.password sent.
+DpValue (576): Values for _NGA_B_PostgreSQLBackend.database.dbSpecific sent.
+DpValue (577): Values for _NGA_B_PostgreSQLBackend.database.dbProcControl sent.
+DpValue (578): Values for _NGA_B_PostgreSQLBackend.database.dbProcMgmt sent.
+DpValue (579): Values for _NGA_B_PostgreSQLBackend.displayName sent.
+DpValue (580): Values for _NGA_P_PostgreSQLBackend_Profile.sendDpWithId sent.
+DpValue (581): Values for _NGA_P_PostgreSQLBackend_Profile.sendDpWithName sent.
+DpValue (582): Values for _NGA_P_PostgreSQLBackend_Profile.sendDpWithAlias sent.
+DpValue (583): Values for _NGA_P_PostgreSQLBackend_Profile.supportsMonthsAndYears sent.
+DpValue (584): Values for _NGA_P_PostgreSQLBackend_Profile.modifiableRetention sent.
+DpValue (585): Values for _NGA_P_PostgreSQLBackend_Profile.modifiableSegmentDuration sent.
+DpValue (586): Values for _NGA_P_PostgreSQLBackend_Profile.oraNameRestrictions sent.
+DpValue (587): Values for _NGA_P_PostgreSQLBackend_Profile.manualSegmentSwitch sent.
+DpValue (588): Values for _NGA_P_PostgreSQLBackend_Profile.startStopDBProcess sent.
+DpValue (589): Values for _NGA_P_PostgreSQLBackend_Profile.dbSpecific sent.
+DpValue (590): Values for _NGA_P_PostgreSQLBackend_Profile.autogenGroupNameInDB sent.
+DpValue (591): Values for _NGA_P_PostgreSQLBackend_Profile.handleRedundancy sent.
+DpValue (592): Values for _NGA_P_PostgreSQLBackend_Profile.displayName sent.
+DpValue (593): Values for _NGA_G_EVENT_PG.backend sent.
+DpValue (594): Values for _NGA_G_EVENT_PG.active sent.
+DpValue (595): Values for _NGA_G_EVENT_PG.groupName sent.
+DpValue (596): Values for _NGA_G_EVENT_PG.storage.retentionInterval sent.
+DpValue (597): Values for _NGA_G_EVENT_PG.storage.retentionFactor sent.
+DpValue (598): Values for _NGA_G_EVENT_PG.storage.segmentDurationInterval sent.
+DpValue (599): Values for _NGA_G_EVENT_PG.storage.segmentDurationFactor sent.
+DpValue (600): Values for _NGA_G_EVENT_PG.storage.backupAgeInterval sent.
+DpValue (601): Values for _NGA_G_EVENT_PG.storage.backupAgeFactor sent.
+DpValue (602): Values for _NGA_G_EVENT_PG.storage.backupInterval sent.
+DpValue (603): Values for _NGA_G_EVENT_PG.storage.backupFactor sent.
+DpValue (604): Values for _NGA_G_EVENT_PG.storage.nextScheduledBackup sent.
+DpValue (605): Values for _NGA_G_EVENT_PG.commands.updateSegmentList sent.
+DpValue (606): Values for _NGA_G_EVENT_PG.statistics.index sent.
+DpValue (607): Values for _NGA_G_EVENT_PG.displayName sent.
+DpValue (608): Values for _NGA_B_PostgreSQLBackend_2.general.active sent.
+DpValue (609): Values for _NGA_B_PostgreSQLBackend_2.general.pluginName sent.
+DpValue (610): Values for _NGA_B_PostgreSQLBackend_2.general.backendProcCtrl sent.
+DpValue (611): Values for _NGA_B_PostgreSQLBackend_2.general.profile sent.
+DpValue (612): Values for _NGA_B_PostgreSQLBackend_2.comm.zmqAddress sent.
+DpValue (613): Values for _NGA_B_PostgreSQLBackend_2.comm.sendDpeWithName sent.
+DpValue (614): Values for _NGA_B_PostgreSQLBackend_2.comm.sendDpeWithId sent.
+DpValue (615): Values for _NGA_B_PostgreSQLBackend_2.comm.sendDpeWithAlias sent.
+DpValue (616): Values for _NGA_B_PostgreSQLBackend_2.comm.splitSize sent.
+DpValue (617): Values for _NGA_B_PostgreSQLBackend_2.buffering.bufferFilesLocation sent.
+DpValue (618): Values for _NGA_B_PostgreSQLBackend_2.buffering.bufferFilesPrefix sent.
+DpValue (619): Values for _NGA_B_PostgreSQLBackend_2.buffering.bufferingLevel sent.
+DpValue (620): Values for _NGA_B_PostgreSQLBackend_2.buffering.memoryBufferSize sent.
+DpValue (621): Values for _NGA_B_PostgreSQLBackend_2.buffering.blockSize sent.
+DpValue (622): Values for _NGA_B_PostgreSQLBackend_2.buffering.timeoutUntilBlockIsWrittenToDisk sent.
+DpValue (623): Values for _NGA_B_PostgreSQLBackend_2.buffering.processOldBlocksAtStartup sent.
+DpValue (624): Values for _NGA_B_PostgreSQLBackend_2.timing.sendTimeout sent.
+DpValue (625): Values for _NGA_B_PostgreSQLBackend_2.timing.maxBufferTime sent.
+DpValue (626): Values for _NGA_B_PostgreSQLBackend_2.timing.waitForDBWrite sent.
+DpValue (627): Values for _NGA_B_PostgreSQLBackend_2.timing.timeToWaitForFinishingAsyncOperInMilisecs sent.
+DpValue (628): Values for _NGA_B_PostgreSQLBackend_2.database.connection sent.
+DpValue (629): Values for _NGA_B_PostgreSQLBackend_2.database.user sent.
+DpValue (630): Values for _NGA_B_PostgreSQLBackend_2.database.password sent.
+DpValue (631): Values for _NGA_B_PostgreSQLBackend_2.database.dbSpecific sent.
+DpValue (632): Values for _NGA_B_PostgreSQLBackend_2.database.dbProcControl sent.
+DpValue (633): Values for _NGA_B_PostgreSQLBackend_2.database.dbProcMgmt sent.
+DpValue (634): Values for _NGA_B_PostgreSQLBackend_2.displayName sent.
+DpValue (635): Values for _NGA_G_EVENT_PG_2.backend sent.
+DpValue (636): Values for _NGA_G_EVENT_PG_2.active sent.
+DpValue (637): Values for _NGA_G_EVENT_PG_2.groupName sent.
+DpValue (638): Values for _NGA_G_EVENT_PG_2.storage.retentionInterval sent.
+DpValue (639): Values for _NGA_G_EVENT_PG_2.storage.retentionFactor sent.
+DpValue (640): Values for _NGA_G_EVENT_PG_2.storage.segmentDurationInterval sent.
+DpValue (641): Values for _NGA_G_EVENT_PG_2.storage.segmentDurationFactor sent.
+DpValue (642): Values for _NGA_G_EVENT_PG_2.storage.backupAgeInterval sent.
+DpValue (643): Values for _NGA_G_EVENT_PG_2.storage.backupAgeFactor sent.
+DpValue (644): Values for _NGA_G_EVENT_PG_2.storage.backupInterval sent.
+DpValue (645): Values for _NGA_G_EVENT_PG_2.storage.backupFactor sent.
+DpValue (646): Values for _NGA_G_EVENT_PG_2.storage.nextScheduledBackup sent.
+DpValue (647): Values for _NGA_G_EVENT_PG_2.commands.updateSegmentList sent.
+DpValue (648): Values for _NGA_G_EVENT_PG_2.statistics.index sent.
+DpValue (650): Values for _NGA_G_EVENT_PG_2.displayName sent.
+_auth configs (653): Values for _NGA_P_PostgreSQLBackend_Profile. sent.
+_auth configs (655): Values for _NGA_B_PostgreSQLBackend. sent.
+_auth configs (657): Values for _NGA_B_PostgreSQLBackend.general.backendProcCtrl sent.
+_auth configs (659): Values for _NGA_B_PostgreSQLBackend.database.dbProcControl sent.
+_auth configs (661): Values for _NGA_G_EVENT_PG. sent.
+_auth configs (663): Values for _NGA_G_EVENT_PG.archiveAll sent.
+_auth configs (665): Values for _NGA_B_PostgreSQLBackend_2. sent.
+_auth configs (667): Values for _NGA_B_PostgreSQLBackend_2.general.backendProcCtrl sent.
+_auth configs (669): Values for _NGA_B_PostgreSQLBackend_2.database.dbProcControl sent.
+_auth configs (671): Values for _NGA_G_EVENT_PG_2. sent.
+_auth configs (675): Values for _NGA_G_EVENT_PG_2.archiveAll sent.
+DpValue (677): Values for _WF_ngaDatabase.FullName sent.
+DpValue (678): Values for _WF_ngaDatabase.WizardKey sent.
+DpValue (679): Values for _WF_ngaDatabase.Description sent.
+DpValue (680): Values for _WF_ngaDatabase.Icon sent.
+DpValue (681): Values for _WF_ngaDatabase.PanelEnable sent.
+DpValue (682): Values for _WF_ngaDatabase.Navi.Keys sent.
+DpValue (683): Values for _WF_ngaDatabase.Navi.PanelsPath sent.
+DpValue (684): Values for _WF_ngaDatabase.Navi.Dollars sent.
+DpValue (685): Values for _WF_ngaDatabase.Navi.Names sent.
+DpValue (686): Values for _WF_ngaDatabase.Navi.Descriptions sent.
+DpValue (687): Values for _WF_ngaDatabase.Navi.Icons sent.
+DpValue (688): Values for _WF_ngaDatabase.Navi.ViewPermissions sent.
+DpValue (689): Values for _WF_ngaDatabase.Navi.HelpKeyWord sent.
+DpValue (690): Values for _WF_ngaDatabase.Navi.Functions.Save sent.
+DpValue (691): Values for _WF_ngaDatabase.Navi.Functions.IsChanged sent.
+DpValue (692): Values for _WF_ngaDatabase.Navi.Functions.MenuPointClick sent.
+DpValue (693): Values for _WF_ngaRuntime.FullName sent.
+DpValue (694): Values for _WF_ngaRuntime.WizardKey sent.
+DpValue (695): Values for _WF_ngaRuntime.Description sent.
+DpValue (696): Values for _WF_ngaRuntime.Icon sent.
+DpValue (697): Values for _WF_ngaRuntime.Navi.Keys sent.
+DpValue (698): Values for _WF_ngaRuntime.Navi.PanelsPath sent.
+DpValue (699): Values for _WF_ngaRuntime.Navi.Dollars sent.
+DpValue (700): Values for _WF_ngaRuntime.Navi.Names sent.
+DpValue (701): Values for _WF_ngaRuntime.Navi.Descriptions sent.
+DpValue (702): Values for _WF_ngaRuntime.Navi.Icons sent.
+DpValue (703): Values for _WF_ngaRuntime.Navi.ViewPermissions sent.
+DpValue (704): Values for _WF_ngaRuntime.Navi.HelpKeyWord sent.
+DpValue (705): Values for _WF_ngaRuntime.Navi.Functions.Save sent.
+DpValue (706): Values for _WF_ngaRuntime.Navi.Functions.IsChanged sent.
+DpValue (707): Values for _WF_ngaRuntime.Navi.Functions.MenuPointClick sent.
+Waiting for last response from eventmanager...
+Scanning of file D:\Magistratura\dbdfiles\version_3.18\update_configs.txt is finished (0)
+End of Program
+[2021.06.21;13:42:41:429 ] D:\Magistratura\bin\WCCOActrl  -proj Conveyor1_save_save9  -LoadNoCtrlLib -noUserCtrlExt -log +stderr -log -file upgrade\upgradeTo_03180000.ctl
+WCCOActrl    (0), 2021.06.21 13:42:41.577, SYS,  INFO,        1, Manager Start, PROJ, Conveyor1_save_save9, V 3.18 - 3.18   platform Windows AMD64 linked at May 12 2021 21:29:53 (64090d55517)
+WCCOActrl    (0), 2021.06.21 13:42:41.580, SYS,  INFO,        1, Manager Start, upgrade\upgradeTo_03180000.ctl
+WCCOActrl    (0), 2021.06.21 13:42:41.580, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOActrl    (0), 2021.06.21 13:42:41.586, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOActrl    (1), 2021.06.21 13:42:41.592, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOActrl    (1), 2021.06.21 13:42:41.592, SYS,  INFO,        3, Trying to connect to (SYS: 1 Event -num 0 CONN: 1) @ localhost:4998
+WCCOActrl    (1), 2021.06.21 13:42:41.612, SYS,  INFO,        4, Connected to (SYS: 1 Event -num 0 CONN: 1) @ DESKTOP-VAOPNBN (::1)
+WCCOActrl    (1), 2021.06.21 13:42:41.615, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (1), 2021.06.21 13:42:41.615, SYS,  INFO,      103, User names/passwords initialized
+WCCOActrl    (1), 2021.06.21 13:42:41.616, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (1), 2021.06.21 13:42:41.698, SYS,  INFO,        0, , Version Upgrade, upgradeTo_03180000.ctl started by root
+WCCOActrl    (1), 2021.06.21 13:42:41.699, CTRL, INFO,        0, , Version Upgrade, IEC 61850/61400 client: Creating directory data/IEC61850/SCL. Will replace data/IEC61850/ICD. Copying SCL configuration files from ICD to SCL.
+WCCOActrl    (1), 2021.06.21 13:42:41.699, CTRL, INFO,        0, , Version Upgrade, SCL files successfully copied from directory ICD to new created directory SCL! Please check file access in user defined scripts!
+WCCOActrl    (1), 2021.06.21 13:42:41.710, SYS,  INFO,        0, , Version Upgrade, upgradeTo_03180000.ctl done by root
+WCCOActrl    (1), 2021.06.21 13:42:41.710, SYS,  INFO,      181, Closing connection to (SYS: 1 Data -num 0 CONN: 1)
+WCCOActrl    (1), 2021.06.21 13:42:41.710, SYS,  INFO,      181, Closing connection to (SYS: 1 Event -num 0 CONN: 1)
+WCCOActrl    (1), 2021.06.21 13:42:41.710, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Event -num 0 CONN: 1), Connection closed
+WCCOActrl    (1), 2021.06.21 13:42:41.716, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1 Data -num 0 CONN: 1), Connection closed
+WCCOActrl    (1), 2021.06.21 13:42:41.727, SYS,  INFO,        2, Manager Stop
+-------------------------------------------------------
+DB succesfully converted. Finished at: 2021.06.21;13:42:41:893 
+

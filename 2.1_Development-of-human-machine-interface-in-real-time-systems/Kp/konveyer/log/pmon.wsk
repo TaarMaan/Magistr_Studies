@@ -1,0 +1,16 @@
+WCCILpmon    (1), 2021.06.20 22:50:25.174, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2021.06.20 22:50:25.933, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save9 -pmonIndex 1 
+WCCILpmon    (1), 2021.06.20 22:50:28.586, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2021.06.20 22:50:29.099, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2021.06.20 22:50:29.611, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2021.06.20 22:50:29.922, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2021.06.20 22:50:30.450, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2021.06.20 22:50:30.860, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save9 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2021.06.20 22:50:34.575, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save9 -pmonIndex 8 
+WCCILpmon    (1), 2021.06.20 22:50:35.857, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save9 -pmonIndex 9 
+WCCILpmon    (1), 2021.06.20 22:50:41.858, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save9 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2021.06.20 22:50:42.436, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save9 -pmonIndex 11 
+WCCILpmon    (1), 2021.06.20 22:50:42.848, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2021.06.20 22:50:45.573, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2021.06.20 22:55:39.911, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2021.06.20 22:55:39.921, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save9 -pmonIndex 12 -m gedi

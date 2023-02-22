@@ -1,0 +1,116 @@
+Raima Database Manager 4.5 [Build 17]
+Database Restructure Utility
+Copyright (C) 1984-1997, Raima Corporation, All Rights Reserved
+
+
+dbrev compilation complete
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\bitvar.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\bit32var.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\charvar.db containing 972 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\intvar.db containing 382 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\uintvar.db containing 16 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\floatvar.db containing 406 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\textvar.db containing 1657 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\timevar.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dynvar.db containing 3364 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dpidvar.db containing 730 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\lngvar.db containing 44 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\ulngvar.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\bit64va.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\smooth.db containing 127 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\smthattr.db containing 127 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\userrng.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\userrngi.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\rngrec.db containing 34 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\pvssrng.db containing 34 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\peradr.db containing 148 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dflvalh.db containing 16 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\conv.db containing 33 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\sconvi.db containing 33 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\sconv.db containing 33 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\sconvatt.db containing 165 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\archinfo.db containing 291 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\archproc.db containing 215 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\archclass.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\alertcl.db containing 21 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\alertrr.db containing 192 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\alertval.db containing 218 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\genattr.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\genconf.db containing 0 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dpauth.db containing 54 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\distinfo.db containing 148 records
+
+
+Processing file D:\Magistratura\Conveyor1_save_save9\db\old\dpfunc.db containing 76 records
+
+dbrev completed, successful restructure

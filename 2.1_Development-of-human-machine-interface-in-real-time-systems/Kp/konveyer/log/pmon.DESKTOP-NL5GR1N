@@ -1,0 +1,764 @@
+WCCILpmon    (1), 2020.09.10 16:29:10.707, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.10 16:29:10.832, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1 -pmonIndex 1 
+WCCILpmon    (1), 2020.09.10 16:29:12.137, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.10 16:29:12.467, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.10 16:29:12.898, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.10 16:29:13.226, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.10 16:29:13.670, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.10 16:29:14.100, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.10 16:29:17.418, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1 -pmonIndex 8 
+WCCILpmon    (1), 2020.09.10 16:29:18.054, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1 -pmonIndex 9 
+WCCILpmon    (1), 2020.09.10 16:29:18.485, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.10 16:29:18.817, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1 -pmonIndex 11 
+WCCILpmon    (1), 2020.09.10 16:29:19.253, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.10 16:29:21.049, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.10 16:30:16.181, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.10 16:30:16.202, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:16.222, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:16.240, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:16.257, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:16.283, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:16.301, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:16.320, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:16.338, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:22.486, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:22.603, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:28.764, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.10 16:30:29.580, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.10 16:31:04.605, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.10 16:31:04.628, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.10 16:31:04.654, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.10 23:57:10.411, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.10 23:57:10.587, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1 -pmonIndex 1 
+WCCILpmon    (1), 2020.09.10 23:57:12.335, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.10 23:57:12.668, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.10 23:57:13.112, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.10 23:57:13.552, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.10 23:57:13.891, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.10 23:57:14.333, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.10 23:57:17.768, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1 -pmonIndex 8 
+WCCILpmon    (1), 2020.09.10 23:57:18.534, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1 -pmonIndex 9 
+WCCILpmon    (1), 2020.09.10 23:57:24.409, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.10 23:57:24.822, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1 -pmonIndex 11 
+WCCILpmon    (1), 2020.09.10 23:57:25.262, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.10 23:57:27.143, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.11 00:04:14.141, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.11 00:04:14.168, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:14.193, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:14.213, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:14.233, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:14.255, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:14.275, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:14.295, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:14.315, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:20.496, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:20.624, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:26.874, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.11 00:04:27.789, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.11 00:05:53.547, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.11 00:05:53.567, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.11 00:05:53.587, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.13 19:17:25.761, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.13 19:17:25.942, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1 -pmonIndex 1 
+WCCILpmon    (1), 2020.09.13 19:17:27.556, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.13 19:17:28.012, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.13 19:17:28.471, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.13 19:17:28.915, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.13 19:17:29.347, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.13 19:17:29.782, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1 -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.13 19:17:33.132, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1 -pmonIndex 8 
+WCCILpmon    (1), 2020.09.13 19:17:33.873, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1 -pmonIndex 9 
+WCCILpmon    (1), 2020.09.13 19:17:39.775, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.13 19:17:40.081, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1 -pmonIndex 11 
+WCCILpmon    (1), 2020.09.13 19:17:40.519, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.13 19:17:42.302, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.13 19:47:35.469, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.13 19:47:35.518, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1 -pmonIndex 8 
+WCCILpmon    (1), 2020.09.13 19:47:37.396, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.13 19:47:37.428, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1 -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.13 19:47:37.761, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.13 19:47:37.789, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1 -pmonIndex 11 
+WCCILpmon    (1), 2020.09.13 19:47:47.705, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.13 19:47:47.734, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1 -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.13 20:12:53.158, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.13 20:12:53.184, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:53.208, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:53.229, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:53.250, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:53.272, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:53.293, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:53.315, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:53.336, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:59.487, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:12:59.707, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:13:06.065, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 20:13:06.779, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.13 20:15:15.716, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.13 20:15:15.737, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.13 20:15:15.758, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.13 21:06:21.501, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.13 21:06:21.616, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.13 21:06:23.166, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.13 21:06:23.612, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.13 21:06:24.081, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.13 21:06:24.519, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.13 21:06:24.955, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.13 21:06:25.413, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.13 21:06:28.838, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.13 21:06:29.683, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.13 21:06:35.559, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.13 21:06:35.967, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.13 21:06:36.408, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.13 21:06:38.191, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.13 21:36:30.457, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.13 21:36:30.487, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.13 21:36:32.380, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.13 21:36:32.406, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.13 21:36:32.636, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.13 21:36:32.657, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.13 21:38:02.846, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.13 21:38:02.867, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:02.888, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:02.911, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:02.931, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:02.952, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:02.973, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:02.993, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:03.014, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:09.227, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:09.463, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:15.707, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:38:16.420, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.13 21:38:16.453, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.13 21:38:30.760, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.13 21:38:30.877, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.13 21:38:32.015, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.13 21:38:32.461, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.13 21:38:32.906, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.13 21:38:33.328, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.13 21:38:33.787, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.13 21:38:34.222, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.13 21:38:37.588, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.13 21:38:38.335, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.13 21:38:44.136, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.13 21:38:44.471, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.13 21:38:44.915, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.13 21:38:47.473, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.13 21:54:25.687, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.13 21:54:25.711, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:25.734, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:25.756, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:25.777, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:25.798, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:25.820, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:25.843, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:25.865, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:32.003, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:32.223, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:38.483, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.13 21:54:39.118, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.13 21:54:46.074, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.13 21:54:46.109, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.13 21:54:46.144, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.14 17:13:08.009, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.14 17:13:08.244, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.14 17:13:10.728, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.14 17:13:11.196, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.14 17:13:11.556, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.14 17:13:12.025, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.14 17:13:12.368, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.14 17:13:12.821, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.14 17:13:16.306, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.14 17:13:17.353, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.14 17:13:24.306, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.14 17:13:24.806, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.14 17:13:25.384, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.14 17:13:27.871, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.14 17:43:17.919, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.14 17:43:18.016, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.14 17:43:19.844, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.14 17:43:19.906, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.14 17:43:20.133, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.14 17:43:20.187, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.14 17:44:13.533, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.14 17:44:13.562, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.14 18:11:05.155, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.14 18:11:05.177, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:05.208, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:05.224, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:05.239, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:05.270, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:05.286, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:05.302, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:05.333, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:11.616, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:11.851, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:18.338, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.14 18:11:19.001, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.14 18:11:19.123, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.14 18:11:19.143, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.14 18:11:22.730, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.14 18:11:22.745, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.14 18:11:22.761, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.15 11:37:07.919, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2020.09.15 11:37:27.914, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2020.09.15 11:37:28.036, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.15 11:37:30.171, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.15 11:37:30.514, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.15 11:37:31.014, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.15 11:37:31.499, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.15 11:37:31.967, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.15 11:37:32.421, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.15 11:37:35.889, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 11:37:36.827, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.15 11:37:43.693, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 11:37:44.193, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 11:37:44.662, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 11:37:46.742, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.15 12:07:37.467, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.15 12:07:37.575, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 12:07:39.490, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 12:07:39.566, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 12:07:39.797, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 12:07:39.856, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 12:07:47.216, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.15 12:07:47.243, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 12:30:18.227, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.15 12:30:18.258, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:18.285, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:18.306, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:18.326, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:18.347, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:18.370, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:18.394, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:18.416, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:25.020, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:25.247, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:31.598, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:30:32.329, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.15 12:30:41.618, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.15 12:30:41.638, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.15 12:30:41.658, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.15 12:32:22.374, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.15 12:32:22.489, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.15 12:32:23.723, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.15 12:32:24.156, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.15 12:32:24.590, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.15 12:32:24.941, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.15 12:32:25.280, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.15 12:32:25.714, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.15 12:32:29.095, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 12:32:29.747, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.15 12:32:30.080, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 12:32:30.520, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 12:32:30.915, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 12:32:32.773, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.15 12:51:51.418, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.15 12:51:51.447, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:51.479, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:51.499, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:51.521, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:51.553, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:51.576, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:51.597, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:51.620, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:57.779, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:58.001, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:51:59.533, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.15 12:51:59.553, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:52:04.170, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 12:52:05.205, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.15 12:52:05.225, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.15 16:48:08.618, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2020.09.15 16:48:29.103, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2020.09.15 16:48:29.198, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.15 16:48:31.700, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.15 16:48:32.169, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.15 16:48:32.638, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.15 16:48:33.106, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.15 16:48:33.559, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.15 16:48:33.919, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.15 16:48:37.387, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 16:48:38.778, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.15 16:48:44.745, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 16:48:45.151, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 16:48:45.557, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 16:48:48.716, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.15 17:18:39.074, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.15 17:18:39.203, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 17:18:40.999, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 17:18:41.121, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 17:18:41.560, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 17:18:41.686, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 17:19:49.223, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.15 17:19:49.252, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 17:48:42.333, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.15 17:48:42.468, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 17:48:44.216, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 17:48:44.321, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 17:48:44.553, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 17:48:44.694, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 17:50:32.763, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.15 17:50:32.858, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 18:18:47.711, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.15 18:18:47.749, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 18:18:48.013, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 18:18:48.041, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 18:18:48.474, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 18:18:48.500, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 18:18:57.552, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.15 18:18:57.578, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 18:48:49.752, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.15 18:48:49.847, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 18:48:51.673, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 18:48:51.746, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 18:48:51.932, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 18:48:52.004, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 18:48:58.604, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.15 18:48:58.682, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 19:18:51.794, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.15 19:18:51.822, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 19:18:53.714, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 19:18:53.740, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 19:18:53.970, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 19:18:53.988, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 19:19:14.613, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.15 19:19:14.642, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 19:48:53.659, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.15 19:48:53.687, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.15 19:48:55.535, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 19:48:55.551, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.15 19:48:55.883, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.15 19:48:55.908, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.15 19:49:03.055, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.15 19:49:03.081, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.15 20:08:22.776, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.15 20:08:22.808, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:22.841, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:22.862, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:22.882, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:22.903, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:22.923, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:22.943, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:22.964, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:29.637, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:29.880, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:36.416, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.15 20:08:37.531, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.15 20:08:43.910, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.15 20:08:43.929, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.15 20:08:43.949, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 15:12:51.322, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 15:12:51.502, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 15:12:53.440, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 15:12:53.876, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 15:12:54.225, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 15:12:54.560, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 15:12:54.997, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 15:12:55.437, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 15:12:58.940, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 15:12:59.921, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 15:13:05.849, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 15:13:06.324, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 15:13:06.910, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 15:13:09.244, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.16 15:29:15.628, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.16 15:29:15.671, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:15.706, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:15.726, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:15.746, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:15.767, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:15.787, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:15.806, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:15.826, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:22.018, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:22.241, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:28.499, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:29:28.729, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.16 15:29:28.748, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 15:43:57.831, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 15:43:57.992, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 15:43:59.079, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 15:43:59.415, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 15:43:59.859, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 15:44:00.197, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 15:44:00.621, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 15:44:01.078, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 15:44:04.450, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 15:44:05.100, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 15:44:10.850, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 15:44:11.283, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 15:44:11.621, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 15:44:14.488, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.16 15:45:20.931, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.16 15:45:20.959, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:20.981, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:21.002, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:21.022, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:21.043, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:21.064, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:21.084, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:21.104, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:27.314, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:27.547, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:32.575, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.16 15:45:32.607, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:33.697, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 15:45:34.018, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.16 15:45:34.038, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 16:11:38.690, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 16:11:38.858, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 16:11:40.054, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 16:11:40.388, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 16:11:40.854, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 16:11:41.277, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 16:11:41.711, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 16:11:42.150, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 16:11:45.541, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 16:11:46.302, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 16:11:52.158, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 16:11:52.569, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 16:11:53.007, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 16:11:55.497, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.16 16:41:47.433, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.16 16:41:47.460, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 16:41:49.357, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 16:41:49.375, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 16:41:49.769, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 16:41:49.793, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 16:41:58.850, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.16 16:41:58.879, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 17:11:49.254, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.16 17:11:49.281, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 17:11:51.278, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 17:11:51.303, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 17:11:51.587, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 17:11:51.615, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 17:11:58.735, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.16 17:11:58.764, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 17:41:51.739, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.16 17:41:51.764, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 17:41:53.662, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 17:41:53.689, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 17:41:54.009, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 17:41:54.028, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 17:42:02.270, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.16 17:42:02.292, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:02.315, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:02.335, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:02.359, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:02.381, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:02.405, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:02.427, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:02.448, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:08.652, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:08.771, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:15.231, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 17:42:16.143, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.16 17:42:16.180, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 18:41:18.907, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 18:41:19.042, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 18:41:20.161, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 18:41:20.597, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 18:41:20.957, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 18:41:21.288, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 18:41:21.726, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 18:41:22.063, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 18:41:25.439, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 18:41:26.178, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 18:41:32.082, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 18:41:32.419, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 18:41:32.764, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 18:41:34.802, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.16 19:08:14.975, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.16 19:08:15.005, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:15.025, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:15.046, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:15.067, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:15.087, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:15.108, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:15.130, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:15.150, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:21.248, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:21.470, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:27.630, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 19:08:28.545, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.16 19:08:28.569, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 22:15:21.638, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 22:15:21.872, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 22:15:23.427, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 22:15:23.861, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 22:15:24.127, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 22:15:24.464, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 22:15:24.798, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 22:15:25.130, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 22:15:28.419, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 22:15:29.307, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 22:15:35.293, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 22:15:35.785, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 22:15:36.266, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 22:15:38.486, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.16 22:16:40.976, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2020.09.16 22:16:40.999, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:41.020, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:41.040, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:41.060, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:41.086, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:41.106, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:41.126, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:41.145, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:47.334, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:47.453, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:53.611, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:16:54.341, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2020.09.16 22:17:01.215, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.16 22:17:01.251, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.16 22:17:01.279, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 22:17:49.780, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 22:17:49.908, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 22:17:50.950, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 22:17:51.384, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 22:17:51.719, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 22:17:52.075, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 22:17:52.523, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 22:17:52.966, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 22:17:56.334, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 22:17:57.089, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 22:18:03.032, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 22:18:03.366, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 22:18:03.753, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 22:18:08.208, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.16 22:19:39.007, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.16 22:19:39.028, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:39.049, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:39.069, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:39.091, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:39.110, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:39.129, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:39.148, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:39.167, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:45.386, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:45.621, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:51.763, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 22:19:52.085, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.16 22:19:52.109, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 22:24:58.888, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 22:24:59.022, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 22:25:00.077, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 22:25:00.516, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 22:25:00.854, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 22:25:01.199, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 22:25:01.591, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 22:25:01.926, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 22:25:05.329, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 22:25:05.971, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 22:25:12.816, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 22:25:13.251, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 22:25:13.689, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 22:25:16.151, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.16 22:50:02.192, SYS,  INFO,      165, maxLogFileSize limit reached (10 MB). Renamed the logfile C:\Users\Vova\Desktop\qwe\Conveyor1_save_save\log\\PVSS_II.log
+WCCILpmon    (1), 2020.09.16 22:55:06.614, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.16 22:55:06.629, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 22:55:08.261, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 22:55:08.282, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 22:55:08.511, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 22:55:08.530, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 22:55:19.526, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.16 22:55:19.555, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 23:10:04.689, SYS,  INFO,      165, maxLogFileSize limit reached (10 MB). Renamed the logfile C:\Users\Vova\Desktop\qwe\Conveyor1_save_save\log\\PVSS_II.log
+WCCILpmon    (1), 2020.09.16 23:25:09.160, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.16 23:25:09.190, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 23:25:11.186, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 23:25:11.219, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 23:25:11.650, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.16 23:25:11.678, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 23:25:18.939, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.16 23:25:18.968, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 23:29:13.899, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.16 23:29:13.934, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:13.971, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:14.001, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:14.021, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:14.042, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:14.063, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:14.083, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:14.104, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:20.279, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:20.399, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:26.657, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.16 23:29:27.472, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.16 23:29:27.497, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.16 23:29:55.793, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.16 23:29:55.897, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.16 23:29:57.035, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.16 23:29:57.483, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.16 23:29:57.839, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.16 23:29:58.249, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.16 23:29:58.690, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.16 23:29:59.039, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.16 23:30:02.398, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.16 23:30:03.145, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.16 23:30:09.001, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.16 23:30:09.337, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.16 23:30:09.777, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.16 23:30:11.529, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.17 00:00:05.882, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 00:00:05.913, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 00:00:07.804, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 00:00:07.828, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 00:00:08.055, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 00:00:08.071, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 00:00:22.342, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.17 00:00:22.372, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 00:12:40.872, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.17 00:12:40.892, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:40.913, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:40.934, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:40.953, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:40.973, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:40.992, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:41.013, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:41.031, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:47.251, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:47.476, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:53.823, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 00:12:54.358, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.17 00:12:54.384, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.17 11:04:40.604, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.17 11:04:40.838, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.17 11:04:43.107, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.17 11:04:43.685, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.17 11:04:44.154, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.17 11:04:44.513, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.17 11:04:44.873, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.17 11:04:45.232, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.17 11:04:48.748, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 11:04:50.107, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.17 11:04:50.732, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 11:04:51.253, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 11:04:51.783, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 11:04:54.973, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.17 11:34:54.151, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 11:34:54.178, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 11:34:54.405, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 11:34:54.432, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 11:34:54.749, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 11:34:54.772, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 11:35:00.404, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.17 11:35:00.429, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 11:54:07.155, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.17 11:54:07.171, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:07.186, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:07.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:07.233, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:07.249, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:07.264, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:07.280, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:07.311, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:13.545, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:13.780, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:20.077, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 11:54:20.202, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.17 11:54:20.217, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.17 12:02:18.846, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.17 12:02:19.002, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.17 12:02:20.721, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.17 12:02:21.205, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.17 12:02:21.674, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.17 12:02:22.049, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.17 12:02:22.424, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.17 12:02:22.892, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.17 12:02:26.283, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 12:02:27.064, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.17 12:02:27.408, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 12:02:27.892, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 12:02:28.361, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 12:02:30.534, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.17 12:32:27.770, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 12:32:27.798, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 12:32:29.742, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 12:32:29.759, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 12:32:30.179, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 12:32:30.206, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 12:38:21.171, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.17 12:38:21.193, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:21.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:21.237, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:21.258, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:21.277, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:21.297, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:21.316, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:21.334, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:27.956, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:28.175, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:33.517, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 12:38:33.838, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.17 12:38:33.859, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2020.09.17 12:38:56.754, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2020.09.17 12:38:56.884, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILdata.exe -PROJ Conveyor1_save_save -pmonIndex 1 
+WCCILpmon    (1), 2020.09.17 12:38:58.034, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 2 -num 0
+WCCILpmon    (1), 2020.09.17 12:38:58.480, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 3 -num 1
+WCCILpmon    (1), 2020.09.17 12:38:58.831, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 4 -num 2
+WCCILpmon    (1), 2020.09.17 12:38:59.252, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 5 -num 3
+WCCILpmon    (1), 2020.09.17 12:38:59.697, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 6 -num 4
+WCCILpmon    (1), 2020.09.17 12:39:00.032, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAvalarch.exe -PROJ Conveyor1_save_save -pmonIndex 7 -num 5
+WCCILpmon    (1), 2020.09.17 12:39:03.400, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 12:39:04.137, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILproxy.exe -PROJ Conveyor1_save_save -pmonIndex 9 
+WCCILpmon    (1), 2020.09.17 12:39:04.572, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 12:39:04.906, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 12:39:05.330, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 12:39:08.491, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2020.09.17 13:09:05.354, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 13:09:05.379, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 13:09:07.323, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 13:09:07.347, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 13:09:07.675, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 13:09:07.691, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 13:09:12.097, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.17 13:09:12.122, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 13:39:07.452, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 13:39:07.479, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 13:39:09.324, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 13:39:09.354, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 13:39:09.683, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 13:39:09.701, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 13:39:16.589, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.17 13:39:16.616, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 14:09:09.813, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 14:09:09.842, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 14:09:11.735, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 14:09:11.764, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 14:09:12.096, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 14:09:12.123, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 14:10:45.313, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.17 14:10:45.341, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 14:11:10.411, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.17 14:11:10.439, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 14:39:11.430, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 14:39:11.457, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 14:39:13.354, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 14:39:13.385, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 14:39:13.839, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 14:39:13.866, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 14:39:18.972, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2020.09.17 14:39:18.999, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOAui.exe -PROJ Conveyor1_save_save -pmonIndex 12 -m gedi
+WCCILpmon    (1), 2020.09.17 15:09:13.459, SYS,  INFO,       11/pmon, Detected stopped manager WCCILevent(0) - restarting it #1
+WCCILpmon    (1), 2020.09.17 15:09:13.496, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILevent.exe -PROJ Conveyor1_save_save -pmonIndex 8 
+WCCILpmon    (1), 2020.09.17 15:09:15.344, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 15:09:15.383, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCOActrl.exe -PROJ Conveyor1_save_save -pmonIndex 10 -f pvss_scripts.lst
+WCCILpmon    (1), 2020.09.17 15:09:15.716, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(1) - restarting it #1
+WCCILpmon    (1), 2020.09.17 15:09:15.739, SYS,  INFO,        1, Manager Start, C:\Siemens\Automation\WinCC_OA\3.15\bin\WCCILsim.exe -PROJ Conveyor1_save_save -pmonIndex 11 
+WCCILpmon    (1), 2020.09.17 15:09:25.444, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2020.09.17 15:09:25.476, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:25.491, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:25.507, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(5) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:25.523, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(4) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:25.538, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(3) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:25.569, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(2) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:25.585, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:25.601, SYS,  INFO,       17/pmon, Stopping Manager WCCOAvalarch(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:32.819, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:33.054, SYS,  INFO,       17/pmon, Stopping Manager WCCILdata(0) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:39.366, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2020.09.17 15:09:40.194, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2020.09.17 15:09:40.210, SYS,  INFO,        2, Manager Stop
