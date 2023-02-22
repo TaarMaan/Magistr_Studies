@@ -1,0 +1,1893 @@
+─// [(Panel)] [0] - [ScopeLib]
+bool isConveyorWorking = FALSE;
+bool isCargoGenerating = FALSE;
+float convSpeed = 1;
+int fullBucketNumber = 0;
+//1 - normal, 2 - uniform, 3 - exp 4 - determ
+int genDistribution = 2;
+int massDistribution = 1;
+int RAND_MAX = 32767;
+float expectedValue = 5;
+float dispSqr = 2;
+int b = 10;
+int a = 3;
+double lamb = 0.1;
+// probability
+float weighterThread = 0.1;
+float sourceThread = 0.1;
+float motorThread = 0.2;
+float pusher1Thread = 0.2;
+float pusher2Thread = 0.2;
+float conveyorThread = 0.2;
+
+float expectedValueTime = 10;
+float dispSqrTime = 30;
+int bTime = 5;
+int aTime = 1;
+double lambTime = 0.1;
+
+int determTime = 2;
+int determMass = 2;
+
+//
+dyn_string panelNames;
+
+dyn_string threadNames;
+
+dyn_int multyThreadsIdis;
+
+dyn_int threadIds;
+
+bool isHand = FALSE;
+bool isAuto = FALSE;
+
+
+public int m1 = 1, m2 = 3, m3 = 6, m4 = 10;
+
+
+void reset(){
+  //int threadId = getThreadId();
+  //stopThread(threadId);
+
+   for (int i = 1; i <= dynlen(panelNames); i++) {
+      removeSymbol(myModuleName(), myPanelName(), panelNames[i]);
+      dpDelete(panelNames[i]);
+      dynRemove(panelNames, i);
+    }
+
+   // for (int i = 1; i <= dynlen(multyThreadsIdis); i++) {
+    //  DebugN("Th " + multyThreadsIdis[i]);
+    //  stopThread(multyThreadsIdis[i]);
+   //   waitThread(multyThreadsIdis[i]);
+    //  dynRemove(multyThreadsIdis, i);
+   // }
+
+    for (int i = 1; i <= dynlen(threadIds); i++) {
+      DebugN("Th " + threadIds[i]);
+      stopThread(threadIds[i]);
+       waitThread(threadIds[i]);
+      dynRemove(threadIds, i);
+    }
+
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+dpSet("System1:A_motor1.command.isEnabled",true);
+setValue("ToggleSwitch_ewo1", "enabled", true);
+
+//isConveyorWorking = TRUE;
+//isCargoGenerating = TRUE;
+
+  dpSet("System1:m1.", 1);
+  dpSet("System1:m2.", 3);
+  dpSet("System1:m3.", 6);
+  dpSet("System1:m4.", 10);
+
+   dpSet("System1:mass.type", 1);
+   dpSet("System1:mass.determ", 1);
+
+
+      dpSet("System1:mass.rand.norm.mu", 1);
+         dpSet("System1:mass.rand.norm.sigma", 1.5);
+
+ dpSet("System1:mass.rand.ravnomer.a", 2);
+         dpSet("System1:mass.rand.ravnomer.b", 5);
+
+
+       dpSet("System1:mass.rand.exp", 7);
+
+        dpSet("System1:time.type", 0);
+        dpSet("System1:time.determ", 1);
+
+
+      dpSet("System1:time.rand.norm.mu", 5);
+         dpSet("System1:time.rand.norm.sigma", 2);
+
+ dpSet("System1:time.rand.ravnomer.a", 2);
+         dpSet("System1:time.rand.ravnomer.b", 5);
+
+
+       dpSet("System1:time.rand.exp", 7);
+
+       setValue("LCD2", "intValue", 0);
+       setValue("LCD3", "intValue", 0);
+       setValue("LCD4", "intValue", 0);
+}
+────────────────────────────────────────────────────────────────────────────────────────────────────
+─// [(Panel)] [0] - [Initialize]
+main()
+{
+   panelNames = makeDynString();
+   multyThreadsIdis = makeDynInt();
+
+   dpSet("System1:A_source1.intensity.value", 5);
+    dpSet("System1:A_source1.deviation.d1", 1);
+    dpSet("System1:A_source1.deviation.d2", 10);
+LCD1.decimals(1);
+  float current;
+   dpSet("System1:weighter_dp.probability.value", 0.1);
+   dpSet("System1:A_source1.probability.value", 0.1);
+   dpSet("System1:A_motor1.probability.value", 0.2);
+   dpSet("System1:pusher1.probability.value", 0.2);
+   dpSet("System1:pusher2.probability.value", 0.2);
+   dpSet("System1:conveyor_dp.probability.value", 0.2);
+   dpGet("System1:weighter_dp.probability.value", current);
+
+ LCD10.decimals(1);
+   while(true) {
+      bool motor;
+    dpGet("System1:A_motor1.command.isEnabled", motor);
+    if (isConveyorWorking && motor){
+      if(convSpeed == 1){
+        setValue("LCD10", "value",1 );
+      } else {
+        setValue("LCD10", "value",1 + convSpeed/10);
+      }
+
+   }else {
+     setValue("LCD10", "value",0);
+   }
+   delay(0,10);
+  }
+ //ZoomModule(myModuleName(), 1.5);
+ // setScaleStyle(SCALE_ZOOM,myModuleName());
+
+ // float  factor = 1;
+ // string moduleName = myModuleName();
+ // getZoomFactor(factor, moduleName);
+ //   panelZoomIn(moduleName);
+
+
+   //DebugN(current);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON6] [4] - [Clicked]
+main(mapping event)
+{
+  reset();
+  dpSet("System1:A_bucket1.count.value", 0);
+  dpSet("System1:A_bucket2.count.value", 0);
+  dpSet("System1:A_bucket3.count.value", 0);
+  //dpSet("System1:A_bucket4.count.value", 0);
+
+setValue("LCD2", "intValue", 0);
+setValue("LCD3", "intValue", 0);
+setValue("LCD4", "intValue", 0);
+//setValue("LCD5", "intValue", 0);
+  //stop();
+  //dpSet("System1:A_bucket1.count.value", 0);
+  //dpSet("System1:A_bucket2.count.value", 0);
+  //dpSet("System1:A_bucket3.count.value", 0);
+  //dpSet("System1:A_bucket4.count.value", 0);
+  //panelOff("MainPanel");
+  //panelRestart(MainPanel);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [ToggleSwitch_ewo1] [15] - [toggled]
+toggled(bool on)
+{
+      isConveyorWorking = on;
+      isCargoGenerating = on;
+      if(isAuto){
+        dpSet("System1:A_motor1.alert.damage", on);
+      dpSet("System1:conveyor_dp.command.isEnabled", on);
+    }
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [SLIDER1] [16] - [Slide]
+Slide(int value)
+{
+  convSpeed = value;
+  DebugN(value);
+  //("PRIMITIVE_TEXT20", "text", value);
+
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON4] [17] - [Clicked]
+main(mapping event)
+{
+ string dpName = "System1:A_bucket" + fullBucketNumber + ".count.value";
+//DebugN("dpname="+dpName);
+dpSet(dpName,0);
+setValue("LCD" + (fullBucketNumber + 1), "intValue", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+fullBucketNumber=0;
+setValue("PUSH_BUTTON4", "visible", false);
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+//setValue("ToggleSwitch_ewo1", "check", true);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON5] [18] - [Clicked]
+main(mapping event)
+{
+dpSet("System1:weighter_dp.alert.mechanicalDamage", false);
+dpSet("System1:pusher1.alert.mechanicalDamage", false);
+dpSet("System1:pusher2.alert.mechanicalDamage", false);
+dpSet("System1:conveyor_dp.alert.mechanicalDamage", false);
+dpSet("System1:A_source1.alert.mechanicalDamage", false);
+dpSet("System1:A_motor1.alert.damage", false);
+
+dpSet("System1:pusher1.command.push", true);
+ dpSet("System1:pusher2.command.push", true);
+ dpSet("System1:pusher3.command.push", true);
+ dpSet("System1:conveyor_dp.command.isEnabled", true);
+ dpSet("System1:weighter_dp.command.isEnabled", true);
+ dpSet("System1:A_motor1.command.isEnabled", true);
+  string dpName = "System1:A_bucket" + fullBucketNumber  + ".count.value";
+DebugN("dpname="+dpName);
+dpSet(dpName,0);
+setValue("LCD" + (fullBucketNumber + 1), "intValue", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+fullBucketNumber=0;
+setValue("PUSH_BUTTON5", "visible", false);
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+//setValue("ToggleSwitch_ewo1", "check", true);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON9] [23] - [Clicked]
+main(mapping event)
+{
+  TAB1.visible(false);
+  PUSH_BUTTON9.visible(false);
+  PUSH_BUTTON8.visible(true);
+
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON10] [30] - [Clicked]
+dyn_string dpNames;
+//dyn_string panelNames;
+//dyn_int threadIds;
+
+dyn_int deletedIds;
+
+int startY = 130;
+int startX = 60;
+
+int pistonX1 = 510;
+int pistonX2 = 640;
+int pistonX3 = 740;
+int pistonX4 = 805;
+
+int weightX = 209;
+
+
+string bucketLabel1 = "LCD2";
+string bucketLabel2 = "LCD3";
+string bucketLabel3 = "LCD4";
+
+
+mapping cargosToPush;
+
+int amount1, amount2, amount3, amount4;
+
+shape table = getShape("TABLE1");
+
+
+
+main()
+{
+  ToggleSwitch_ewo1.visible = true;
+  PRIMITIVE_TEXT62.visible = TRUE;
+PRIMITIVE_TEXT62.text = "Автоматический режим запущен";
+  PANEL_REF22.position(2000,2000);
+      PANEL_REF21.position(2000,2000);
+      PANEL_REF20.position(2000,2000);
+      PANEL_REF19.position(2000,2000);
+      PANEL_REF18.position(2000,2000);
+   isHand = FALSE;
+ isAuto = TRUE;
+  reset();
+  init();
+  runThreads();
+
+
+}
+
+void init() {
+//int amount11, amount12, amount13, amount14;
+  //panelNames = makeDynString();
+  dpNames = makeDynString();
+
+
+
+setValue("ToggleSwitch_ewo1", "checked", true);
+
+  dpSet("System1:A_bucket1.count.value", 0);
+  dpSet("System1:A_bucket2.count.value", 0);
+  dpSet("System1:A_bucket3.count.value", 0);
+
+}
+//запуск
+void runThreads(){
+   for (int i = 1; i <= dynlen(multyThreadsIdis); i++) {
+      DebugN("Th " + multyThreadsIdis[i]);
+      stopThread(multyThreadsIdis[i]);
+      waitThread(multyThreadsIdis[i]);
+      dynRemove(multyThreadsIdis, i);
+    }
+ int upt = startThread("update");
+ int gen = startThread("generateCargos");
+ int br = startThread("breakerThread");
+  dynAppend(multyThreadsIdis, upt);
+   dynAppend(multyThreadsIdis, gen);
+    dynAppend(multyThreadsIdis, br);
+}
+//наполнение корзин
+void updateMass(){
+     float mass1, mass2, mass3;
+         //, mass4;
+
+//setValue("ToggleSwitch_ewo1", "checked", true);
+
+  dpGet("System1:A_bucket1.max_value", amount1);
+  dpGet("System1:A_bucket2.max_value", amount2);
+  dpGet("System1:A_bucket3.max_value", amount3);
+
+
+  dpGet("System1:A_bucket1.max_value", mass1);
+  dpGet("System1:A_bucket2.max_value", mass2);
+  dpGet("System1:A_bucket3.max_value", mass3);
+ // dpGet("System1:A_bucket4.max_value", mass4);
+
+  setValue("PRIMITIVE_TEXT30", "text", mass1);
+  setValue("PRIMITIVE_TEXT34", "text", mass2);
+  setValue("PRIMITIVE_TEXT32", "text", mass3);
+
+
+  dpGet("System1:m1.", m1);
+  dpGet("System1:m2.", m2);
+  dpGet("System1:m3.", m3);
+
+}
+
+//задание грузов
+void generateCargos(){
+  int id = 0;
+  while(true) {
+    if(isHand) {
+      return;
+    }
+    if (!isCargoGenerating) { continue; }
+    updateMass();
+    generateCargoWithID(id++);
+    int del = getDelay() * 1000;
+    delay(0, del);
+  }
+}
+//задание цвета и тд для груза
+void generateCargoWithID(int id) {
+  string name = "CARGO" + id;
+  dpCreate(name, "A_cargo");
+  float mass = generateMass();
+  int targetX = getTargetX(mass);
+  dpSet(name + ".mass", mass);
+  dpSet(name + ".targetX", targetX);
+  string weightLabel = "$weight:" + mass + "кг";
+  string colorStr = "$color:";
+ // int color = getBucketByMass(mass);
+   int color;
+   float d1,d2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+    if (mass >= m1*d1L && mass <= m1*d1R) {
+    color =  1;
+  } else if ( mass >= m2*d2L &&mass <= m2*d2R) {
+    color =  2;
+  } else {
+    float sub1 = abs(mass - m1);
+    float sub2 = abs(mass - m2);
+    if (sub1 > sub2) {
+      color =  2;
+    } else {
+      color =  1;
+    }
+  }
+  switch(color) {
+     case 1:
+    colorStr = colorStr + "WF_Warning";
+    break;
+    case 2:
+    colorStr = colorStr + "WF_Info";
+    break;
+    case 3:
+    colorStr = colorStr + "WF_Selected";
+    break;
+    case 4:
+    colorStr = colorStr + "WF_Selected";
+    break;
+  }
+  addSymbol(myModuleName(), myPanelName(), "gedi/Cargo.pnl",name,makeDynString(weightLabel, colorStr),startX, startY,0,0,0);
+  dynAppend(panelNames, name);
+  // аппенжу только в panelNames, dpNames не нужен наверн. name и там и там же одинаковые
+}
+// распределения
+float generateMass(){
+  int dist;
+  dpGet("System1:mass.determ",determMass);
+  dpGet("System1:mass.type",dist);
+      dpGet("System1:mass.rand.norm.mu",expectedValue);
+        dpGet("System1:mass.rand.norm.sigma",dispSqr);
+        dpGet("System1:mass.rand.ravnomer.a",a);
+        dpGet("System1:mass.rand.ravnomer.b",b);
+        dpGet("System1:mass.rand.exp",lamb);
+
+  switch(dist) {
+    case 0:
+    return determMass;
+    case 1 :
+    return getNormDistribValue(expectedValue,dispSqr);
+    case 2:
+    return getUniformDistribValue(a, b);
+    case 3:
+    return getExpDistribValue(lamb);
+
+  }
+}
+// получение цели по X
+int getTargetX(float mass) {
+  float d1,d2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+  if (mass >= m1*d1L && mass <= m1*d1R) {
+    return pistonX1;
+  } else if ( mass >= m2*d2L &&mass <= m2*d2R) {
+    return pistonX2;
+  }
+  else {
+    return pistonX3;
+ }
+}
+//Задание толкателя
+int getPusherNum(int pos) {
+  if (pos == pistonX1) {
+    return 3;
+  }
+  else if (pos == pistonX2) {
+    return 4;
+  }
+  else {
+    return 0;
+  }
+}
+// задание позиции
+int getLineNum(int pos) {
+  if (pos == pistonX1) {
+    return 5;
+  }
+  else if (pos == pistonX2) {
+    return 7;
+  }
+  else {
+    return 0;
+  }
+}
+
+
+
+string getBucketLabel(float mass) {
+    float d1,d2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+  if (mass >= m1*d1L && mass <= m1*d1R) {
+    return bucketLabel1;
+  } else if ( mass >= m2*d2L &&mass <= m2*d2R) {
+    return bucketLabel2;
+  } else {
+    return bucketLabel3;
+  }
+}
+
+int getBucketByMass (float mass) {
+      float d1,d2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+    if (mass >= m1*d1L && mass <= m1*d1R) {
+    return 1;
+  } else if ( mass >= m2*d2L &&mass <= m2*d2R) {
+    return 2;
+  } else  {
+    return 3;
+  }
+}
+// задержка
+int getDelay() {
+        int intensity;
+         dpGet("System1:A_source1.intensity.value", intensity);
+        return 60/intensity;
+}
+
+
+void update(){
+  while(true) {
+    if(isHand) {
+      return;
+    }
+    if (!isConveyorWorking || isSomeBucketFull()) { continue; }
+    threadIds = makeDynInt();
+    for (int i = 1; i <= dynlen(panelNames); i++) {
+      int id = startThread("updateAt", i);
+      dynAppend(threadIds, id);
+    }
+    for (int i = 1; i <= dynlen(threadIds); i++) {
+      int id = threadIds[i];
+      if (dynContains(deletedIds, id)) {
+        waitThread(id);
+      }
+    }
+
+
+   if(isConveyorWorking){
+      if(convSpeed == 1){
+         dpSet("System1:conveyor_dp.speed.value", 1);
+      } else {
+        dpSet("System1:conveyor_dp.speed.value", 1 + convSpeed/10);
+      }
+
+    } else {
+      dpSet("System1:conveyor_dp.speed.value", 0);
+    }
+
+    delay(0,20);
+  }
+}
+
+bool isSomeBucketFull(){
+    int am1, am2, am3;
+        //, am4;
+    dpGet("System1:A_bucket1.count.value", am1);
+    dpGet("System1:A_bucket2.count.value", am2);
+    dpGet("System1:A_bucket3.count.value", am3);
+
+
+    if (amount1 == am1) {
+      fullBucketNumber = 1;
+    }
+    else if (amount2 == am2) {
+      fullBucketNumber = 2;
+    }
+    else if (amount3 == am3) {
+      fullBucketNumber = 3;
+    }
+    if (fullBucketNumber != 0) {
+      performOverflowBucket();
+      return true;
+    }
+    else {
+      return false;
+    }
+}
+
+void performOverflowBucket() {
+      isConveyorWorking = false;
+      isCargoGenerating = false;
+      time t1 = getCurrentTime();
+      string localTime;
+      localTime = formatTime("%c", t1, "");
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      string messageBoxText;
+      //getValue("TEXT_EDIT1","text", messageBoxText);
+      messageBoxText = "корзина " + fullBucketNumber + " полная";
+     // setValue("TEXT_EDIT1","text", messageBoxText);
+       table.appendLine("Дата и время", localTime, "Событие", messageBoxText);
+
+      setValue("PUSH_BUTTON4", "visible", true);
+
+     if (isConveyorWorking == false || isCargoGenerating == false){
+string dpName = "System1:A_bucket" + fullBucketNumber + ".count.value";
+dpSet(dpName,0);
+setValue("LCD" + (fullBucketNumber + 1), "intValue", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+//dpSet("System1:conveyor_dp.command.isEnabled", true);
+fullBucketNumber=0;
+setValue("PUSH_BUTTON4", "visible", false);
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+
+
+
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+//dpSet("System1:conveyor_dp.command.isEnabled", true);
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+}
+
+
+void updateAt(int i) {
+  float x = 0, y = 0, targetX, mass;
+  string name = panelNames[i];
+  getValue(name, "position", x, y);
+  float summary = x +(1.5 + convSpeed/7);
+  setValue(name, "position", summary, startY);
+
+  dpGet(name + ".targetX", targetX);
+  dpGet(name + ".mass", mass);
+
+  //DebugN("mass " + mass, "target " + targetX);
+
+if(weightX == x){
+     dpSet("System1:weighter_dp.current_weight.value", mass);
+  }
+  if (x >= weightX && x<= weightX + 94 ) {
+    setValue("LCD1", "value", mass);
+  } else {
+    setValue("LCD1", "value", 0);
+  }
+
+  if (x == targetX) {
+    int count;
+    string label = getBucketLabel(mass);
+    int pushern = getPusherNum(targetX);
+    int lineNum = getLineNum(targetX);
+    dynInsertAt(deletedIds, i, 0);
+    dynRemove(threadIds,i);
+    if (pushern != 0) {
+     int psh = startThread("pushRunnable", name, pushern, lineNum, i);
+     dynAppend(multyThreadsIdis, psh);
+    } else {
+         removeSymbol(myModuleName(), myPanelName(), name);
+    }
+    dynRemove(panelNames, i);
+    dpDelete(name);
+    string dpName = "System1:A_bucket" + getBucketByMass(mass) + ".count.value";
+    getValue(label, "intValue", mass);
+    setValue(label, "intValue", ++mass);
+    int bucketCount;
+    dpGet(dpName, bucketCount);
+    dpSet(dpName, ++bucketCount);
+
+  }
+}
+
+void pushRunnable(string name, int pusherNum, int lineNum, int i) {
+  int pusherX, pusherY, lineX, lineY, cargoX, cargoY;
+  string pusher = "PANEL_REF" + pusherNum;
+  string line = "LINE" + lineNum;
+  int count = 0;
+  while(count < 39) {
+    getValue(pusher, "position", pusherX, pusherY);
+    setValue(pusher, "position", pusherX, ++pusherY);
+    getValue(line, "position", lineX, lineY);
+    setValue(line, "position", lineX, ++lineY);
+
+    count++;
+    if(count > 20) {
+       getValue(name, "position", cargoX, cargoY);
+       cargoY += 4;
+      setValue(name, "position", cargoX, cargoY);
+    }
+  }
+
+  delay(0,50);
+  removeSymbol(myModuleName(), myPanelName(), name);
+  while (count > 0) {
+      getValue(pusher, "position", pusherX, pusherY);
+      setValue(pusher, "position", pusherX, --pusherY);
+      getValue(line, "position", lineX, lineY);
+      setValue(line, "position", lineX, --lineY);
+      count--;
+  }
+}
+
+
+void breakerThread() {
+  dpSet("System1:pusher1.command.push", true);
+ dpSet("System1:pusher2.command.push", true);
+ dpSet("System1:conveyor_dp.command.isEnabled", true);
+ dpSet("System1:weighter_dp.command.isEnabled", true);
+  while(true) {
+    if(isHand) {
+      return;
+    }
+      delay(abs(getNormDistribValue(20,10)));
+      if (isConveyorWorking) {
+            float weighterThreadCurrent;
+float sourceThreadCurrent;
+float motorThreadCurrent;
+float pusher1ThreadCurrent;
+float pusher2ThreadCurrent;
+float conveyorThreadCurrent;
+dpGet("System1:weighter_dp.probability.value", weighterThreadCurrent);
+   dpGet("System1:A_source1.probability.value", sourceThreadCurrent);
+   dpGet("System1:A_motor1.probability.value", motorThreadCurrent);
+   dpGet("System1:pusher1.probability.value", pusher1ThreadCurrent);
+   dpGet("System1:pusher2.probability.value", pusher2ThreadCurrent);
+   dpGet("System1:conveyor_dp.probability.value", conveyorThreadCurrent);
+   ///
+      //int rand = floor(1.0*rand()/RAND_MAX * 4);
+      float rand = (float)rand()/32767;
+      string type;
+      string messageBoxText;
+      time t1 = getCurrentTime();
+      string localTime;
+
+
+
+      if(rand < weighterThreadCurrent){
+        dpSet("System1:weighter_dp.command.isEnabled", false);
+        dpSet("System1:weighter_dp.alert.mechanicalDamage", true);
+        type = "взвешиватель";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+     // setValue("ToggleSwitch_ewo1", "checked", false);
+      //setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      setValue("PUSH_BUTTON5", "visible", true);
+      }
+      rand = (float)rand()/32767;
+
+       if(rand < pusher1ThreadCurrent){
+        dpSet("System1:pusher1.command.push", false);
+        dpSet("System1:pusher1.alert.mechanicalDamage", true);
+        type = "толкатель 1";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      //setValue("ToggleSwitch_ewo1", "checked", false);
+     // setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      setValue("PUSH_BUTTON5", "visible", true);
+      }
+       rand = (float)rand()/32767;
+
+         if(rand < pusher2ThreadCurrent){
+        dpSet("System1:pusher2.command.push", false);
+         dpSet("System1:pusher2.alert.mechanicalDamage", true);
+        type = "толкатель 2";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      //setValue("ToggleSwitch_ewo1", "checked", false);
+     // setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      setValue("PUSH_BUTTON5", "visible", true);
+      }
+         rand = (float)rand()/32767;
+
+         if(rand < conveyorThreadCurrent){
+        dpSet("System1:conveyor_dp.command.isEnabled", false);
+         dpSet("System1:conveyor_dp.alert.mechanicalDamage", true);
+        type = "конвейер";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      //setValue("ToggleSwitch_ewo1", "checked", false);
+      //setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      setValue("PUSH_BUTTON5", "visible", true);
+      }
+         rand = (float)rand()/32767;
+
+          if(rand < sourceThreadCurrent){
+            dpSet("System1:A_source1.alert.mechanicalDamage", true);
+    type = "источник товара";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+     // setValue("ToggleSwitch_ewo1", "checked", false);
+     // setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      setValue("PUSH_BUTTON5", "visible", true);
+      }
+          rand = (float)rand()/32767;
+
+          if(rand < motorThreadCurrent){
+         dpSet("System1:A_motor1.command.isEnabled", false);
+         dpSet("System1:A_motor1.alert.damage", true);
+    type = "мотор";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      //setValue("ToggleSwitch_ewo1", "checked", false);
+      //setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      setValue("PUSH_BUTTON5", "visible", true);
+      }
+
+      if(isConveyorWorking == false || isCargoGenerating == false){
+        delay(2);
+         dpSet("System1:weighter_dp.command.isEnabled", true);
+        dpSet("System1:weighter_dp.alert.mechanicalDamage", false);
+        dpSet("System1:pusher1.command.push", true);
+        dpSet("System1:pusher1.alert.mechanicalDamage", false);
+        dpSet("System1:pusher2.command.push", true);
+         dpSet("System1:pusher2.alert.mechanicalDamage", false);
+         dpSet("System1:conveyor_dp.command.isEnabled", true);
+         dpSet("System1:conveyor_dp.alert.mechanicalDamage", false);
+         dpSet("System1:A_motor1.command.isEnabled", true);
+         dpSet("System1:A_motor1.alert.damage", false);
+
+
+//dpSet("System1:pusher1.command.push", true);
+//dpSet("System1:pusher2.command.push", true);
+//dpSet("System1:conveyor_dp.command.isEnabled", true);
+//dpSet("System1:weighter_dp.command.isEnabled", true);
+string dpName = "System1:A_bucket" + fullBucketNumber + ".count.value";
+//DebugN("dpname="+dpName);
+dpSet(dpName,0);
+setValue("LCD" + (fullBucketNumber + 1), "intValue", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+fullBucketNumber=0;
+setValue("PUSH_BUTTON5", "visible", false);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+      }
+    }
+//dpSet("System1:conveyor_dp.command.isEnabled", true);
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+   }
+}
+
+float getNormDistribValue(float MO, float sko) {
+    float sum=0, x;
+    for (int i=0;i<25;i++)
+        sum+=1.0*rand()/RAND_MAX;
+    x = (sqrt(2.0)*(sko)*(sum-12.5))/1.99661 + MO;
+    if(x < 0 ){
+      x = x *(-1);
+    }
+
+    return floor(x * 10)/ 10;
+}
+
+int getUniformDistribValue(int a, int b) {
+  return abs((int)(a + rand() * (b - a) / RAND_MAX));
+}
+
+int getExpDistribValue(double lambda) {
+  return abs((int)-log((double)(rand())/RAND_MAX)/lambda);
+}
+────────────────────────────────────────────────────────────────────────────────────────────────────
+─// [PUSH_BUTTON10] [30] - [Initialize]
+main()
+{
+  if(!getUserPermission(6)){
+    PUSH_BUTTON10.visible(false);
+  }
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON11] [31] - [Clicked]
+dyn_string dpNames;
+//dyn_string panelNames;
+//dyn_int threadIds;
+
+dyn_int deletedIds;
+
+
+int startY = 130;
+int startX = 60;
+
+int pistonX1 = 510;//540
+int pistonX2 = 640;//635
+int pistonX3 = 740;//730
+int pistonX4 = 805;
+
+int weightX = 209;
+
+
+string bucketLabel1 = "LCD2";
+string bucketLabel2 = "LCD3";
+string bucketLabel3 = "LCD4";
+string bucketLabel4 = "LCD5";
+
+mapping cargosToPush;
+
+int amount1, amount2, amount3, amount4;
+
+shape table = getShape("TABLE1");
+
+
+
+main()
+{
+  ToggleSwitch_ewo1.visible = false;
+  PRIMITIVE_TEXT62.visible = TRUE;
+PRIMITIVE_TEXT62.text = "Ручной режим запущен";
+  PANEL_REF22.position(27,161);
+      PANEL_REF21.position(174,42);
+      PANEL_REF20.position(333,47);
+      PANEL_REF19.position(685,6);
+      PANEL_REF18.position(471,6);
+ isHand = TRUE;
+ isAuto = FALSE;
+  reset();
+  init();
+  //if(!isHand){
+  runThreads();
+ // isHand = TRUE;
+//}
+}
+
+void init() {
+  setValue("ToggleSwitch_ewo1", "checked", true);
+ // panelNames = makeDynString();
+  dpNames = makeDynString();
+
+  threadNames = makeDynString();
+
+
+
+  dpSet("System1:A_bucket1.count.value", 0);
+  dpSet("System1:A_bucket2.count.value", 0);
+  dpSet("System1:A_bucket3.count.value", 0);
+
+}
+//запуск
+void runThreads(){
+   for (int i = 1; i <= dynlen(multyThreadsIdis); i++) {
+      DebugN("Th " + multyThreadsIdis[i]);
+      stopThread(multyThreadsIdis[i]);
+      waitThread(multyThreadsIdis[i]);
+      dynRemove(multyThreadsIdis, i);
+    }
+ int upt = startThread("update");
+ int gen = startThread("generateCargos");
+ int br = startThread("breakerThread");
+  dynAppend(multyThreadsIdis, upt);
+   dynAppend(multyThreadsIdis, gen);
+    dynAppend(multyThreadsIdis, br);
+}
+//наполнение корзин
+void updateMass(){
+     float mass1, mass2, mass3;
+         //, mass4;
+
+  dpGet("System1:A_bucket1.max_value", amount1);
+  dpGet("System1:A_bucket2.max_value", amount2);
+  dpGet("System1:A_bucket3.max_value", amount3);
+  //dpGet("System1:A_bucket4.max_value", amount4);
+
+  dpGet("System1:A_bucket1.max_value", mass1);
+  dpGet("System1:A_bucket2.max_value", mass2);
+  dpGet("System1:A_bucket3.max_value", mass3);
+  //dpGet("System1:A_bucket4.max_value", mass4);
+
+  setValue("PRIMITIVE_TEXT30", "text", mass1);
+  setValue("PRIMITIVE_TEXT34", "text", mass2);
+  setValue("PRIMITIVE_TEXT32", "text", mass3);
+  //setValue("PRIMITIVE_TEXT33", "text", mass4);
+
+  dpGet("System1:m1.", m1);
+  dpGet("System1:m2.", m2);
+  dpGet("System1:m3.", m3);
+  //dpGet("System1:m4.", m4);
+
+}
+
+//задание грузов
+void generateCargos(){
+  int id = 0;
+  while(true) {
+     if(isAuto){
+      return;
+    }
+     bool sour;
+      bool motor;
+    dpGet("System1:conveyor_dp.command.isEnabled", motor);
+     dpGet("System1:conveyor_dp.command.isEnabled", sour);
+    if (!isCargoGenerating || !sour || !motor) { continue; }
+    updateMass();
+    generateCargoWithID(id++);
+    int del = getDelay() * 1000;
+    delay(0, del);
+  }
+}
+//задание цвета и тд для груза
+void generateCargoWithID(int id) {
+  string name = "CARGO" + id;
+ // addSymbol(myModuleName(), myPanelName(), "gedi/Cargo.pnl",name,"",startX, startY,0,0,0);
+  //$weight
+  dpCreate(name, "A_cargo");
+  float mass = generateMass();
+  int targetX = getTargetX(mass);
+  dpSet(name + ".mass", mass);
+  dpSet(name + ".targetX", targetX);
+  //DebugN("mass " + mass);
+  string weightLabel = "$weight:" + mass + "кг";
+  string colorStr = "$color:";
+  int color;
+        float d1,d2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+    if (mass >= m1*d1L && mass <= m1*d1R) {
+    color =  1;
+  } else if ( mass >= m2*d2L &&mass <= m2*d2R) {
+    color =  2;
+  } else {
+    float sub1 = abs(mass - m1);
+    float sub2 = abs(mass - m2);
+    if (sub1 > sub2) {
+      color =  2;
+    } else {
+      color =  1;
+    }
+  }
+  int someInt = getBucketByMass(mass);
+  switch(color) {
+    case 1:
+    colorStr = colorStr + "WF_Warning";
+    break;
+    case 2:
+    colorStr = colorStr + "WF_Info";
+    break;
+    case 3:
+    colorStr = colorStr + "WF_Selected";
+    break;
+    case 4:
+    colorStr = colorStr + "WF_Selected";
+    break;
+  }
+  //DebugN(colorStr);
+  addSymbol(myModuleName(), myPanelName(), "gedi/Cargo.pnl",name,makeDynString(weightLabel, colorStr),startX, startY,0,0,0);
+  dynAppend(panelNames, name);
+  //DebugN(panelNames);
+  // аппенжу только в panelNames, dpNames не нужен наверн. name и там и там же одинаковые
+}
+// распределения
+float generateMass(){
+  int dist;
+  dpGet("System1:mass.determ",determMass);
+  dpGet("System1:mass.type",dist);
+      dpGet("System1:mass.rand.norm.mu",expectedValue);
+        dpGet("System1:mass.rand.norm.sigma",dispSqr);
+        dpGet("System1:mass.rand.ravnomer.a",a);
+        dpGet("System1:mass.rand.ravnomer.b",b);
+        dpGet("System1:mass.rand.exp",lamb);
+
+  switch(dist) {
+    case 0:
+    return determMass;
+    case 1 :
+    return getNormDistribValue(expectedValue,dispSqr);
+    case 2:
+    return getUniformDistribValue(a, b);
+    case 3:
+    return getExpDistribValue(lamb);
+
+  }
+}
+// получение цели по X
+int getTargetX(float mass) {
+  float d1,d2;
+  bool p1,p2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    dpGet("System1:pusher1.command.push", p1);
+    dpGet("System1:pusher2.command.push", p2);
+     bool we;
+  dpGet("System1:weighter_dp.command.isEnabled", we);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+  if ((mass >= m1*d1L && mass <= m1*d1R)&& p1 && we) {
+    return pistonX1;
+  } else if ((mass >= m2*d2L &&mass <= m2*d2R)&& p2 && we) {
+    return pistonX2;
+  }
+  else {
+    return pistonX3;
+ }
+}
+//Задание толкателя
+int getPusherNum(int pos) {
+  if (pos == pistonX1) {
+    return 3;
+  }
+  else if (pos == pistonX2) {
+    return 4;
+  }
+  //else if (pos == pistonX3) {
+  //  return 5;
+ // }
+  else {
+    return 0;
+  }
+}
+// задание позиции
+int getLineNum(int pos) {
+  if (pos == pistonX1) {
+    return 5;
+  }
+  else if (pos == pistonX2) {
+    return 7;
+  }
+ // else if (pos == pistonX3) {
+ //   return 9;
+ // }
+  else {
+    return 0;
+  }
+}
+
+
+string getBucketLabel(float mass) {
+    float d1,d2;
+ bool p1,p2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    dpGet("System1:pusher1.command.push", p1);
+    dpGet("System1:pusher2.command.push", p2);
+     bool we;
+  dpGet("System1:weighter_dp.command.isEnabled", we);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+  if ((mass >= m1*d1L && mass <= m1*d1R)&& p1 && we) {
+    return bucketLabel1;
+  } else if ((mass >= m2*d2L &&mass <= m2*d2R)&& p2 && we) {
+    return bucketLabel2;
+  } else {
+    return bucketLabel3;
+  }
+}
+
+int getBucketByMass (float mass) {
+      float d1,d2;
+   bool p1,p2;
+   dpGet("System1:A_source1.deviation.d1", d1);
+    dpGet("System1:A_source1.deviation.d2", d2);
+    dpGet("System1:pusher1.command.push", p1);
+    dpGet("System1:pusher2.command.push", p2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+     bool we;
+  dpGet("System1:weighter_dp.command.isEnabled", we);
+    if ((mass >= m1*d1L && mass <= m1*d1R)&& p1 && we) {
+    return 1;
+  } else if ((mass >= m2*d2L &&mass <= m2*d2R)&& p2 && we) {
+    return 2;
+  } else  {
+    return 3;
+  }
+ // else {
+ //   return 4;
+ // }
+}
+// задержка
+int getDelay() {
+       int intensity;
+         dpGet("System1:A_source1.intensity.value", intensity);
+        return 60/intensity;
+}
+
+void update(){
+
+  while(true) {
+    if(isAuto){
+      return;
+    }
+    bool conv;
+    bool motor;
+    dpGet("System1:conveyor_dp.command.isEnabled", conv);
+    dpGet("System1:A_motor1.command.isEnabled", motor);
+
+
+        if(isConveyorWorking && motor){
+      if(convSpeed == 1){
+         dpSet("System1:conveyor_dp.speed.value", 1);
+      } else {
+        dpSet("System1:conveyor_dp.speed.value", 1 + convSpeed/10);
+      }
+
+    } else {
+      dpSet("System1:conveyor_dp.speed.value", 0);
+      DebugN(motor);
+    }
+
+    if ((!isConveyorWorking || !motor) || isSomeBucketFull()) { continue; }
+    threadIds = makeDynInt();
+    for (int i = 1; i <= dynlen(panelNames); i++) {
+      int id = startThread("updateAt", i);
+      dynAppend(threadIds, id);
+    }
+    for (int i = 1; i <= dynlen(threadIds); i++) {
+      int id = threadIds[i];
+      if (dynContains(deletedIds, id)) {
+        waitThread(id);
+      }
+    }
+
+
+
+    //DebugN(getThreadId());
+   //delay(0, 1 / convSpeed * 5);
+
+    delay(0,20);
+    //DebugN(getThreadId());
+  }
+}
+
+bool isSomeBucketFull(){
+    int am1, am2, am3;
+    dpGet("System1:A_bucket1.count.value", am1);
+    dpGet("System1:A_bucket2.count.value", am2);
+    dpGet("System1:A_bucket3.count.value", am3);
+
+    if (amount1 == am1) {
+      fullBucketNumber = 1;
+    }
+    else if (amount2 == am2) {
+      fullBucketNumber = 2;
+    }
+    else if (amount3 == am3) {
+      fullBucketNumber = 3;
+    }
+
+    if (fullBucketNumber != 0) {
+      performOverflowBucket();
+      return true;
+    }
+    else {
+      return false;
+    }
+}
+
+void performOverflowBucket() {
+      isConveyorWorking = false;
+      isCargoGenerating = false;
+      time t1 = getCurrentTime();
+      string localTime;
+      localTime = formatTime("%c", t1, "");
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      string messageBoxText;
+      //getValue("TEXT_EDIT1","text", messageBoxText);
+      messageBoxText = "корзина " + fullBucketNumber + " полная";
+     // setValue("TEXT_EDIT1","text", messageBoxText);
+       table.appendLine("Дата и время", localTime, "Событие", messageBoxText);
+
+      // DebugN(fullBucketNumber);
+       if(fullBucketNumber == 1){
+         setValue("PUSH_BUTTON18", "visible", true);
+       }
+       if(fullBucketNumber == 2){
+         setValue("PUSH_BUTTON19", "visible", true);
+       }
+       if(fullBucketNumber == 3){
+         setValue("PUSH_BUTTON20", "visible", true);
+       }
+
+      //setValue("PUSH_BUTTON4", "visible", true);
+
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+}
+
+
+void updateAt(int i) {
+
+  float x = 0, y = 0, targetX, mass;
+  string name = panelNames[i];
+  getValue(name, "position", x, y);
+  float summary = x +(1.5 + convSpeed/7);
+ // DebugN(name);
+  setValue(name, "position",summary, startY);
+
+  dpGet(name + ".targetX", targetX);
+  dpGet(name + ".mass", mass);
+  bool we;
+  dpGet("System1:weighter_dp.command.isEnabled", we);
+  if(weightX == x){
+     dpSet("System1:weighter_dp.current_weight.value", mass);
+  }
+  if ((x >= weightX && x<= weightX + 94) && we ) {
+
+    setValue("LCD1", "value", mass);
+
+  } else {
+    setValue("LCD1", "value", 0);
+  }
+  if (x == targetX) {
+    int count;
+    string label = getBucketLabel(mass);
+    int pushern = getPusherNum(targetX);
+    int lineNum = getLineNum(targetX);
+    dynInsertAt(deletedIds, i, 0);
+    dynRemove(threadIds,i);
+    if (pushern != 0) {
+      int psh = startThread("pushRunnable", name, pushern, lineNum, i);
+      dynAppend(multyThreadsIdis, psh);
+    } else {
+         removeSymbol(myModuleName(), myPanelName(), name);
+    }
+    dynRemove(panelNames, i);
+    dpDelete(name);
+    string dpName = "System1:A_bucket" + getBucketByMass(mass) + ".count.value";
+    getValue(label, "intValue", mass);
+    setValue(label, "intValue", ++mass);
+    int bucketCount;
+    dpGet(dpName, bucketCount);
+    dpSet(dpName, ++bucketCount);
+
+  }
+}
+
+void pushRunnable(string name, int pusherNum, int lineNum, int i) {
+
+
+  int pusherX, pusherY, lineX, lineY, cargoX, cargoY;
+  string pusher = "PANEL_REF" + pusherNum;
+  string line = "LINE" + lineNum;
+  int count = 0;
+  while(count < 39) {
+    getValue(pusher, "position", pusherX, pusherY);
+    setValue(pusher, "position", pusherX, ++pusherY);
+    getValue(line, "position", lineX, lineY);
+    setValue(line, "position", lineX, ++lineY);
+
+    count++;
+    if(count > 20) {
+       getValue(name, "position", cargoX, cargoY);
+       cargoY += 4;
+      setValue(name, "position", cargoX, cargoY);
+    }
+  }
+
+  delay(0,50);
+  removeSymbol(myModuleName(), myPanelName(), name);
+  while (count > 0) {
+      getValue(pusher, "position", pusherX, pusherY);
+      setValue(pusher, "position", pusherX, --pusherY);
+      getValue(line, "position", lineX, lineY);
+      setValue(line, "position", lineX, --lineY);
+      count--;
+  }
+}
+
+
+void breakerThread() {
+
+  dpSet("System1:pusher1.command.push", true);
+ dpSet("System1:pusher2.command.push", true);
+ dpSet("System1:conveyor_dp.command.isEnabled", true);
+ dpSet("System1:weighter_dp.command.isEnabled", true);
+
+  while(true) {
+     if(isAuto){
+      return;
+    }
+      delay(abs(getNormDistribValue(20,10)));
+      bool motor;
+    dpGet("System1:A_motor1.command.isEnabled", motor);
+      if (isConveyorWorking && motor) {
+            float weighterThreadCurrent;
+float sourceThreadCurrent;
+float motorThreadCurrent;
+float pusher1ThreadCurrent;
+float pusher2ThreadCurrent;
+float conveyorThreadCurrent;
+dpGet("System1:weighter_dp.probability.value", weighterThreadCurrent);
+   dpGet("System1:A_source1.probability.value", sourceThreadCurrent);
+   dpGet("System1:A_motor1.probability.value", motorThreadCurrent);
+   dpGet("System1:pusher1.probability.value", pusher1ThreadCurrent);
+   dpGet("System1:pusher2.probability.value", pusher2ThreadCurrent);
+   dpGet("System1:conveyor_dp.probability.value", conveyorThreadCurrent);
+   ///
+      //int rand = floor(1.0*rand()/RAND_MAX * 4);
+    bool p1,p2;
+    dpGet("System1:pusher1.command.push", p1);
+    dpGet("System1:pusher2.command.push", p2);
+    ///
+
+      float rand = (float)rand()/32767;
+      string type;
+      string messageBoxText;
+      time t1 = getCurrentTime();
+      string localTime;
+
+
+
+      if(rand < weighterThreadCurrent){
+        dpSet("System1:weighter_dp.command.isEnabled", false);
+         dpSet("System1:A_motor1.command.isEnabled", false);
+        dpSet("System1:weighter_dp.alert.mechanicalDamage", true);
+        type = "взвешиватель";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+     // setValue("PUSH_BUTTON5", "visible", true);
+      dynAppend(threadNames, "We");
+      setValue("PUSH_BUTTON22", "visible", true);
+      }
+      rand = (float)rand()/32767;
+
+       if((rand < pusher1ThreadCurrent) && p1){
+        dpSet("System1:pusher1.command.push", false);
+        dpSet("System1:A_motor1.command.isEnabled", false);
+        dpSet("System1:pusher1.alert.mechanicalDamage", true);
+        type = "толкатель 1";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      //setValue("PUSH_BUTTON5", "visible", true);
+      dynAppend(threadNames, "P1");
+      setValue("PUSH_BUTTON15", "visible", true);
+      }
+       rand = (float)rand()/32767;
+
+         if((rand < pusher2ThreadCurrent)&& p1){
+        dpSet("System1:pusher2.command.push", false);
+        dpSet("System1:A_motor1.command.isEnabled", false);
+         dpSet("System1:pusher2.alert.mechanicalDamage", true);
+        type = "толкатель 2";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      //setValue("PUSH_BUTTON5", "visible", true);
+      dynAppend(threadNames, "P2");
+      setValue("PUSH_BUTTON16", "visible", true);
+      }
+         rand = (float)rand()/32767;
+
+         if(rand < conveyorThreadCurrent){
+        dpSet("System1:conveyor_dp.command.isEnabled", false);
+        dpSet("System1:A_motor1.command.isEnabled", false);
+         dpSet("System1:conveyor_dp.alert.mechanicalDamage", true);
+        type = "конвейер";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      //setValue("PUSH_BUTTON5", "visible", true);
+      dynAppend(threadNames, "Conv");
+      setValue("PUSH_BUTTON23", "visible", true);
+      }
+         rand = (float)rand()/32767;
+
+          if(rand < sourceThreadCurrent){
+            dpSet("System1:A_source1.alert.mechanicalDamage", true);
+            dpSet("System1:A_motor1.command.isEnabled", false);
+    type = "источник товара";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      //setValue("PUSH_BUTTON5", "visible", true);
+      dynAppend(threadNames, "Sour");
+      setValue("PUSH_BUTTON21", "visible", true);
+      }
+          rand = (float)rand()/32767;
+
+          if(rand < motorThreadCurrent){
+         dpSet("System1:A_motor1.command.isEnabled", false);
+         dpSet("System1:A_motor1.alert.damage", true);
+    type = "мотор";
+              localTime = formatTime("%c", t1, "");
+      messageBoxText = type + " отказал";
+      table.appendLine("Дата и время", localTime,"Событие", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue("ToggleSwitch_ewo1", "checked", false);
+      setValue("ToggleSwitch_ewo1", "enabled", false);
+      dpSet("System1:conveyor_dp.command.isEnabled", false);
+      //setValue("PUSH_BUTTON5", "visible", true);
+      dynAppend(threadNames, "Mot");
+      setValue("PUSH_BUTTON17", "visible", true);
+      }
+
+    }
+
+   }
+}
+
+
+float getNormDistribValue(float MO, float sko) {
+    float sum=0, x;
+    for (int i=0;i<25;i++)
+        sum+=1.0*rand()/RAND_MAX;
+    x = (sqrt(2.0)*(sko)*(sum-12.5))/1.99661 + MO;
+    if(x < 0 ){
+      x = x *(-1);
+    }
+
+    return floor(x * 10)/ 10;
+}
+
+int getUniformDistribValue(float a, float b) {
+  DebugN(a);
+  return abs((int)(a + rand() * (b - a) / RAND_MAX));
+}
+
+int getExpDistribValue(double lambda) {
+  return abs((int)-log((double)(rand())/RAND_MAX)/lambda);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON12] [81] - [Clicked]
+// SimpleCtrlScriptStart {invalid}
+main()
+{
+
+  EP_childPanelOn();
+
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal("gedi/process_trends.pnl",
+      "Graphs",
+      makeDynString(""));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentralModal}
+// File {gedi/process_trends.pnl}
+// Panel {Graphs}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON13] [86] - [Clicked]
+// SimpleCtrlScriptStart {valid}
+main()
+{
+  EP_childPanelOn();
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal("gedi/DataView.pnl",
+      "Data View",
+      makeDynString(""));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentralModal}
+// File {gedi/DataView.pnl}
+// Panel {Data View}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON14] [87] - [Clicked]
+// SimpleCtrlScriptStart {valid}
+main()
+{
+  EP_childPanelOn();
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal("gedi/AboutProgramm.pnl",
+      "About Programm",
+      makeDynString(""));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentralModal}
+// File {gedi/AboutProgramm.pnl}
+// Panel {About Programm}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON15] [91] - [Clicked]
+main(mapping event)
+{
+dpSet("System1:pusher1.alert.mechanicalDamage", false);
+//dpSet("System1:pusher1.command.push", true);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == "P1"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+     // dpSet("System1:conveyor_dp.command.isEnabled", true);
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue("PUSH_BUTTON15", "visible", false);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON16] [92] - [Clicked]
+main(mapping event)
+{
+dpSet("System1:pusher2.alert.mechanicalDamage", false);
+// dpSet("System1:pusher2.command.push", true);
+
+     for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == "P2"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      //dpSet("System1:conveyor_dp.command.isEnabled", true);
+     ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue("PUSH_BUTTON16", "visible", false);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON17] [93] - [Clicked]
+main(mapping event)
+{
+dpSet("System1:A_motor1.alert.damage", false);
+ //dpSet("System1:A_motor1.command.isEnabled", true);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == "Mot"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+    //  dpSet("System1:conveyor_dp.command.isEnabled", true);
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue("PUSH_BUTTON17", "visible", false);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON18] [94] - [Clicked]
+main(mapping event)
+{
+   string dpName = "System1:A_bucket" + fullBucketNumber + ".count.value";
+//DebugN("dpname="+dpName);
+dpSet(dpName,0);
+setValue("LCD" + (fullBucketNumber + 1), "intValue", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+fullBucketNumber=0;
+setValue("PUSH_BUTTON4", "visible", false);
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+//setValue("ToggleSwitch_ewo1", "check", true);
+setValue("PUSH_BUTTON18", "visible", false);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON19] [95] - [Clicked]
+main(mapping event)
+{
+   string dpName = "System1:A_bucket" + fullBucketNumber + ".count.value";
+//DebugN("dpname="+dpName);
+dpSet(dpName,0);
+setValue("LCD" + (fullBucketNumber + 1), "intValue", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+fullBucketNumber=0;
+setValue("PUSH_BUTTON4", "visible", false);
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+//setValue("ToggleSwitch_ewo1", "check", true);
+setValue("PUSH_BUTTON19", "visible", false);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON20] [96] - [Clicked]
+main(mapping event)
+{
+   string dpName = "System1:A_bucket" + fullBucketNumber + ".count.value";
+//DebugN("dpname="+dpName);
+dpSet(dpName,0);
+setValue("LCD" + (fullBucketNumber + 1), "intValue", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet("System1:conveyor_dp.command.isEnabled", true);
+fullBucketNumber=0;
+setValue("PUSH_BUTTON4", "visible", false);
+//setValue("ToggleSwitch_ewo1", "enabled", true);
+//setValue("ToggleSwitch_ewo1", "check", true);
+setValue("PUSH_BUTTON20", "visible", false);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON21] [97] - [Clicked]
+main(mapping event)
+{
+dpSet("System1:A_source1.alert.mechanicalDamage", false);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == "Sour"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      //dpSet("System1:conveyor_dp.command.isEnabled", true);
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue("PUSH_BUTTON21", "visible", false);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON22] [98] - [Clicked]
+main(mapping event)
+{
+    dpSet("System1:weighter_dp.alert.mechanicalDamage", false);
+    //dpSet("System1:weighter_dp.command.isEnabled", true);
+
+        for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == "We"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+     // dpSet("System1:conveyor_dp.command.isEnabled", true);
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue("PUSH_BUTTON22", "visible", false);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON23] [99] - [Clicked]
+main(mapping event)
+{
+
+dpSet("System1:conveyor_dp.alert.mechanicalDamage", false);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == "Conv"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      //dpSet("System1:conveyor_dp.command.isEnabled", true);
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue("PUSH_BUTTON23", "visible", false);
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON24] [102] - [Clicked]
+// SimpleCtrlScriptStart {valid}
+main()
+{
+  EP_childPanelOn();
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal("gedi/AboutProg.pnl",
+      "About Program",
+      makeDynString(""));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentralModal}
+// File {gedi/AboutProg.pnl}
+// Panel {About Program}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+════════════════════════════════════════════════════════════════════════════════════════════════════
+─// [PUSH_BUTTON8] [103] - [Clicked]
+main(mapping event)
+{
+  TAB1.visible(true);
+  PUSH_BUTTON9.visible(true);
+  PUSH_BUTTON8.visible(false);
+}
+────────────────────────────────────────────────────────────────────────────────────────────────────
+─// [PUSH_BUTTON8] [103] - [Initialize]
+main()
+{
+   if(!getUserPermission(6)){
+    PUSH_BUTTON8.visible(false);
+  }
+}
+════════════════════════════════════════════════════════════════════════════════════════════════════
