@@ -1,0 +1,713 @@
+V 14
+2
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 400 400 N "_3DFace" 0
+E E E E E 1 -1 -1 0  43.83956648428564 23.04819623161762
+""0  1
+E E 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 0 
+LANG:10027 0 
+19 1
+"RADIO_BOX1"
+""
+1 45.87542119449157 93.49153047449453 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  43.87542119449157 91.49153047449453 191.8786807136012 132.5323665843291
+2
+T 
+2
+LANG:10001 34 Детерминированное
+LANG:10027 3 ???
+
+1 
+2
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+2
+LANG:10001 18 Случайное
+LANG:10027 3 ???
+
+0 
+2
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E "main(int button)
+{
+  switch(button) {
+    case 0:
+    setValue(\"FRAME1\", \"visible\", true);
+    setValue(\"PRIMITIVE_TEXT15\", \"visible\", true);
+    setValue(\"SPIN_BUTTON6\", \"visible\", true);
+    setValue(\"PRIMITIVE_TEXT14\", \"visible\", false);
+    setValue(\"CASCADE_BUTTON1\", \"visible\", false);
+    setValue(\"PRIMITIVE_TEXT16\", \"visible\", false);
+    setValue(\"PRIMITIVE_TEXT17\", \"visible\", false);
+    setValue(\"PRIMITIVE_TEXT18\", \"visible\", false);
+    setValue(\"SPIN_BUTTON7\", \"visible\", false);
+    setValue(\"SPIN_BUTTON8\", \"visible\", false);
+    typeSelected = 0;
+    break;
+    case 1:
+    setValue(\"FRAME1\", \"visible\", false);
+    setValue(\"PRIMITIVE_TEXT15\", \"visible\", false);
+    setValue(\"SPIN_BUTTON6\", \"visible\", false);
+    
+    setValue(\"PRIMITIVE_TEXT14\", \"visible\", true);
+    setValue(\"CASCADE_BUTTON1\", \"visible\", true);
+    setValue(\"PRIMITIVE_TEXT16\", \"visible\", true);
+    setValue(\"PRIMITIVE_TEXT17\", \"visible\", true);
+    setValue(\"PRIMITIVE_TEXT18\", \"visible\", true);
+    setValue(\"SPIN_BUTTON7\", \"visible\", true);
+    setValue(\"SPIN_BUTTON8\", \"visible\", true);
+    typeSelected = 1;
+    break;
+  }
+}" 0
+
+2 2
+"PRIMITIVE_TEXT6"
+""
+1 48.54617520191133 25.06359145220586 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 48.54617520191133 25.06359145220586 98.54617520191128 45.06359145220586
+0 2 2 "0s" 0 0 0 64 0 0  48.54617520191133 25.06359145220586 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 2 m1
+LANG:10027 2 m1
+2 3
+"PRIMITIVE_TEXT7"
+""
+1 48.54617520191133 55.06359145220586 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 48.54617520191133 55.06359145220586 98.54617520191128 75.06359145220586
+0 2 2 "0s" 0 0 0 64 0 0  48.54617520191133 55.06359145220586 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 2 m2
+LANG:10027 2 m1
+2 4
+"PRIMITIVE_TEXT8"
+""
+1 197.7674111888789 25.04819623161762 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 197.7674111888789 25.04819623161762 247.7674111888789 45.04819623161761
+0 2 2 "0s" 0 0 0 64 0 0  197.7674111888789 25.04819623161762 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 2 m3
+LANG:10027 2 m1
+2 5
+"PRIMITIVE_TEXT9"
+""
+1 197.8909650611886 55.20576746323521 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 197.8909650611886 55.20576746323521 247.8909650611886 75.2057674632353
+0 2 2 "0s" 0 0 0 64 0 0  197.8909650611886 55.20576746323521 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 2 m4
+LANG:10027 2 m1
+21 6
+"SPIN_BUTTON2"
+""
+1 73.40903391953714 28.01734834558823 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  71.40903391953714 22.09639246323524 190.409033919537 48.31514246323533
+0
+
+E
+E
+E
+
+N 0 100 1 1 1 1
+21 7
+"SPIN_BUTTON3"
+""
+1 73.35260456072422 58.01734834558822 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  71.35260456072422 52.09639246323521 190.3526045607241 78.31514246323532
+0
+
+E
+E
+E
+
+N 0 100 1 3 1 1
+21 8
+"SPIN_BUTTON4"
+""
+1 222.6561416641566 28.01734834558822 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  220.6561416641566 22.09639246323523 339.6561416641564 48.31514246323533
+0
+
+E
+E
+E
+
+N 0 100 1 6 1 1
+21 9
+"SPIN_BUTTON5"
+""
+1 222.7247123053437 58.19804113051463 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  220.7247123053437 52.27708524816168 339.7247123053436 78.49583524816183
+0
+
+E
+E
+E
+
+N 0 100 1 10 1 1
+13 10
+"PUSH_BUTTON2"
+""
+1 49.87868071360131 237 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+9 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  47.87868071360131 230 171.8786807136011 256
+
+T 
+2
+LANG:10001 18 Применить
+LANG:10027 12 PUSH_BUTTON2
+"main(mapping event)
+{
+  int mass1, mass2, mass3, mass4;
+  getValue(\"SPIN_BUTTON2\", \"value\", mass1);
+  getValue(\"SPIN_BUTTON3\", \"value\", mass2);
+  getValue(\"SPIN_BUTTON4\", \"value\", mass3);
+  getValue(\"SPIN_BUTTON5\", \"value\", mass4);
+  
+  dpSet(\"System1:m1.\", mass1);
+  dpSet(\"System1:m2.\", mass2);
+  dpSet(\"System1:m3.\", mass3);
+  dpSet(\"System1:m4.\", mass4);
+  
+
+/*
+panelOff(\"objects/MassParameters\");
+panelOff(\"objects/TimeParameters\");
+panelOff(\"objects/Buckets\");
+*/
+//panelOff(\"objects/CustomPanel\");
+TAB3.visible(false);  
+
+
+  
+int firstVal, secondVal;
+if (typeSelected == 0) {
+  getValue(\"SPIN_BUTTON6\",\"value\", firstVal);
+  dpSet(\"System1:mass.type\", 0);
+  dpSet(\"System1:mass.determ\", firstVal);
+  
+} else {
+   getValue(\"SPIN_BUTTON7\",\"value\", firstVal);
+   getValue(\"SPIN_BUTTON8\",\"value\", secondVal);
+     dpSet(\"System1:mass.type\", selid);
+  switch (selid) {
+    case 1: 
+      dpSet(\"System1:mass.rand.norm.mu\", firstVal);
+         dpSet(\"System1:mass.rand.norm.sigma\", secondVal);
+      break;
+      case 2:
+ dpSet(\"System1:mass.rand.ravnomer.a\", firstVal);
+         dpSet(\"System1:mass.rand.ravnomer.b\", secondVal);
+      break;
+      case 3:
+       dpSet(\"System1:mass.rand.exp\", firstVal);
+      break;
+  }
+}
+//RECTANGLE23.visible(true);
+}" 0
+ E E E
+30 11
+"FRAME1"
+""
+1 20 161 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+10 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 2.023641219944352 0 1 5.366742085398595 -9 0 E 20 161 149 230
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 82 Настройки детерминированного распределения
+LANG:10027 11 Frame Title
+2 12
+"PRIMITIVE_TEXT15"
+""
+1 59.8786807136012 180 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 59.8786807136012 180 130 198
+0 2 2 "0s" 0 0 0 192 0 0  59.8786807136012 180 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 16 Значение
+LANG:10027 16 Значение
+2 13
+"PRIMITIVE_TEXT16"
+""
+1 49.60260456072413 154 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 49.60260456072413 154 139 172
+0 2 2 "0s" 0 0 0 192 0 0  49.60260456072413 154 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 19 Параметры:
+LANG:10027 19 Параметры:
+2 14
+"PRIMITIVE_TEXT17"
+""
+1 47.83956648428564 189 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 47.83956648428564 189 58 207
+0 2 2 "0s" 0 0 0 192 0 0  47.83956648428564 189 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 2 µ
+LANG:10027 3 raz
+14 15
+"TEXT_FIELD2"
+""
+1 89.60260456072413 186 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  87.60260456072413 192 101.6026045607241 196
+3 "0s" 0 0 0 0 0 -1  E E E
+2 16
+"PRIMITIVE_TEXT18"
+""
+1 155.5504522549701 188 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 155.5504522549701 188 166 206
+0 2 2 "0s" 0 0 0 192 0 0  155.5504522549701 188 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 2 σ
+LANG:10027 3 dva
+26 17
+"CASCADE_BUTTON1"
+""
+1 209.8786807136012 110 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  207.8786807136012 108 331.8786807136012 133.9999999999999
+ 0 2
+LANG:10001 20 Нормальное
+LANG:10027 0 
+"" 0 0 0 0 0
+ 3 1 2
+LANG:10001 20 Нормальное
+LANG:10027 0 
+"1" 0 0 0 0 0
+ 1 2
+LANG:10001 22 Равномерное
+LANG:10027 0 
+"2" 0 0 0 0 0
+ 1 2
+LANG:10001 32 Экспоненциальное
+LANG:10027 0 
+"3" 0 0 0 0 0
+ E "main(string id)
+{
+  setValue(\"SPIN_BUTTON6\", \"value\", 1);
+  setValue(\"SPIN_BUTTON7\", \"value\", 5);
+  setValue(\"SPIN_BUTTON8\", \"value\", 5);
+  switch (id) {
+    case \"1\":
+    this.text(\"Нормальное\");
+    setValue(\"PRIMITIVE_TEXT17\", \"text\", \"µ\");
+    setValue(\"PRIMITIVE_TEXT18\", \"text\", \"σ\");
+        setValue(\"SPIN_BUTTON8\", \"visible\", true);
+    setValue(\"PRIMITIVE_TEXT18\", \"visible\", true);
+    selid = 1;
+    break;
+    case \"2\":
+    this.text(\"Равномерное\");
+    setValue(\"PRIMITIVE_TEXT17\", \"text\", \"a\");
+    setValue(\"PRIMITIVE_TEXT18\", \"text\",\"b\");
+        setValue(\"SPIN_BUTTON8\", \"visible\", true);
+    setValue(\"PRIMITIVE_TEXT18\", \"visible\", true);
+    selid = 2;
+    break;
+    case \"3\":
+    this.text(\"Экспоненциальное\");
+    setValue(\"SPIN_BUTTON8\", \"visible\", false);
+    setValue(\"PRIMITIVE_TEXT18\", \"visible\", false);
+    setValue(\"PRIMITIVE_TEXT17\", \"text\", \"λ\");
+   selid = 3;
+    break;
+    
+  }
+}" 0
+0 
+2 18
+"PRIMITIVE_TEXT14"
+""
+1 48 334.9880514705882 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.582433979083385 0 1 153.9218497175987 -244.9880514705882 0 E 48 334.9880514705882 98 354.9880514705882
+0 2 2 "0s" 0 0 0 64 0 0  48 334.9880514705882 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 26 Распределение
+LANG:10027 2 m1
+21 19
+"SPIN_BUTTON6"
+""
+1 139.8786807136012 185.8148148148148 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  137.8786807136012 181 261.8786807136012 200.9506172839506
+0
+
+E
+E
+E
+
+N 0 100 1 1 1 1
+21 20
+"SPIN_BUTTON7"
+""
+1 69.8786807136012 194 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  67.8786807136012 189 128.6417187900397 210
+0
+
+E
+E
+E
+
+N 0 100 1 5 1 1
+21 21
+"SPIN_BUTTON8"
+""
+1 169.8786807136012 193.9753086419753 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  167.8786807136012 188.9753086419753 232.1213192863988 209.9753086419753
+0
+
+E
+E
+E
+
+N 0 100 1 5 1 1
+0
+LAYER, 1 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 2 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 3 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 4 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 6 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 7 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+0

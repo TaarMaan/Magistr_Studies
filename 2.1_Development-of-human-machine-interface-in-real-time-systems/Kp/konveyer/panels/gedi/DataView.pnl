@@ -1,0 +1,299 @@
+V 14
+2
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 586 436 N "_3DFace" 0
+"main()
+{
+shape table = getShape(\"TABLE1\");
+shape dt1 = getShape(\"DateTimeEdit_ewo1\");
+shape dt2 = getShape(\"DateTimeEdit_ewo2\");
+dyn_float values,values2;   //Содержит одинарные значения
+dyn_time tim1,tim2; //Содержит исходное время для значений
+int ant,ant2; //если 1 --> к ошибке в dpGetPeriod()
+DateTimeEdit_ewo1.dateTime(getCurrentTime());
+DateTimeEdit_ewo2.dateTime(getCurrentTime());
+
+DebugN(DateTimeEdit_ewo1.dateTime);
+
+ant = dpGetPeriod(makeTime(2003,9,8), getCurrentTime(),1, \"System1:weighter_dp.current_weight.value\" ,values, tim1);
+ant2 = dpGetPeriod(makeTime(2003,9,8), getCurrentTime(),1, \"System1:conveyor_dp.speed.value\" ,values2, tim2);
+table.deleteAllLines();
+
+if ((ant== 1) || (dynlen(values) == 0)) /* При ошибке запроса или отсутствии значений */
+
+{
+
+DebugN(\"dpGetPeriod generated an error or there are no values\");
+
+}
+
+else
+
+{
+
+int i; //переменная цикла
+
+//DebugN(\"Result values:\");
+
+for(i=1;i<=dynlen(values);i++) {
+  DebugN(values[i],tim1[i]);
+   table.appendLine(\"Время\", formatTime(\"%c\", tim1[i], \"\"),\"Тип пакета\", floor(values[i]),\"Скорость ленты\", values2[i] );
+ }
+
+}
+}
+" 0
+ E E E E 1 -1 -1 0  100 130
+""0  1
+E E 4
+"CBRef" "1"
+"EClose" E
+"dpi" "144"
+"pdpi" "161.962"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 0 
+LANG:10027 0 
+25 1
+"TABLE1"
+""
+1 0 0 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 37 Noto Sans,-1,19,5,50,1,0,0,0,0,Italic
+LANG:10027 37 Noto Sans,-1,19,5,50,1,0,0,0,0,Italic
+0  -2 -2 582 322
+EE 1 0 1 3 0 "Время" 6 1 0 "[0s,,,AlignHCenter]" 2
+LANG:10001 10 Время
+LANG:10027 2 #1
+E
+2
+LANG:10001 0 
+LANG:10027 0 
+
+300 "Тип пакета" 6 1 0 "[0s,,,AlignHCenter]" 2
+LANG:10001 19 Тип пакета
+LANG:10027 2 #1
+E
+2
+LANG:10001 0 
+LANG:10027 0 
+
+115 "Скорость ленты" 6 1 0 "[0s,,,AlignHCenter]" 2
+LANG:10001 27 Скорость ленты
+LANG:10027 2 #1
+E
+2
+LANG:10001 0 
+LANG:10027 0 
+
+165 
+19 19 10 0
+2
+LANG:10001 37 Noto Sans,-1,19,5,50,1,0,0,0,0,Italic
+LANG:10027 37 Noto Sans,-1,19,5,50,1,0,0,0,0,Italic
+0 0 1 1 1 7
+1 0
+29 2
+"DateTimeEdit_ewo1"
+""
+1 33.2868421052633 132.3427933673469 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,18,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  65.89736842105265 364.46875 289.8973684210526 390
+16 DateTimeEdit.ewo
+0
+E29 3
+"DateTimeEdit_ewo2"
+""
+1 -40.31842105263155 349.358418367347 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,18,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  314.8712273848684 364.46875 538.8712273848683 390
+16 DateTimeEdit.ewo
+0
+E13 4
+"PUSH_BUTTON1"
+""
+1 590.0654810855262 363.9393518518518 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+3 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 50 MS Shell Dlg 2,-1,19,5,50,0,0,0,0,0,Обычный
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  228 402.3351851851853 372 435.3351851851853
+
+T 
+2
+LANG:10001 20 Определить
+LANG:10027 12 PUSH_BUTTON1
+"main(mapping event)
+{
+  shape table = getShape(\"TABLE1\");
+shape dt1 = getShape(\"DateTimeEdit_ewo1\");
+shape dt2 = getShape(\"DateTimeEdit_ewo2\");
+dyn_float values,values2;   //Содержит одинарные значения
+dyn_time tim1,tim2; //Содержит исходное время для значений
+int ant,ant2; //если 1 --> к ошибке в dpGetPeriod()
+
+DebugN(DateTimeEdit_ewo1.dateTime);
+
+ant = dpGetPeriod(DateTimeEdit_ewo1.dateTime, DateTimeEdit_ewo2.dateTime,1, \"System1:weighter_dp.current_weight.value\" ,values, tim1);
+ant2 = dpGetPeriod(DateTimeEdit_ewo1.dateTime, DateTimeEdit_ewo2.dateTime,1, \"System1:conveyor_dp.speed.value\" ,values2, tim2);
+table.deleteAllLines();
+
+if ((ant== 1) || (dynlen(values) == 0)) /* При ошибке запроса или отсутствии значений */
+
+{
+
+DebugN(\"dpGetPeriod generated an error or there are no values\");
+
+}
+
+else
+
+{
+
+int i; //переменная цикла
+
+//DebugN(\"Result values:\");
+
+for(i=1;i<=dynlen(values);i++) {
+  DebugN(values[i],tim1[i]);
+   table.appendLine(\"Время\", formatTime(\"%c\", tim1[i], \"\"),\"Тип пакета\", floor(values[i]),\"Скорость ленты\", values2[i] );
+ }
+
+}
+}
+" 0
+ E E E
+2 5
+"PRIMITIVE_TEXT1"
+""
+1 40 20 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.105263157894737 0 0.75 23.88684210526321 317.96875 0 E 40 20 230 60
+0 2 2 "0s" 0 0 0 64 0 0  40 20 1
+2
+LANG:10001 38 Noto Sans,-1,18,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 27 Начальная дата
+LANG:10027 27 Начальная дата
+2 6
+"PRIMITIVE_TEXT2"
+""
+1 290 20 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.05 0 0.75 12.28157894736835 317.96875 0 E 290 20 490 60
+0 2 2 "0s" 0 0 0 64 0 0  290 20 1
+2
+LANG:10001 38 Noto Sans,-1,18,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 25 Конечная дата
+LANG:10027 25 Конечная дата
+0
+LAYER, 1 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 2 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 3 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 4 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 6 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 7 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+0

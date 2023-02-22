@@ -1,0 +1,119 @@
+V 14
+3
+LANG:10001 10 Navigation
+LANG:10027 18 Навигация
+LANG:10000 10 Navigation
+PANEL,-1 -1 130 25 N "_3DFace" 0
+"main()
+{ 
+  // Init the alarm indicator
+  string strServerName = substr(getSystemName(), 0, strlen(getSystemName()) - 1);
+  
+  if (!mappingHasKey(ptnavi_navigation, strServerName))
+  {
+    DebugN(\"naviPanel Initialize has no valid servername ALARMINDICATOR has not been initialized!\");
+    
+    return;
+  }
+  
+  string strFileName = ptnavi_navigation[ strServerName ][ ptnavi_FILENAME ][ 1 ];
+  
+  // Determine the filename and sum alert number of the sumalert for this panel
+  int iSumAlertNumber = ptnavi_navigation[ strServerName ][ ptnavi_SUMALERTNUMBER ][ 1 ];
+
+  // determine the name of the sumalert datapoint
+  string sPanelSumAlert = strServerName + \":\" + pt_fileNameToDpName(strFileName, iSumAlertNumber);     
+  
+  if (strFileName == \"\") 
+  {    
+    return;
+  }
+  
+  if (!dpExists(sPanelSumAlert)) return;
+
+  dpConnect( \"ShowAlarmCB\",
+    sPanelSumAlert + \".Warning:_alert_hdl.._act_state_color\",
+    sPanelSumAlert + \".Alert:_alert_hdl.._act_state_color\",
+    sPanelSumAlert + \".Danger:_alert_hdl.._act_state_color\" );
+
+}
+
+void ShowAlarmCB(
+  string strDP1, string strWarning,
+  string strDP2, string strAlert,
+  string strDP3, string strDanger
+)
+{
+  string strColor;
+  
+  if( strlen( strWarning )) strColor = strWarning;
+  if( strlen( strAlert ))   strColor = strAlert;  
+  if( strlen( strDanger ))  strColor = strDanger;
+ 
+//   ALARMINDICATOR.foreCol = strColor;
+//   ALARMINDICATOR.visible = strlen( strColor ); 
+}
+
+
+
+
+
+
+
+
+
+" 0
+ E E E E 1 -1 -1 0  350 60
+""0  1
+E "dyn_string ptnavi_strOfflineServers;
+" 0
+ 4
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+"pdpi" "96"
+0 0 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+2
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+2
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+2
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+2
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+2
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+2
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

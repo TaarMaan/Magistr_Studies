@@ -1,0 +1,4274 @@
+V 14
+2
+LANG:10001 9 MainPanel
+LANG:10027 0 
+PANEL,-1 -1 1217 610 N "_3DFace" 3
+"$ACTION"
+"$FILENAME"
+"$SCREENTYPE"
+"main()
+{
+   panelNames = makeDynString();
+   multyThreadsIdis = makeDynInt();
+
+   dpSet(\"System1:A_source1.intensity.value\", 25);
+    dpSet(\"System1:A_source1.deviation.d1\", 1);
+    dpSet(\"System1:A_source1.deviation.d2\", 10);
+LCD1.decimals(1);
+
+dpSet(\"System1:TIP.tip\",0);
+
+  float current;
+   dpSet(\"System1:weighter_dp.probability.value\", 0.01);
+   dpSet(\"System1:A_source1.probability.value\", 0.01);
+   dpSet(\"System1:A_motor1.probability.value\", 0.01);
+   dpSet(\"System1:pusher1.probability.value\", 0.01);
+   dpSet(\"System1:pusher2.probability.value\", 0.01);
+   dpSet(\"System1:pusher3.probability.value\", 0.01);
+   dpSet(\"System1:conveyor_dp.probability.value\", 0.01);
+   dpGet(\"System1:weighter_dp.probability.value\", current);
+
+ LCD10.decimals(1);
+   while(true) {
+      bool motor;
+    dpGet(\"System1:A_motor1.command.isEnabled\", motor);
+    if (isConveyorWorking && motor){
+      if(convSpeed == 1){
+        setValue(\"LCD10\", \"value\",1 );
+      } else {
+        setValue(\"LCD10\", \"value\",1 + convSpeed/10);
+      }
+
+   }else {
+     setValue(\"LCD10\", \"value\",0);
+   }
+   delay(0,10);
+  }
+}
+" 0
+ E E E E 1 -1 -1 0  20 140
+""0  1
+E "bool isConveyorWorking = FALSE;
+bool isCargoGenerating = FALSE;
+float convSpeed = 1;
+int fullBucketNumber = 0;
+int genDistribution = 2;
+int massDistribution = 1;
+int RAND_MAX = 32767;
+float expectedValue = 5;
+float dispSqr = 2;
+int b = 10;
+int a = 3;
+double lamb = 0.1;
+float weighterThread = 0.0;
+float sourceThread = 0.0;
+float motorThread = 0.0;
+float pusher1Thread = 0.0;
+float pusher2Thread = 0.0;
+float pusher3Thread = 0.0;
+float conveyorThread = 0.0;
+
+float expectedValueTime = 10;
+float dispSqrTime = 30;
+int bTime = 5;
+int aTime = 1;
+double lambTime = 0.1;
+
+int determTime = 2;
+int determMass = 2;
+
+//
+dyn_string panelNames;
+
+dyn_string threadNames;
+
+dyn_int multyThreadsIdis;
+
+dyn_int threadIds;
+bool isHand = FALSE;
+bool isAuto = FALSE;
+
+public int m1 = 1, m2 = 3, m3 = 6, m4 = 10;
+
+void reset(){
+
+   for (int i = 1; i <= dynlen(panelNames); i++) {
+      removeSymbol(myModuleName(), myPanelName(), panelNames[i]);
+      dpDelete(panelNames[i]);
+      dynRemove(panelNames, i);
+    }
+
+    for (int i = 1; i <= dynlen(threadIds); i++)
+   {
+      DebugN(\"Th \" + threadIds[i]);
+      stopThread(threadIds[i]);
+       waitThread(threadIds[i]);
+      dynRemove(threadIds, i);
+    }
+
+dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+dpSet(\"System1:A_motor1.command.isEnabled\",true);
+setValue(\"ToggleSwitch_ewo1\", \"enabled\", true);
+
+
+  dpSet(\"System1:m1.\", 1);
+  dpSet(\"System1:m2.\", 3);
+  dpSet(\"System1:m3.\", 6);
+  dpSet(\"System1:m4.\", 10);
+    dpSet(\"System1:mass.type\", 1);
+   dpSet(\"System1:mass.determ\", 1);
+
+
+      dpSet(\"System1:mass.rand.norm.mu\", 1);
+         dpSet(\"System1:mass.rand.norm.sigma\", 1.5);
+
+ dpSet(\"System1:mass.rand.ravnomer.a\", 2);
+         dpSet(\"System1:mass.rand.ravnomer.b\", 5);
+
+       dpSet(\"System1:mass.rand.exp\", 7);
+
+        dpSet(\"System1:time.type\", 0);
+        dpSet(\"System1:time.determ\", 1);
+
+
+      dpSet(\"System1:time.rand.norm.mu\", 5);
+         dpSet(\"System1:time.rand.norm.sigma\", 2);
+
+ dpSet(\"System1:time.rand.ravnomer.a\", 2);
+         dpSet(\"System1:time.rand.ravnomer.b\", 5);
+
+       dpSet(\"System1:time.rand.exp\", 7);
+
+       setValue(\"LCD2\", \"intValue\", 0);
+       setValue(\"LCD3\", \"intValue\", 0);
+       setValue(\"LCD4\", \"intValue\", 0);
+       setValue(\"LCD5\", \"intValue\", 0);
+}
+" 0
+ 4
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+"pdpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 0 
+LANG:10027 0 
+6 1873
+"RECTANGLE45"
+""
+1 180 130 E E E 1 E 1 E N "WF_Text" E N "White" E E
+ E E
+324 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 4.194744861108774 0 0.7459350574098477 -414.1393584430036 42.04758774891827 1 E 180 130 300 210
+6 1875
+"RECTANGLE47"
+""
+1 347.5318890813642 196.111111111111 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+326 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.7374880536628965 0 0.913927452305983 84.61410009217067 -59.34820008363327 1 E 347.5318890813642 196.111111111111 1030.077702309061 217.0493344907406
+13 433
+"PUSH_BUTTON4"
+""
+1 1761.705979951607 758.5340924785799 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+126 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  1759.546863205858 752.5787224075732 1907.546863205859 780.5787224075732
+
+T 
+2
+LANG:10001 31 Очистить корзину
+LANG:10027 12 PUSH_BUTTON4
+"main(mapping event)
+{
+ string dpName = \"System1:A_bucket\" + fullBucketNumber + \".count.value\";
+dpSet(dpName,0);
+setValue(\"LCD\" + (fullBucketNumber + 1), \"intValue\", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+fullBucketNumber=0;
+setValue(\"PUSH_BUTTON4\", \"visible\", false);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+" 0
+ E E E
+13 467
+"PUSH_BUTTON5"
+""
+1 1686.666666666667 637.9578711439499 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+127 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  1687.760393078385 631.955790769515 1835.760393078384 659.955790769515
+
+T 
+2
+LANG:10001 30 Отремонтировать
+LANG:10027 12 PUSH_BUTTON4
+"main(mapping event)
+{dpSet(\"System1:weighter_dp.alert.mechanicalDamage\", false);
+ dpSet(\"System1:pusher1.alert.mechanicalDamage\", false);
+ dpSet(\"System1:pusher2.alert.mechanicalDamage\", false);
+ dpSet(\"System1:pusher3.alert.mechanicalDamage\", false);
+ dpSet(\"System1:conveyor_dp.alert.mechanicalDamage\", false);
+ dpSet(\"System1:A_source1.alert.mechanicalDamage\", false);
+ dpSet(\"System1:A_motor1.alert.damage\", false);
+
+ dpSet(\"System1:pusher1.command.push\", true);
+ dpSet(\"System1:pusher2.command.push\", true);
+ dpSet(\"System1:pusher3.command.push\", true);
+ dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+ dpSet(\"System1:weighter_dp.command.isEnabled\", true);
+ dpSet(\"System1:A_motor1.command.isEnabled\", true);
+ string dpName = \"System1:A_bucket\" + fullBucketNumber  + \".count.value\";
+ DebugN(\"dpname=\"+dpName);
+ dpSet(dpName,0);
+ setValue(\"LCD\" + (fullBucketNumber + 1), \"intValue\", 0);
+ isConveyorWorking = true;
+ isCargoGenerating = true;
+ dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+ fullBucketNumber=0;
+ setValue(\"PUSH_BUTTON5\", \"visible\", false);
+ ToggleSwitch_ewo1.enabled(true);
+ ToggleSwitch_ewo1.checked(true);
+}
+" 0
+ E E E
+13 535
+"PUSH_BUTTON6"
+""
+1 2034.746005063271 2026.615695409195 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+129 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  2032.560533463908 2016.430490499306 2165.560533463908 2059.430490499306
+
+T 
+2
+LANG:10001 39 Очистить 
+все корзины
+LANG:10027 12 PUSH_BUTTON4
+E E E E
+4 73
+"LINE5"
+""
+1 519.154767932868 68.7427238724726 E E E 1 E 1 E N "WF_FrameDark" E N {255,255,255} E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 14 3 2 1 E  519.5292552175276 68.7427238724726 520.5292552175276 105.7427238724726
+6 74
+"RECTANGLE18"
+""
+1 570 120 E E E 1 E 1 E N {0,0,0} E N "STD_value_invalid" E E
+ E E
+56 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.721405185293241 0 1.226153483992463 -496.0998041054845 -102.9187638864723 1 E 570 120 610 160
+4 77
+"LINE7"
+""
+1 652.2032177837508 67.7916624749821 E E E 1 E 1 E N "WF_FrameDark" E N {255,255,255} E E
+ E E
+59 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 14 3 2 1 E  652.4532177837508 67.7916624749821 653.4532177837508 106.0348930231696
+6 78
+"RECTANGLE20"
+""
+1 570 120 E E E 1 E 1 E N {0,0,0} E N "STD_valve_open" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.717311386656512 0 1.226173371647509 -360.2605003435914 -102.9145801569069 1 E 570 120 610 160
+29 88
+"LCD2"
+""
+1 497.9047368779758 235.7496918737444 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+67 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  478.9047368779759 245.7496918737444 554.9047368779761 285.7496918737444
+19 NUMLED.NumLEDCtrl.1
+0
+"main()
+{
+  float n;
+  dpGet(\"System1:A_bucket1.count.value\", n);
+  if(n==200.0){
+    dpSet(\"System1:A_bucket1.count.value\", 0.0);
+    setValue(\"LCD2\", \"intValue\", 0.0);}
+}" 0
+29 89
+"LCD3"
+""
+1 612.8410582444627 246.3699524211718 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+68 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  612.8410582444625 246.3699524211718 689.1589417555375 286.4694894582088
+19 NUMLED.NumLEDCtrl.1
+0
+"main()
+{
+  float n;
+  dpGet(\"System1:A_bucket2.count.value\", n);
+  if(n==400.0){
+    dpSet(\"System1:A_bucket2.count.value\", 0.0);
+    setValue(\"LCD3\", \"intValue\", 0.0);}
+}" 0
+30 93
+"FRAME1"
+""
+1 140 304 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+72 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.034640551663629 0 4.597829978713084 1302.261163622956 -1295.311298713003 0 E 140 304 371 391
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 18 Сообщения
+LANG:10027 11 Frame Title
+2 297
+"PRIMITIVE_TEXT19"
+""
+1 802.0000000000006 77 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+122 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.183567867735219 0 1 -155.4188497763027 85.64784741913974 0 E 802.0000000000006 77 804 95
+0 2 2 "0s" 0 0 0 192 0 0  802.0000000000006 77 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 3 >10
+29 331
+"ToggleSwitch_ewo1"
+""
+1 1071.018891137986 65.72653805693449 E E E 1 E 0 E N "STD_value_invalid" E N "WF_Text" E E
+ E E
+123 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  1071.08547246 65.48945273096118 1120.08547246 114.4894527309612
+16 ToggleSwitch.ewo
+1
+0 "toggled" "(bool on)"
+"      isConveyorWorking = on;
+      isCargoGenerating = on;
+      if(isAuto){
+        dpSet(\"System1:A_motor1.alert.damage\", on);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", on);
+    }"
+E29 365
+"SLIDER1"
+""
+1 535.6307385820012 807.5431986617377 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+124 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+7
+"orientation" "enum 0"
+"minValue" "int 1"
+"maxValue" "int 10"
+"tickPosition" "enum 1"
+"tickInterval" "int 1"
+"sizePolicy" "Expanding Fixed"
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  1019.654111793375 550.1283271508495 1160.773964135944 569.1283271508495
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  convSpeed = value;
+  DebugN(value);"
+"main()
+{
+  if(!getUserPermission(6)){
+    SLIDER1.transparentForMouse(true);
+    this.color(\"red\");
+    SLIDER1.font();
+    DebugN(\"authorization for level 4 ok\");}
+  else DebugN(\"no authorization for level\");
+}
+" 0
+25 606
+"TABLE1"
+""
+1 1492.217655282583 268.8953460615065 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+134 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,13,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  37.95891580760622 393.0294864514561 383.9589158076062 598.029486451456
+EE 1 0 1 2 0 "Дата и время" 15 1 0 "s" 2
+LANG:10001 22 Дата и время
+LANG:10027 2 #1
+E
+2
+LANG:10001 0 
+LANG:10027 0 
+
+160 "Событие" 78 1 0 "s" 2
+LANG:10001 14 Событие
+LANG:10027 2 #1
+E
+2
+LANG:10001 0 
+LANG:10027 0 
+
+795 
+16 16 10 0
+2
+LANG:10001 35 MS Shell Dlg 2,-1,13,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 0 1 1 1 7
+1 0
+13 692
+"PUSH_BUTTON9"
+""
+1 1189.758359944943 2285.424518969909 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+160 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  2032.184221783034 2016.635185802196 2165.184221783034 2059.635185802196
+
+T 
+2
+LANG:10001 31 Скрыть настройки
+LANG:10027 12 PUSH_BUTTON4
+E E E E
+2 707
+"PRIMITIVE_TEXT35"
+""
+1 102.3069472662725 240.8110344663368 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+166 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 102.3069472662725 240.8110344663368 104 253
+0 2 2 "0s" 0 0 0 192 0 0  102.3069472662725 240.8110344663368 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+2 709
+"PRIMITIVE_TEXT36"
+""
+1 210.5909075859933 197.875282543573 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+168 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.9999999999999999 0 0.9999999999999999 30.91471655657558 34.69992335522585 0 E 210.5909075859933 197.875282543573 212 210
+0 2 2 "0s" 0 0 0 192 0 0  210.5909075859933 197.875282543573 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+2 710
+"PRIMITIVE_TEXT37"
+""
+1 82.30694726627253 210.8110344663368 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+169 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 82.30694726627253 210.8110344663368 84 223
+0 2 2 "0s" 0 0 0 192 0 0  82.30694726627253 210.8110344663368 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+1 2709 5 "7" 0
+0
+1 2721 7 "7" 0
+0
+1 2727 8 "7" 0
+0
+2 745
+"PRIMITIVE_TEXT38"
+""
+1 76.30694726627254 86.81103446633685 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+175 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 76.30694726627254 86.81103446633685 78 99
+0 2 2 "0s" 0 0 0 192 0 0  76.30694726627254 86.81103446633685 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+13 779
+"PUSH_BUTTON10"
+""
+1 129.6237022879485 579.0523297403258 E E E 1 E 1 E N "_ButtonText" E N "White" E E
+ E E
+176 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  1024.438230688584 187.9447218636109 1157.438230688585 230.9447218636109
+
+T 
+2
+LANG:10001 40 Автоматический
+ режим
+LANG:10027 13 PUSH_BUTTON10
+"dyn_string dpNames;
+
+dyn_int deletedIds;
+
+int startY = 130;
+int startX = 40;
+
+int pistonX5 = 440;
+int pistonX1 = 580;
+int pistonX3 = 780;
+int pistonX4 = 855;
+int pistonX2 = 710;
+
+int weightX = 225;
+
+
+string bucketLabel1 = \"LCD2\";
+string bucketLabel2 = \"LCD3\";
+string bucketLabel3 = \"LCD4\";
+string bucketLabel4 = \"LCD5\";
+
+mapping cargosToPush;
+int amount1, amount2, amount3, amount4;
+shape table = getShape(\"TABLE1\");
+
+main()
+{
+  ToggleSwitch_ewo1.visible = true;
+  PRIMITIVE_TEXT62.visible = TRUE;
+PRIMITIVE_TEXT62.text = \"Автомат. режим запущен\";
+  PANEL_REF22.position(2000,2000);
+      PANEL_REF21.position(2000,2000);
+      PANEL_REF20.position(2000,2000);
+      PANEL_REF19.position(2000,2000);
+      PANEL_REF18.position(2000,2000);
+      PANEL_REF25.position(2000,2000);
+   isHand = FALSE;
+ isAuto = TRUE;
+  reset();
+  init();
+  runThreads();
+}
+
+void init() {
+  dpNames = makeDynString();
+
+setValue(\"ToggleSwitch_ewo1\", \"checked\", true);
+
+  dpSet(\"System1:A_bucket1.count.value\", 0);
+  dpSet(\"System1:A_bucket2.count.value\", 0);
+  dpSet(\"System1:A_bucket3.count.value\", 0);
+  dpSet(\"System1:A_bucket4.count.value\", 0);
+}
+void runThreads(){
+   for (int i = 1; i <= dynlen(multyThreadsIdis); i++)
+  {DebugN(\"Th \" + multyThreadsIdis[i]);
+      stopThread(multyThreadsIdis[i]);
+      waitThread(multyThreadsIdis[i]);
+      dynRemove(multyThreadsIdis, i);}
+ int upt = startThread(\"update\");
+ int gen = startThread(\"generateCargos\");
+ int br = startThread(\"breakerThread\");
+  dynAppend(multyThreadsIdis, upt);
+   dynAppend(multyThreadsIdis, gen);
+    dynAppend(multyThreadsIdis, br);
+}
+//наполнение корзин
+void updateMass(){
+  float mass1, mass2, mass3,mass4;
+
+  dpGet(\"System1:A_bucket1.max_value\", amount1);
+  dpGet(\"System1:A_bucket2.max_value\", amount2);
+  dpGet(\"System1:A_bucket3.max_value\", amount3);
+  dpGet(\"System1:A_bucket4.max_value\", amount4);
+
+  dpGet(\"System1:A_bucket1.max_value\", mass1);
+  dpGet(\"System1:A_bucket2.max_value\", mass2);
+  dpGet(\"System1:A_bucket3.max_value\", mass3);
+  dpGet(\"System1:A_bucket4.max_value\", mass4);
+
+  setValue(\"PRIMITIVE_TEXT30\", \"text\", mass1);
+  setValue(\"PRIMITIVE_TEXT34\", \"text\", mass2);
+  setValue(\"PRIMITIVE_TEXT32\", \"text\", mass3);
+
+  dpGet(\"System1:m1.\", m1);
+  dpGet(\"System1:m2.\", m2);
+  dpGet(\"System1:m3.\", m3);
+  dpGet(\"System1:m4.\", m4);
+
+}
+
+void generateCargos(){
+  int id = 0;
+  while(true) {
+    if(isHand) {
+      return;
+    }
+    if (!isCargoGenerating) {continue;}
+    updateMass();
+    generateCargoWithID(id++);
+    int del = getDelay() * 1000;
+    delay(0, del);
+  }
+}
+
+void generateCargoWithID(int id) {
+  string name = \"CARGO\" + id;
+  dpCreate(name, \"A_cargo\");
+
+  float mass = generateMass();
+  int targetX = getTargetX(mass);
+  dpSet(name + \".mass\", mass);
+  dpSet(name + \".targetX\", targetX);
+  string weightLabel = \"$weight:\" ;
+  string colorStr = \"$color:\";
+
+   int color;
+   float d1,d2;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+    if (mass ==0) {color =  1;}
+    else if ( mass ==1) {color =  2;}
+    else if(mass ==2) {color=3;}
+    else {color = 4;}
+
+  switch(color) {
+    case 1:
+    colorStr = colorStr + \"STD_value_invalid\";
+    break;
+    case 2:
+    colorStr = colorStr + \"STD_valve_open\";
+    break;
+    case 3:
+    colorStr = colorStr + \"Yellow\";
+    break;
+    case 4:
+    colorStr = colorStr + \"Black\";
+    break;
+
+  }
+
+  addSymbol(myModuleName(), myPanelName(), \"gedi/Cargo.pnl\",name,makeDynString(weightLabel, colorStr),startX, startY,0,0,0);
+  dynAppend(panelNames, name);}
+
+
+float generateMass(){
+  int dist;
+  dpGet(\"System1:mass.determ\",determMass);
+  dpGet(\"System1:mass.type\",dist);
+      dpGet(\"System1:mass.rand.norm.mu\",expectedValue);
+        dpGet(\"System1:mass.rand.norm.sigma\",dispSqr);
+        dpGet(\"System1:mass.rand.ravnomer.a\",a);
+        dpGet(\"System1:mass.rand.ravnomer.b\",b);
+        dpGet(\"System1:mass.rand.exp\",lamb);
+
+  switch(dist) {
+    case 0:
+    return determMass;
+    case 1 :
+    return getNormDistribValue(expectedValue,dispSqr);
+
+  }
+}
+
+int getTargetX(float mass) {
+  float d1,d2;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+
+  if (mass==0) {
+  return pistonX5;
+  } else if (mass==1)
+  {return pistonX1;}
+  else if(mass==2)
+  {return pistonX2;}
+  else {return pistonX3;}
+}
+
+int getPusherNum(int pos) {
+  if (pos == pistonX5) {
+    return 3;
+  }
+  else if (pos == pistonX1) {
+    return 4;
+  }
+
+  else if (pos == pistonX2) {
+    return 5;
+  }
+  else {
+    return 0;
+  }
+}
+
+int getLineNum(int pos) {
+  if (pos == pistonX5) {
+    return 5;
+  }
+  else if (pos == pistonX1) {
+    return 7;
+  }
+
+  else if (pos == pistonX2) {
+    return 9;
+  }
+  else {
+    return 0;
+  }
+}
+
+string getBucketLabel(float mass) {
+    float d1,d2;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+  if(mass ==0)
+  {return bucketLabel1;
+  }else if( mass ==1)
+  {return bucketLabel2;}
+  else if ( mass ==2)
+  {return bucketLabel4;}else
+  {return bucketLabel3;}
+}
+
+int getBucketByMass (float mass) {
+      float d1,d2;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+    if (mass==0) {
+    return 1;
+  } else if (mass==1) {
+    return 2;
+  }
+   else if (mass==2) {
+    return 4;
+  }else  {
+    return 3;
+  }
+}
+
+int getDelay() {
+        int intensity;
+        dpGet(\"System1:A_source1.intensity.value\", intensity);
+        return 60/intensity;
+}
+
+
+void update(){
+  while(true) {
+    if(isHand) {
+      return;
+    }
+    if (!isConveyorWorking || isSomeBucketFull()) { continue; }
+    threadIds = makeDynInt();
+    for (int i = 1; i <= dynlen(panelNames); i++) {
+      int id = startThread(\"updateAt\", i);
+      dynAppend(threadIds, id);
+    }
+    for (int i = 1; i <= dynlen(threadIds); i++) {
+      int id = threadIds[i];
+      if (dynContains(deletedIds, id)) {
+        waitThread(id);
+      }
+    }
+
+
+   if(isConveyorWorking){
+      if(convSpeed == 1){
+         dpSet(\"System1:conveyor_dp.speed.value\", 1);
+      } else {
+        dpSet(\"System1:conveyor_dp.speed.value\", 1 + convSpeed/10);
+      }
+
+    } else {
+      dpSet(\"System1:conveyor_dp.speed.value\", 0);
+    }
+
+    delay(0,20);//
+  }
+}
+
+bool isSomeBucketFull(){
+    int am1, am2, am3, am4;
+
+    dpGet(\"System1:A_bucket1.count.value\", am1);
+    dpGet(\"System1:A_bucket2.count.value\", am2);
+    dpGet(\"System1:A_bucket3.count.value\", am3);
+    dpGet(\"System1:A_bucket4.count.value\", am4);
+
+    if (amount1 == am1) {
+      fullBucketNumber = 1;
+    }
+    else if (amount2 == am2) {
+      fullBucketNumber = 2;
+    }
+    else if (amount3 == am3) {
+      fullBucketNumber = 4;
+    }
+    else if (amount4 == am4) {
+      fullBucketNumber = 3;
+    }//
+    if (fullBucketNumber != 0) {
+      performOverflowBucket();
+      return true;
+    }
+    else {
+      return false;
+    }
+}
+
+void performOverflowBucket() {
+      isConveyorWorking = false;
+      isCargoGenerating = false;
+      time t1 = getCurrentTime();
+
+      string localTime;
+
+      localTime = formatTime(\"%c\", t1, \"\");
+
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+
+      string messageBoxText;
+      messageBoxText = \"корзина \" + fullBucketNumber + \" полная\";
+
+      table.appendLine(\"Дата и время\", localTime, \"Событие\", messageBoxText);
+
+      setValue(\"PUSH_BUTTON4\", \"visible\", true);
+
+     if (isConveyorWorking == false || isCargoGenerating == false){
+string dpName = \"System1:A_bucket\" + fullBucketNumber + \".count.value\";
+dpSet(dpName,0);
+setValue(\"LCD\" + (fullBucketNumber + 1), \"intValue\", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+fullBucketNumber=0;
+setValue(\"PUSH_BUTTON4\", \"visible\", false);
+dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+}
+}
+
+
+void updateAt(int i) {
+  float x = 0, y = 0, targetX, mass;
+  string name = panelNames[i];
+  getValue(name, \"position\", x, y);
+  float summary = x +(1.5 + convSpeed/7);
+  setValue(name, \"position\", summary, startY);
+
+  dpGet(name + \".targetX\", targetX);
+  dpGet(name + \".mass\", mass);
+
+if(weightX == x){
+     dpSet(\"System1:weighter_dp.current_weight.value\", mass);
+   }
+    if (x  >= weightX && x<= weightX + 10 ) {
+    setValue(\"LCD1\", \"value\", mass);
+    delay(0,600);
+        setValue(\"LCD1\", \"value\", 0);
+  }
+
+  if (x == targetX) {
+    int count;
+    string label = getBucketLabel(mass);
+    int pushern = getPusherNum(targetX);
+    int lineNum = getLineNum(targetX);
+    dynInsertAt(deletedIds, i, 0);
+    dynRemove(threadIds,i);
+    if (pushern != 0) {
+     int psh = startThread(\"pushRunnable\", name, pushern, lineNum, i);
+     dynAppend(multyThreadsIdis, psh);
+    } else {
+         removeSymbol(myModuleName(), myPanelName(), name);
+    }
+    dynRemove(panelNames, i);
+    dpDelete(name);
+    string dpName = \"System1:A_bucket\" + getBucketByMass(mass) + \".count.value\";
+    getValue(label, \"intValue\", mass);
+    setValue(label, \"intValue\", ++mass);
+    int bucketCount;
+    dpGet(dpName, bucketCount);
+    dpSet(dpName, ++bucketCount);
+
+  }
+}
+
+void pushRunnable(string name, int pusherNum, int lineNum, int i) {
+  int pusherX, pusherY, lineX, lineY, cargoX, cargoY;
+  string pusher = \"PANEL_REF\" + pusherNum;
+  string line = \"LINE\" + lineNum;
+  int count = 0;
+  while(count < 45) {
+    getValue(pusher, \"position\", pusherX, pusherY);
+    setValue(pusher, \"position\", pusherX, ++pusherY);
+    getValue(line, \"position\", lineX, lineY);
+    setValue(line, \"position\", lineX, ++lineY);
+
+    count++;
+    if(count > 20) {
+       getValue(name, \"position\", cargoX, cargoY);
+       cargoY += 4;
+      setValue(name, \"position\", cargoX, cargoY);
+    }
+  }
+
+  delay(0,50);
+  removeSymbol(myModuleName(), myPanelName(), name);
+  while (count > 0) {
+      getValue(pusher, \"position\", pusherX, pusherY);
+      setValue(pusher, \"position\", pusherX, --pusherY);
+      getValue(line, \"position\", lineX, lineY);
+      setValue(line, \"position\", lineX, --lineY);
+      count--;
+  }
+}
+
+void breakerThread() {
+ dpSet(\"System1:pusher1.command.push\", true);
+ dpSet(\"System1:pusher2.command.push\", true);
+ dpSet(\"System1:pusher3.command.push\", true);
+ dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+ dpSet(\"System1:weighter_dp.command.isEnabled\", true);
+  while(true) {
+    if(isHand) {
+      return;
+    }
+      delay(2.5);
+      if (isConveyorWorking) {
+float weighterThreadCurrent;
+float sourceThreadCurrent;
+float motorThreadCurrent;
+float pusher1ThreadCurrent;
+float pusher2ThreadCurrent;
+float pusher3ThreadCurrent;
+float conveyorThreadCurrent;
+dpGet(\"System1:weighter_dp.probability.value\", weighterThreadCurrent);
+   dpGet(\"System1:A_source1.probability.value\", sourceThreadCurrent);
+   dpGet(\"System1:A_motor1.probability.value\", motorThreadCurrent);
+   dpGet(\"System1:pusher1.probability.value\", pusher1ThreadCurrent);
+   dpGet(\"System1:pusher2.probability.value\", pusher2ThreadCurrent);
+   dpGet(\"System1:pusher3.probability.value\", pusher3ThreadCurrent);
+   dpGet(\"System1:conveyor_dp.probability.value\", conveyorThreadCurrent);
+
+      float rand = (float)rand()/32767;
+      string type;
+      string messageBoxText;
+      time t1 = getCurrentTime();
+      string localTime;
+
+      if(rand < weighterThreadCurrent){
+        dpSet(\"System1:weighter_dp.command.isEnabled\", false);
+        dpSet(\"System1:weighter_dp.alert.mechanicalDamage\", true);
+        type = \"сканер\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      setValue(\"PUSH_BUTTON5\", \"visible\", true);
+      }
+      rand = (float)rand()/32767;
+
+       if(rand < pusher1ThreadCurrent){
+        dpSet(\"System1:pusher1.command.push\", false);
+        dpSet(\"System1:pusher1.alert.mechanicalDamage\", true);
+        type = \"толкатель 1\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+      isConveyorWorking = false;
+      isCargoGenerating = false;
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      setValue(\"PUSH_BUTTON5\", \"visible\", true);
+      }
+       rand = (float)rand()/32767;
+
+         if(rand < pusher2ThreadCurrent){
+        dpSet(\"System1:pusher2.command.push\", false);
+         dpSet(\"System1:pusher2.alert.mechanicalDamage\", true);
+        type = \"толкатель 2\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      setValue(\"PUSH_BUTTON5\", \"visible\", true);
+      }
+         rand = (float)rand()/32767;
+
+         if(rand < pusher3ThreadCurrent){
+        dpSet(\"System1:pusher3.command.push\", false);
+         dpSet(\"System1:pusher3.alert.mechanicalDamage\", true);
+        type = \"толкатель 3\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      setValue(\"PUSH_BUTTON5\", \"visible\", true);
+      }
+         rand = (float)rand()/32767;
+
+         if(rand < conveyorThreadCurrent){
+        dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+         dpSet(\"System1:conveyor_dp.alert.mechanicalDamage\", true);
+        type = \"конвейер\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      setValue(\"PUSH_BUTTON5\", \"visible\", true);
+      }
+         rand = (float)rand()/32767;
+
+          if(rand < sourceThreadCurrent){
+            dpSet(\"System1:A_source1.alert.mechanicalDamage\", true);
+    type = \"товаровыпускающее устройство\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      setValue(\"PUSH_BUTTON5\", \"visible\", true);
+      }
+          rand = (float)rand()/32767;
+
+          if(rand < motorThreadCurrent){
+         dpSet(\"System1:A_motor1.command.isEnabled\", false);
+         dpSet(\"System1:A_motor1.alert.damage\", true);
+    type = \"приводное устройство\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      setValue(\"PUSH_BUTTON5\", \"visible\", true);
+      }
+
+      if(isConveyorWorking == false || isCargoGenerating == false){
+        delay(2);
+         dpSet(\"System1:weighter_dp.command.isEnabled\", true);
+         dpSet(\"System1:weighter_dp.alert.mechanicalDamage\", false);
+         dpSet(\"System1:pusher1.command.push\", true);
+         dpSet(\"System1:pusher1.alert.mechanicalDamage\", false);
+         dpSet(\"System1:pusher2.command.push\", true);
+         dpSet(\"System1:pusher2.alert.mechanicalDamage\", false);
+         dpSet(\"System1:pusher3.command.push\", true);
+         dpSet(\"System1:pusher3.alert.mechanicalDamage\", false);
+         dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+         dpSet(\"System1:conveyor_dp.alert.mechanicalDamage\", false);
+         dpSet(\"System1:A_motor1.command.isEnabled\", true);
+         dpSet(\"System1:A_motor1.alert.damage\", false);
+
+string dpName = \"System1:A_bucket\" + fullBucketNumber + \".count.value\";
+dpSet(dpName,0);
+setValue(\"LCD\" + (fullBucketNumber + 1), \"intValue\", 0);
+isConveyorWorking = true;
+isCargoGenerating = true;
+dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+fullBucketNumber=0;
+setValue(\"PUSH_BUTTON5\", \"visible\", false);
+ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+      }
+    }
+   }
+}
+
+float getNormDistribValue(float aa, float bb) {
+float sum =0,x;
+for(int i=0;i<8;i++)
+  sum+=1.0*rand()/RAND_MAX;
+  x= (sqrt(2.0)*(bb)*(sum-6.95))/2.0+aa;
+if(x<0){x=x*(-1);}
+ return floor(x);
+}
+
+" 0
+ E E E
+13 806
+"PUSH_BUTTON11"
+""
+1 131.3950017247303 535.8497601554479 E E E 1 E 1 E N "_ButtonText" E N "WF_EwoWaitBackground" E E
+ E E
+177 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  1024.668833137703 137.9060201833829 1157.668833137704 180.9060201833829
+
+T 
+2
+LANG:10001 23 Ручной режим
+LANG:10027 13 PUSH_BUTTON10
+"dyn_string dpNames;
+
+dyn_int deletedIds;
+
+int startY = 130;
+int startX = 40;
+
+int pistonX5 = 440;
+int pistonX1 = 580;
+int pistonX3 = 780;
+int pistonX4 = 855;
+int pistonX2 = 710;
+
+int weightX = 225;
+
+
+string bucketLabel1 = \"LCD2\";
+string bucketLabel2 = \"LCD3\";
+string bucketLabel3 = \"LCD4\";
+string bucketLabel4 = \"LCD5\";
+
+mapping cargosToPush;
+
+int amount1, amount2, amount3, amount4;
+
+shape table = getShape(\"TABLE1\");
+
+
+
+main()
+{
+  ToggleSwitch_ewo1.visible = true;
+  PRIMITIVE_TEXT62.visible = TRUE;
+PRIMITIVE_TEXT62.text = \"Ручной режим запущен\";
+  PANEL_REF22.position(28,60);
+      PANEL_REF21.position(113,213);
+      PANEL_REF20.position(264,59);
+      PANEL_REF18.position(477,42);
+      PANEL_REF19.position(611,42);
+      PANEL_REF25.position(745,42);//
+   isHand = TRUE;
+ isAuto = FALSE;
+  reset();
+  init();
+  runThreads();
+}
+
+void init() {
+  setValue(\"ToggleSwitch_ewo1\", \"checked\", true);
+  dpNames = makeDynString();
+
+threadNames = makeDynString();
+  dpSet(\"System1:A_bucket1.count.value\", 0);
+  dpSet(\"System1:A_bucket2.count.value\", 0);
+  dpSet(\"System1:A_bucket3.count.value\", 0);
+  dpSet(\"System1:A_bucket4.count.value\", 0);
+}
+
+void runThreads(){
+   for (int i = 1; i <= dynlen(multyThreadsIdis); i++) {
+      DebugN(\"Th \" + multyThreadsIdis[i]);
+      stopThread(multyThreadsIdis[i]);
+      waitThread(multyThreadsIdis[i]);
+      dynRemove(multyThreadsIdis, i);
+    }
+ int upt = startThread(\"update\");
+ int gen = startThread(\"generateCargos\");
+ int br = startThread(\"breakerThread\");
+  dynAppend(multyThreadsIdis, upt);
+   dynAppend(multyThreadsIdis, gen);
+    dynAppend(multyThreadsIdis, br);
+}
+
+void updateMass(){
+     float mass1, mass2, mass3,mass4;
+
+  dpGet(\"System1:A_bucket1.max_value\", amount1);
+  dpGet(\"System1:A_bucket2.max_value\", amount2);
+  dpGet(\"System1:A_bucket3.max_value\", amount3);
+  dpGet(\"System1:A_bucket4.max_value\", amount4);
+
+  dpGet(\"System1:A_bucket1.max_value\", mass1);
+  dpGet(\"System1:A_bucket2.max_value\", mass2);
+  dpGet(\"System1:A_bucket3.max_value\", mass3);
+  dpGet(\"System1:A_bucket4.max_value\", mass4);
+
+  setValue(\"PRIMITIVE_TEXT30\", \"text\", mass1);
+  setValue(\"PRIMITIVE_TEXT34\", \"text\", mass2);
+  setValue(\"PRIMITIVE_TEXT32\", \"text\", mass3);
+
+
+  dpGet(\"System1:m1.\", m1);
+  dpGet(\"System1:m2.\", m2);
+  dpGet(\"System1:m3.\", m3);
+  dpGet(\"System1:m4.\", m4);
+
+}
+
+void generateCargos(){
+  int id = 0;
+  while(true) {
+    if(isAuto) {
+      return;
+    }
+    bool sour;
+    bool motor;
+    dpGet(\"System1:conveyor_dp.command.isEnabled\",motor);
+    dpGet(\"System1:conveyor_dp.command.isEnabled\",sour);
+    if (!isCargoGenerating || !sour || !motor) { continue; }
+    updateMass();
+    generateCargoWithID(id++);
+    int del = getDelay() * 1000;
+    delay(0, del);
+  }
+}
+
+void generateCargoWithID(int id) {
+  string name = \"CARGO\" + id;
+  dpCreate(name, \"A_cargo\");
+  float mass = generateMass();
+  int targetX = getTargetX(mass);
+  dpSet(name + \".mass\", mass);
+  dpSet(name + \".targetX\", targetX);
+  string weightLabel = \"$weight:\";
+  string colorStr = \"$color:\";
+   int color;
+   float d1,d2;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+    float d1L = 1 - d1/100;
+    float d1R = 1 + d1/100;
+    float d2L = 1 - d2/100;
+    float d2R = 1 + d2/100;
+    if (mass ==0)       {color =  1;}
+    else if ( mass ==1) {color =  2;}
+    else if (mass==2)   {color =  3;}
+    else {color = 4;}
+
+  int someInt = getBucketByMass(mass);
+
+  switch(color) {
+    case 1:
+    colorStr = colorStr + \"STD_value_invalid\";
+    break;
+    case 2:
+    colorStr = colorStr + \"STD_valve_open\";
+    break;
+    case 3:
+    colorStr = colorStr + \"Yellow\";
+    break;
+    case 4:
+    colorStr = colorStr + \"Black\";
+    break;
+  }
+  addSymbol(myModuleName(), myPanelName(), \"gedi/Cargo.pnl\",name,makeDynString(weightLabel, colorStr),startX, startY,0,0,0);
+  dynAppend(panelNames, name);
+
+}
+
+float generateMass(){
+  int dist;
+  dpGet(\"System1:mass.determ\",determMass);
+  dpGet(\"System1:mass.type\",dist);
+      dpGet(\"System1:mass.rand.norm.mu\",expectedValue);
+        dpGet(\"System1:mass.rand.norm.sigma\",dispSqr);
+        dpGet(\"System1:mass.rand.ravnomer.a\",a);
+        dpGet(\"System1:mass.rand.ravnomer.b\",b);
+        dpGet(\"System1:mass.rand.exp\",lamb);
+
+  switch(dist) {
+    case 0:
+    return determMass;
+    case 1 :
+    return getNormDistribValue(expectedValue,dispSqr);
+
+  }
+}
+
+int getTargetX(float mass) {
+  float d1,d2;
+  bool p1,p2,p3;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+    dpGet(\"System1:pusher1.command.push\", p1);
+    dpGet(\"System1:pusher2.command.push\", p2);
+    dpGet(\"System1:pusher3.command.push\", p3);
+    bool we;
+    dpGet(\"System1:weighter_dp.command.isEnabled\", we);
+  if (mass==0) {return pistonX5;}
+  else if ( mass==1){return pistonX1;}
+  else if(mass==2){return pistonX2;}
+  else {return pistonX3;}}
+
+int getPusherNum(int pos) {
+  if (pos == pistonX5) {
+    return 3;
+  }
+  else if (pos == pistonX1) {
+    return 4;
+  }
+
+  else if (pos == pistonX2) {
+    return 5;
+  }
+  else {
+    return 0;
+  }
+}
+
+int getLineNum(int pos) {
+  if (pos == pistonX5) {
+    return 5;
+  }
+  else if (pos == pistonX1) {
+    return 7;
+  }
+
+  else if (pos == pistonX2) {
+    return 9;
+  }
+  else {
+    return 0;
+  }
+}
+
+string getBucketLabel(float mass) {
+    float d1,d2;
+  bool p1,p2,p3;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+    dpGet(\"System1:pusher1.command.push\", p1);
+    dpGet(\"System1:pusher2.command.push\", p2);
+    dpGet(\"System1:pusher3.command.push\", p3);
+    bool we;
+    dpGet(\"System1:weighter_dp.command.isEnabled\", we);
+  if (mass==0){return bucketLabel1;} else if
+     (mass==1){return bucketLabel2;} else if
+     (mass==2){return bucketLabel4;}
+  else { return bucketLabel3;}
+}
+
+int getBucketByMass (float mass) {
+    float d1,d2;
+  bool p1,p2,p3;
+   dpGet(\"System1:A_source1.deviation.d1\", d1);
+    dpGet(\"System1:A_source1.deviation.d2\", d2);
+    dpGet(\"System1:pusher1.command.push\", p1);
+    dpGet(\"System1:pusher2.command.push\", p2);
+    dpGet(\"System1:pusher3.command.push\", p3);
+    bool we;
+    dpGet(\"System1:weighter_dp.command.isEnabled\", we);
+  if (mass==0){return 1;} else if
+     (mass==1){return 2;} else if
+     (mass==2){return 4;}
+  else { return 3;}
+}
+
+int getDelay() {
+        int intensity;
+         dpGet(\"System1:A_source1.intensity.value\", intensity);
+        return 60/intensity;
+}
+void update(){
+
+  while(true) {
+    if(isAuto){
+      return;
+    }
+    bool conv;
+    bool motor;
+    dpGet(\"System1:conveyor_dp.command.isEnabled\", conv);
+    dpGet(\"System1:A_motor1.command.isEnabled\", motor);
+
+
+        if(isConveyorWorking && motor){
+      if(convSpeed == 1){
+         dpSet(\"System1:conveyor_dp.speed.value\", 1);
+      } else {
+        dpSet(\"System1:conveyor_dp.speed.value\", 1 + convSpeed/10);
+      }
+
+    } else {
+      dpSet(\"System1:conveyor_dp.speed.value\", 0);
+      DebugN(motor);
+    }
+
+    if ((!isConveyorWorking || !motor) || isSomeBucketFull()) { continue; }
+    threadIds = makeDynInt();
+    for (int i = 1; i <= dynlen(panelNames); i++) {
+      int id = startThread(\"updateAt\", i);
+      dynAppend(threadIds, id);
+    }
+    for (int i = 1; i <= dynlen(threadIds); i++) {
+      int id = threadIds[i];
+      if (dynContains(deletedIds, id)) {
+        waitThread(id);
+      }
+    }
+
+    delay(0,20);
+
+  }
+}
+
+bool isSomeBucketFull(){
+    int am1, am2, am3,am4;
+    dpGet(\"System1:A_bucket1.count.value\", am1);
+    dpGet(\"System1:A_bucket2.count.value\", am2);
+    dpGet(\"System1:A_bucket3.count.value\", am3);
+    dpGet(\"System1:A_bucket4.count.value\", am4);
+
+    if (amount1 == am1) {
+      fullBucketNumber = 1;
+    }
+    else if (amount2 == am2) {
+      fullBucketNumber = 2;
+    }
+    else if (amount3 == am3) {
+      fullBucketNumber = 3;
+    }
+    else if (amount4 == am4) {
+      fullBucketNumber = 4;
+    }
+
+    if (fullBucketNumber != 0) {
+      performOverflowBucket();
+      return true;
+    }
+    else {
+      return false;
+    }
+}
+
+void performOverflowBucket() {
+      isConveyorWorking = false;
+      isCargoGenerating = false;
+      time t1 = getCurrentTime();
+      string localTime;
+      localTime = formatTime(\"%c\", t1, \"\");
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      string messageBoxText;
+      messageBoxText = \"корзина \" + fullBucketNumber + \" полная\";
+       table.appendLine(\"Дата и время\", localTime, \"Событие\", messageBoxText);
+
+       if(fullBucketNumber == 1){
+         setValue(\"PUSH_BUTTON18\", \"visible\", true);
+       }
+       if(fullBucketNumber == 2){
+         setValue(\"PUSH_BUTTON19\", \"visible\", true);
+       }
+       if(fullBucketNumber == 3){
+         setValue(\"PUSH_BUTTON20\", \"visible\", true);
+       }
+       if(fullBucketNumber == 4){
+         setValue(\"PUSH_BUTTON26\", \"visible\", true);
+       }
+}
+
+
+void updateAt(int i) {
+
+  float x = 0, y = 0, targetX, mass;
+  string name = panelNames[i];
+  getValue(name, \"position\", x, y);
+  float summary = x +(1.5 + convSpeed/7);
+  setValue(name, \"position\",summary, startY);
+
+  dpGet(name + \".targetX\", targetX);
+  dpGet(name + \".mass\", mass);
+  bool we;
+  dpGet(\"System1:weighter_dp.command.isEnabled\", we);
+  if(weightX == x){
+     dpSet(\"System1:weighter_dp.current_weight.value\", mass);
+   }
+    if ((x  >= weightX && x<= weightX + 10 )&& we) {
+    setValue(\"LCD1\", \"value\", mass);
+    delay(0,600);
+        setValue(\"LCD1\", \"value\", 0);
+  }
+
+  if (x == targetX) {
+    int count;
+    string label = getBucketLabel(mass);
+    int pushern = getPusherNum(targetX);
+    int lineNum = getLineNum(targetX);
+    dynInsertAt(deletedIds, i, 0);
+    dynRemove(threadIds,i);
+    if (pushern != 0) {
+      int psh = startThread(\"pushRunnable\", name, pushern, lineNum, i);
+      dynAppend(multyThreadsIdis, psh);
+    } else {
+         removeSymbol(myModuleName(), myPanelName(), name);
+    }
+    dynRemove(panelNames, i);
+    dpDelete(name);
+    string dpName = \"System1:A_bucket\" + getBucketByMass(mass) + \".count.value\";
+    getValue(label, \"intValue\", mass);
+    setValue(label, \"intValue\", ++mass);
+    int bucketCount;
+    dpGet(dpName, bucketCount);
+    dpSet(dpName, ++bucketCount);
+
+  }
+}
+
+void pushRunnable(string name, int pusherNum, int lineNum, int i) {
+
+
+  int pusherX, pusherY, lineX, lineY, cargoX, cargoY;
+  string pusher = \"PANEL_REF\" + pusherNum;
+  string line = \"LINE\" + lineNum;
+  int count = 0;
+  while(count < 45) {
+    getValue(pusher, \"position\", pusherX, pusherY);
+    setValue(pusher, \"position\", pusherX, ++pusherY);
+    getValue(line, \"position\", lineX, lineY);
+    setValue(line, \"position\", lineX, ++lineY);
+
+    count++;
+    if(count > 20) {
+       getValue(name, \"position\", cargoX, cargoY);
+       cargoY += 4;
+      setValue(name, \"position\", cargoX, cargoY);
+    }
+  }
+
+  delay(0,50);
+  removeSymbol(myModuleName(), myPanelName(), name);
+  while (count > 0) {
+      getValue(pusher, \"position\", pusherX, pusherY);
+      setValue(pusher, \"position\", pusherX, --pusherY);
+      getValue(line, \"position\", lineX, lineY);
+      setValue(line, \"position\", lineX, --lineY);
+      count--;
+  }
+}
+
+
+void breakerThread() {
+
+  dpSet(\"System1:pusher1.command.push\", true);
+ dpSet(\"System1:pusher2.command.push\", true);
+ dpSet(\"System1:pusher3.command.push\", true);
+ dpSet(\"System1:conveyor_dp.command.isEnabled\", true);
+ dpSet(\"System1:weighter_dp.command.isEnabled\", true);
+
+  while(true) {
+     if(isAuto){
+      return;
+    }
+      delay(2.5);
+      bool motor;
+    dpGet(\"System1:A_motor1.command.isEnabled\", motor);
+      if (isConveyorWorking && motor) {
+            float weighterThreadCurrent;
+float sourceThreadCurrent;
+float motorThreadCurrent;
+float pusher1ThreadCurrent;
+float pusher2ThreadCurrent;
+float pusher3ThreadCurrent;
+float conveyorThreadCurrent;
+dpGet(\"System1:weighter_dp.probability.value\", weighterThreadCurrent);
+   dpGet(\"System1:A_source1.probability.value\", sourceThreadCurrent);
+   dpGet(\"System1:A_motor1.probability.value\", motorThreadCurrent);
+   dpGet(\"System1:pusher1.probability.value\", pusher1ThreadCurrent);
+   dpGet(\"System1:pusher2.probability.value\", pusher2ThreadCurrent);
+   dpGet(\"System1:pusher3.probability.value\", pusher3ThreadCurrent);
+   dpGet(\"System1:conveyor_dp.probability.value\", conveyorThreadCurrent);
+    bool p1,p2,p3;
+    dpGet(\"System1:pusher1.command.push\", p1);
+    dpGet(\"System1:pusher2.command.push\", p2);
+    dpGet(\"System1:pusher3.command.push\", p3);
+
+      float rand = (float)rand()/32767;
+      string type;
+      string messageBoxText;
+      time t1 = getCurrentTime();
+      string localTime;
+
+
+
+      if(rand < weighterThreadCurrent){
+        dpSet(\"System1:weighter_dp.command.isEnabled\", false);
+         dpSet(\"System1:A_motor1.command.isEnabled\", false);
+        dpSet(\"System1:weighter_dp.alert.mechanicalDamage\", true);
+        type = \"сканер\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      dynAppend(threadNames, \"We\");
+      setValue(\"PUSH_BUTTON22\", \"visible\", true);
+      }
+      rand = (float)rand()/32767;
+
+       if((rand < pusher1ThreadCurrent) && p1){
+        dpSet(\"System1:pusher1.command.push\", false);
+        dpSet(\"System1:A_motor1.command.isEnabled\", false);
+        dpSet(\"System1:pusher1.alert.mechanicalDamage\", true);
+        type = \"толкатель 1\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      dynAppend(threadNames, \"P1\");
+      setValue(\"PUSH_BUTTON15\", \"visible\", true);
+      }
+       rand = (float)rand()/32767;
+
+         if((rand < pusher2ThreadCurrent)&& p2){
+        dpSet(\"System1:pusher2.command.push\", false);
+        dpSet(\"System1:A_motor1.command.isEnabled\", false);
+         dpSet(\"System1:pusher2.alert.mechanicalDamage\", true);
+        type = \"толкатель 2\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      dynAppend(threadNames, \"P2\");
+      setValue(\"PUSH_BUTTON16\", \"visible\", true);
+      }
+         rand = (float)rand()/32767;
+
+         if((rand < pusher3ThreadCurrent) && p3){
+        dpSet(\"System1:pusher3.command.push\", false);
+        dpSet(\"System1:A_motor1.command.isEnabled\", false);
+        dpSet(\"System1:pusher3.alert.mechanicalDamage\", true);
+        type = \"толкатель 3\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      dynAppend(threadNames, \"P3\");
+      setValue(\"PUSH_BUTTON25\", \"visible\", true);
+      }
+       rand = (float)rand()/32767;
+
+         if(rand < conveyorThreadCurrent){
+        dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+        dpSet(\"System1:A_motor1.command.isEnabled\", false);
+         dpSet(\"System1:conveyor_dp.alert.mechanicalDamage\", true);
+        type = \"конвейер\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      dynAppend(threadNames, \"Conv\");
+      setValue(\"PUSH_BUTTON23\", \"visible\", true);
+      }
+         rand = (float)rand()/32767;
+
+          if(rand < sourceThreadCurrent){
+            dpSet(\"System1:A_source1.alert.mechanicalDamage\", true);
+            dpSet(\"System1:A_motor1.command.isEnabled\", false);
+    type = \"товаровыпускающее устройство\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      dynAppend(threadNames, \"Sour\");
+      setValue(\"PUSH_BUTTON21\", \"visible\", true);
+      }
+          rand = (float)rand()/32767;
+
+          if(rand < motorThreadCurrent){
+         dpSet(\"System1:A_motor1.command.isEnabled\", false);
+         dpSet(\"System1:A_motor1.alert.damage\", true);
+    type = \"приводное устройство\";
+              localTime = formatTime(\"%c\", t1, \"\");
+      messageBoxText = type + \" отказал\";
+      table.appendLine(\"Дата и время\", localTime,\"Событие\", messageBoxText);
+
+         isConveyorWorking = false;
+      isCargoGenerating = false;
+      setValue(\"ToggleSwitch_ewo1\", \"checked\", false);
+      setValue(\"ToggleSwitch_ewo1\", \"enabled\", false);
+      dpSet(\"System1:conveyor_dp.command.isEnabled\", false);
+      dynAppend(threadNames, \"Mot\");
+      setValue(\"PUSH_BUTTON17\", \"visible\", true);
+      }
+    }
+   }
+}
+float getNormDistribValue(float aa, float bb) {
+float sum =0,x;
+for(int i=0;i<8;i++)
+  sum+=1.0*rand()/RAND_MAX;
+  x= (sqrt(2.0)*(bb)*(sum-6.95))/2.0+aa;
+if(x<0){x=x*(-1);}
+ return floor(x);
+}
+" 0
+ E E E
+2 836
+"PRIMITIVE_TEXT42"
+""
+1 520 250 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+181 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.238963261654654 0 1.09767789855141 -108.2608960604202 45.58052536214754 0 E 501 250 539 271
+0 2 2 "0s" 0 0 0 193 0 0  520 250 1
+2
+LANG:10001 37 Noto Sans,-1,16,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 5 /200 
+LANG:10027 16 Максимум
+2 837
+"PRIMITIVE_TEXT43"
+""
+1 667.9645038865364 319.8394458592899 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+182 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 651 319.8394458592899 685 341
+0 2 2 "0s" 0 0 0 193 0 0  667.9645038865364 319.8394458592899 1
+2
+LANG:10001 37 Noto Sans,-1,16,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 4 /400
+LANG:10027 16 Максимум
+28 501
+"TAB1"
+""
+1 406.0992123024415 380.1059999300186 E E E 1 E 1 E N {0,0,0} E N "White" E E
+ E E
+128 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"sizePolicy" "Expanding Expanding"
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  379.9383737114092 393.0442296771841 972.6712051176992 597.8245754845608
+"main()
+{
+  if(!getUserPermission(6)){
+    TAB1.transparentForMouse(true);
+    langString f = \"Arial Black,8,-1,5,50,0,0,0,0,0\";
+    this.color(\"grey\");
+    this.font(f);
+    DebugN(\"authorization for level 4 ok\");}
+  else DebugN(\"no authorization for level\");
+}
+" 0
+2 "Параметры" 2
+LANG:10001 25 Поток изделий
+LANG:10027 2 #1
+1 "objects/MassParameters.pnl" 2
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"Вероятности отказа" 2
+LANG:10001 22 Вероятности
+LANG:10027 2 #1
+1 "objects/NodesThreads.pnl" 2
+LANG:10001 0 
+LANG:10027 0 
+0
+
+
+1 2707 2 "" 3
+0
+1 2708 3 "" 3
+0
+6 642
+"RECTANGLE23"
+""
+1 276.0479297287007 360.6790397393824 E E E 1 E 1 E N "STD_button_text" E N "_3DFace" E E
+ E E
+137 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.785847435649868 0 0.9172234471654788 1479.673504114967 326.4879565679998 1 E 276.0479297287007 360.6790397393824 40 640
+6 1021
+"RECTANGLE27"
+""
+1 110 30 E E E 1 E 1 E N {0,0,0} E N "WF_Text" E E
+ E E
+236 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.491820477751579 0 0.4665169512794232 127.3111364576056 212.8275574135415 1 E 110 30 189 81
+1 2733 9 "7" 0
+0
+1 2739 10 "" 26
+0
+13 1066
+"PUSH_BUTTON12"
+""
+1 1027.118887642504 251.4991975895583 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+245 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  1024.903972671857 237.9047155194946 1157.903972671857 280.9047155194946
+
+T 
+2
+LANG:10001 12 График
+LANG:10027 13 PUSH_BUTTON12
+"main()
+{
+
+  EP_childPanelOn();
+
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal(\"gedi/process_trends.pnl\",
+      \"График\",
+      makeDynString(\"\"));
+}
+" 0
+ E E E
+29 1111
+"LCD10"
+""
+1 174.9147165565754 37.08744152144206 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+248 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  149.9147165565757 45.90993788819881 249.9147165565755 81.19992335522585
+19 NUMLED.NumLEDCtrl.1
+0
+E2 1154
+"PRIMITIVE_TEXT57"
+""
+1 442.9549102556731 475.0089873603362 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+249 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 442.9549102556731 475.0089873603362 444 507
+0 2 2 "0s" 0 0 0 192 0 0  442.9549102556731 475.0089873603362 1
+2
+LANG:10001 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+13 1197
+"PUSH_BUTTON13"
+""
+1 1026.45717299549 298.9471061788881 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+250 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  1024.271701396126 288.263106427319 1157.271701396126 331.2631064273188
+
+T 
+2
+LANG:10001 10 Архив
+LANG:10027 13 PUSH_BUTTON13
+"main()
+{
+  EP_childPanelOn();
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal(\"gedi/DataView.pnl\", \"Архив точек данных\", makeDynString(\"\"));
+}
+" 0
+ E E E
+13 1198
+"PUSH_BUTTON14"
+""
+1 71.7911688017258 567.0011125175484 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+251 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  1024.605697202363 338.1064459336919 1157.605697202363 381.1064459336919
+
+T 
+2
+LANG:10001 29 О разработчиках
+LANG:10027 13 PUSH_BUTTON14
+"main()
+{
+  EP_childPanelOn();
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal(\"gedi/AboutProgramm.pnl\",
+      \"О разработчиках\",
+      makeDynString(\"\"));
+}
+" 0
+ E E E
+13 1286
+"PUSH_BUTTON15"
+""
+1 525.0906922567256 54.87402441528864 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+255 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  522.9573589233926 62.26579355232181 555.9573589233926 95.26579355232181
+
+P 
+4294967295
+"pictures/wf/buttons/revision_on.png"
+2
+LANG:10001 13 PUSH_BUTTON15
+LANG:10027 13 PUSH_BUTTON15
+"main(mapping event)
+{
+dpSet(\"System1:pusher1.alert.mechanicalDamage\", false);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == \"P1\"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue(\"PUSH_BUTTON15\", \"visible\", false);
+}
+" 0
+ E E E
+13 1287
+"PUSH_BUTTON16"
+""
+1 571.4867324493874 -1.085726201531674 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+256 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  656.2994455168808 62.27315930669451 689.2994455168808 95.27315930669451
+
+P 
+4294967295
+"pictures/wf/buttons/revision_on.png"
+2
+LANG:10001 13 PUSH_BUTTON15
+LANG:10027 13 PUSH_BUTTON15
+"main(mapping event)
+{
+dpSet(\"System1:pusher2.alert.mechanicalDamage\", false);
+     for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == \"P2\"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+     ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue(\"PUSH_BUTTON16\", \"visible\", false);
+}
+" 0
+ E E E
+13 1288
+"PUSH_BUTTON17"
+""
+1 173.0500586769032 268.5138501212612 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+257 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  170.657827967206 276.2850919513265 203.657827967206 309.2850919513265
+
+P 
+4294967295
+"pictures/wf/buttons/revision_on.png"
+2
+LANG:10001 13 PUSH_BUTTON15
+LANG:10027 13 PUSH_BUTTON15
+"main(mapping event)
+{
+dpSet(\"System1:A_motor1.alert.damage\", false);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == \"Mot\"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue(\"PUSH_BUTTON17\", \"visible\", false);
+}
+" 0
+ E E E
+13 1289
+"PUSH_BUTTON18"
+""
+1 618.169686375015 358.0691569099906 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+258 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,14,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  468.7774556653178 312.9580457988795 501.7774556653178 345.9580457988795
+
+P 
+4294967295
+"pictures/copyFormat.png"
+2
+LANG:10001 16 Очистить
+LANG:10027 13 PUSH_BUTTON18
+"main()
+{
+    dpSet(\"System1:A_bucket1.count.value\", 0);
+setValue(\"LCD2\", \"intValue\", 0);
+}
+" 0
+ E E E
+13 1290
+"PUSH_BUTTON19"
+""
+1 600.5852834434245 263.0094749252359 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+259 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,14,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  604.6108408558648 313.2496918737444 637.6108408558648 346.2496918737444
+
+P 
+4294967295
+"pictures/copyFormat.png"
+2
+LANG:10001 16 Очистить
+LANG:10027 13 PUSH_BUTTON18
+"main(mapping event)
+{
+    dpSet(\"System1:A_bucket2.count.value\", 0);
+setValue(\"LCD3\", \"intValue\", 0);
+}" 0
+ E E E
+13 1291
+"PUSH_BUTTON20"
+""
+1 1016.651294239112 226.7975481104593 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+260 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,14,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  910.0735919300523 260.7419925549038 943.0735919300528 293.7419925549038
+
+P 
+4294967295
+"pictures/copyFormat.png"
+2
+LANG:10001 16 Очистить
+LANG:10027 13 PUSH_BUTTON18
+"main()
+{
+   dpSet(\"System1:A_bucket3.count.value\", 0);
+setValue(\"LCD4\", \"intValue\", 0);
+}
+" 0
+ E E E
+13 1293
+"PUSH_BUTTON22"
+""
+1 313.4474538240552 58.61126998046328 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+262 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  311.3188873186286 66.38251181052868 344.3188873186286 99.38251181052868
+
+P 
+4294967295
+"pictures/wf/buttons/revision_on.png"
+2
+LANG:10001 13 PUSH_BUTTON15
+LANG:10027 13 PUSH_BUTTON15
+"main(mapping event)
+{
+    dpSet(\"System1:weighter_dp.alert.mechanicalDamage\", false);
+
+        for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == \"We\"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue(\"PUSH_BUTTON22\", \"visible\", false);
+}
+" 0
+ E E E
+13 1336
+"PUSH_BUTTON23"
+""
+1 244.1193160907237 78.9784500436791 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+263 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  242.2020853810266 86.74969187374442 275.2020853810266 119.7496918737444
+
+P 
+4294967295
+"pictures/wf/buttons/revision_on.png"
+2
+LANG:10001 13 PUSH_BUTTON15
+LANG:10027 13 PUSH_BUTTON15
+"main(mapping event)
+{
+
+dpSet(\"System1:conveyor_dp.alert.mechanicalDamage\", false);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == \"Conv\"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue(\"PUSH_BUTTON23\", \"visible\", false);
+}
+" 0
+ E E E
+2 1449
+"PRIMITIVE_TEXT61"
+""
+1 339.8727501672711 360.101019933364 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+275 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 339.8727501672711 360.101019933364 599.8727501672711 400.101019933364
+0 2 2 "0s" 0 0 0 64 0 0  339.8727501672711 360.101019933364 1
+2
+LANG:10001 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+13 1563
+"PUSH_BUTTON24"
+""
+1 73.85832975790754 636.0537792256202 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+277 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  1024.858329757908 388.0537792256201 1157.858329757908 431.0537792256201
+
+T 
+2
+LANG:10001 21 О программе
+LANG:10027 13 PUSH_BUTTON24
+"main()
+{
+  EP_childPanelOn();
+}
+
+void EP_childPanelOn()
+{
+  ChildPanelOnCentralModal(\"gedi/AboutProg.pnl\",
+      \"О системе\",
+      makeDynString(\"\"));
+}
+" 0
+ E E E
+4 1676
+"LINE9"
+""
+1 786.901793973366 67.92504587994966 E E E 1 E 1 E N "WF_FrameDark" E N {255,255,255} E E
+ E E
+281 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 14 3 2 1 E  787.151793973366 67.92504587994966 788.151793973366 106.9250458799496
+6 1677
+"RECTANGLE29"
+""
+1 570 120 E E E 1 E 1 E N {0,0,0} E N "yellow" E E
+ E E
+282 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.717311386656512 0 1.205737148786717 -225.5619241539762 -99.58354663751706 1 E 570 120 610 160
+1 2819 16 "7" 0
+0
+1 2825 17 "" 3
+0
+13 1681
+"PUSH_BUTTON25"
+""
+1 564.9925628383446 4.337301251447007 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+284 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  791.4573589233926 62.21965419262335 824.4573589233926 95.21965419262335
+
+P 
+4294967295
+"pictures/wf/buttons/revision_on.png"
+2
+LANG:10001 13 PUSH_BUTTON15
+LANG:10027 13 PUSH_BUTTON15
+"main(mapping event)
+{
+dpSet(\"System1:pusher3.alert.mechanicalDamage\", false);
+
+     for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == \"P3\"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+     ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue(\"PUSH_BUTTON25\", \"visible\", false);
+}
+" 0
+ E E E
+29 1702
+"LCD5"
+""
+1 625.6108408558648 340.2496918737444 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+286 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  748.1179899282456 245.6573611772679 825.1179899282456 285.6573611772679
+19 NUMLED.NumLEDCtrl.1
+0
+"main()
+{
+  float n;
+  dpGet(\"System1:A_bucket4.count.value\", n);
+  if(n==600.0){
+    dpSet(\"System1:A_bucket4.count.value\", 0.0);
+    setValue(\"LCD5\", \"intValue\", 0.0);}
+}" 0
+2 1703
+"PRIMITIVE_TEXT64"
+""
+1 825.5885627119475 334.0650304807913 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+287 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 825.5885627119475 334.0650304807913 827 346
+0 2 2 "0s" 0 0 0 192 0 0  825.5885627119475 334.0650304807913 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+2 1704
+"PRIMITIVE_TEXT65"
+""
+1 679.6653490582472 318.0300376811211 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+288 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.064572198549981 0 1 79.41336231991099 1.985224281151712 0 E 663 318.0300376811211 697 339
+0 2 2 "0s" 0 0 0 193 0 0  679.6653490582472 318.0300376811211 1
+2
+LANG:10001 37 Noto Sans,-1,16,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 4 /600
+LANG:10027 16 Максимум
+13 1707
+"PUSH_BUTTON26"
+""
+1 732.7696522449864 289.5662977111417 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+291 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,14,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  740.3774215352894 312.9551866000307 773.3774215352894 345.9551866000307
+
+P 
+4294967295
+"pictures/copyFormat.png"
+2
+LANG:10001 16 Очистить
+LANG:10027 13 PUSH_BUTTON18
+E E E E
+2 1711
+"PRIMITIVE_TEXT69"
+""
+1 527.2325396671052 25.9220062766591 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+295 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 502 25.9220062766591 552 43
+0 2 2 "0s" 0 0 0 193 0 0  527.2325396671052 25.9220062766591 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 8 Pusher 1
+LANG:10027 8 Весы
+2 1712
+"PRIMITIVE_TEXT70"
+""
+1 668.1936772299354 46.80278422063703 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+296 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.9802719810546657 0 1 6.010418683888219 -21.77377555920587 0 E 643 46.80278422063703 693 64
+0 2 2 "0s" 0 0 0 193 0 0  668.1936772299354 46.80278422063703 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 8 Pusher 2
+LANG:10027 8 Весы
+2 1713
+"PRIMITIVE_TEXT71"
+""
+1 796.0931348225603 25.83446198868724 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+297 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 771 25.83446198868724 821 43
+0 2 2 "0s" 0 0 0 193 0 0  796.0931348225603 25.83446198868724 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 8 Pusher 3
+LANG:10027 8 Весы
+2 1714
+"PRIMITIVE_TEXT72"
+""
+1 168.9754901960784 217.0303001387188 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+298 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.9999999999999999 0 0.9999999999999999 30.91471655657557 42.40993788819883 0 E 140 217.0303001387188 198 234
+0 2 2 "0s" 0 0 0 193 0 0  168.9754901960784 217.0303001387188 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 10 Drive Unit
+LANG:10027 8 Весы
+2 1715
+"PRIMITIVE_TEXT73"
+""
+1 187.8326334568194 98.64804700653733 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+299 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 148 98.64804700653733 228 116
+0 2 2 "0s" 0 0 0 193 0 0  187.8326334568194 98.64804700653733 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 13 Assembly Line
+LANG:10027 8 Весы
+2 1716
+"PRIMITIVE_TEXT74"
+""
+1 199.2278611250368 27.1114492218401 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+300 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 152 27.1114492218401 246 44
+0 2 2 "0s" 0 0 0 193 0 0  199.2278611250368 27.1114492218401 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 20 Speed line:    м/с
+LANG:10027 8 Весы
+2 1717
+"PRIMITIVE_TEXT75"
+""
+1 516.904736877976 300.7496918737444 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+301 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 500 300.7496918737444 534 318
+0 2 2 "0s" 0 0 0 193 0 0  516.904736877976 300.7496918737444 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 6 Cart 1
+LANG:10027 8 Весы
+2 1718
+"PRIMITIVE_TEXT76"
+""
+1 649.2261897652967 301.3912380133737 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+302 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 632 301.3912380133737 666 318
+0 2 2 "0s" 0 0 0 193 0 0  649.2261897652967 301.3912380133737 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 6 Cart 2
+LANG:10027 8 Весы
+2 1719
+"PRIMITIVE_TEXT77"
+""
+1 783.6179899282456 300.6573611772679 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+303 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 767 300.6573611772679 801 318
+0 2 2 "0s" 0 0 0 193 0 0  783.6179899282456 300.6573611772679 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 6 Cart 3
+LANG:10027 8 Весы
+6 1853
+"RECTANGLE33"
+""
+1 610 250 E E E 1 E 1 E N {0,0,0} E N "STD_value_invalid" E E
+ E E
+304 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.988888888888889 0 1.750000000000001 -130.8174853442463 -206.7503081262559 1 E 610 250 700 290
+6 1854
+"RECTANGLE34"
+""
+1 610 250 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+305 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.1888888888888889 0 0.4249999999999999 348.6825146557539 115.9996918737444 1 E 610 250 700 290
+7 1856
+"ELLIPSE2"
+""
+1 710 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+307 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 1 0 1 51.90473687797601 20.14179108873941 1 E 496.4999999999998 281 10 10
+6 1865
+"RECTANGLE39"
+""
+1 110 30 E E E 1 E 1 E N {0,0,0} E N "WF_RefDiffLineDark" E E
+ E E
+316 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.7683668404070495 0 0.1845711385044222 85.04387391572163 211.8728037330661 1 E 110 30 189 81
+6 1867
+"RECTANGLE41"
+""
+1 110 30 E E E 1 E 1 E N {0,0,0} E N "WF_Text" E E
+ E E
+318 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.7689873417721524 0 0.1730354423478958 84.92659915771719 245.424367196738 1 E 110 30 189 81
+7 1868
+"ELLIPSE7"
+""
+1 141.8961822576253 298.1038177423747 E E E 1 E 1 E N {0,0,0} E N "Yellow" E E
+ E E
+319 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 0.9999999999999999 0 0.9999999999999999 90.26520675265401 -59.38456953282508 1 E 141.8961822576253 298.1038177423747 11.896182 11.896182
+7 1869
+"ELLIPSE8"
+""
+1 141.8961822576253 298.1038177423747 E E E 1 E 1 E N {0,0,0} E N "yellow" E E
+ E E
+320 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 0.9999999999999999 0 0.9999999999999999 27.61902449502866 -59.38456953282508 1 E 141.8961822576253 298.1038177423747 11.896182 11.896182
+6 1870
+"RECTANGLE42"
+""
+1 180 130 E E E 1 E 1 E N "WF_Text" E N "White" E E
+ E E
+321 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.241666666666667 0 0.7459350574098477 -100.4927851036889 40.91415155962268 1 E 180 130 300 210
+6 1871
+"RECTANGLE43"
+""
+1 347.5318890813642 196.111111111111 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+322 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.2186040102033878 0 0.913927452305983 46.93172431001253 18.32918546901745 1 E 347.5318890813642 196.111111111111 1030.077702309061 217.0493344907406
+6 1872
+"RECTANGLE44"
+""
+1 347.5318890813642 196.111111111111 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+323 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.2185618875747383 0 0.913927452305983 46.96866252383933 -60.48163627292885 1 E 347.5318890813642 196.111111111111 1030.077702309061 217.0493344907406
+6 1874
+"RECTANGLE46"
+""
+1 347.5318890813642 196.111111111111 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+325 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.7374880536628965 0 0.913927452305983 84.61410009217067 19.46262165831302 1 E 347.5318890813642 196.111111111111 1030.077702309061 217.0493344907406
+7 2011
+"ELLIPSE9"
+""
+1 710 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+329 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 1 0 1 51.90473687797601 20.14179108873941 1 E 433.1964146336869 281 10 10
+6 2020
+"RECTANGLE54"
+""
+1 610 250 E E E 1 E 1 E N {0,0,0} E N "STD_valve_open" E E
+ E E
+338 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.988888888888889 0 1.750000000000001 3.277777777777715 -206.08027906031 1 E 610 250 700 290
+6 2021
+"RECTANGLE55"
+""
+1 610 250 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+339 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.1888888888888889 0 0.4249999999999999 482.7777777777778 115.6697209396903 1 E 610 250 700 290
+7 2022
+"ELLIPSE14"
+""
+1 710 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+340 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 1 0 1 186 19.81182015468528 1 E 496.4999999999998 281 10 10
+7 2023
+"ELLIPSE15"
+""
+1 710 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+341 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 1 0 1 186 19.81182015468528 1 E 433.1964146336869 281 10 10
+6 2024
+"RECTANGLE56"
+""
+1 610 250 E E E 1 E 1 E N {0,0,0} E N "yellow" E E
+ E E
+342 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.988888888888889 0 1.750000000000001 138.8957677060233 -206.8426388227324 1 E 610 250 700 290
+6 2025
+"RECTANGLE57"
+""
+1 610 250 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+343 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.1888888888888889 0 0.4249999999999999 618.3957677060233 115.9073611772679 1 E 610 250 700 290
+7 2026
+"ELLIPSE16"
+""
+1 710 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+344 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 1 0 1 320.6179899282456 20.04946039226286 1 E 496.4999999999998 281 10 10
+7 2027
+"ELLIPSE17"
+""
+1 710 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+345 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "1"
+E E 0 1 3 2 1 E 1 0 1 321.6179899282456 20.04946039226286 1 E 433.1964146336869 281 10 10
+1 2715 6 "7" 0
+0
+6 839
+"RECTANGLE24"
+""
+1 210 30 E E E 1 E 1 E N {0,0,0} E N "STD_value_invalid" E E
+ E E
+184 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.7666666666666664 0 1.1875 112.2020853810266 33.12469187374437 1 E 210 30 300 190
+6 2295
+"RECTANGLE59"
+""
+1 880 10 E E E 1 E 1 E N {0,0,0} E N "WF_Info" E E
+ E E
+347 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.8000150849321128 0 2.218896521271573 266.7561639160505 9.117593449298527 1 E 880 10 1180 270
+6 2297
+"RECTANGLE60"
+""
+1 942 34 E E E 1 E 1 E N {0,0,0} E N "STD_valve_open" E E
+ E E
+349 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1 0 1 49.7717013961269 -15.69344133798575 1 E 942 34 1140 60
+2 2296
+"PRIMITIVE_TEXT78"
+""
+1 1091.179446825585 22.43437864808849 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+348 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 998 22.43437864808849 1184 40
+0 2 2 "0s" 0 0 0 193 0 0  1091.179446825585 22.43437864808849 1
+2
+LANG:10001 56 MS Shell Dlg 2,-1,16,5,75,0,0,0,0,0,Полужирный
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 35 Управляющая панель
+LANG:10027 8 Весы
+6 2435
+"pal1"
+""
+1 880 10 E E E 1 E 1 E N {0,0,0} E N "WF_Info" E E
+ E E
+354 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 3.102579880453145 0 0.9201576773921564 -2690.270294798768 359.777081296741 1 E 880 10 1180 270
+6 2434
+"pal3"
+""
+1 942 34 E E E 1 E 1 E N {0,0,0} E N "STD_valve_open" E E
+ E E
+353 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1 0 1 -364.6130179320282 321.9786580706626 1 E 942 34 1140 60
+2 2436
+"pal2"
+""
+1 676.0500093639779 359.9288300133485 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+355 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 604 359.9288300133485 748 378
+0 2 2 "0s" 0 0 0 193 0 0  676.0500093639779 359.9288300133485 1
+2
+LANG:10001 56 MS Shell Dlg 2,-1,16,5,75,0,0,0,0,0,Полужирный
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 29 Панель настроек
+LANG:10027 8 Весы
+2 1243
+"PRIMITIVE_TEXT60"
+""
+1 240 520 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+254 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7547169811320755 0 0.76 989.1055676626567 153.7000449762321 0 E 240 520 293 545
+0 2 2 "0s" 0 0 0 64 0 0  240 520 1
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 4 2000
+LANG:10027 4 1000
+2 1242
+"PRIMITIVE_TEXT59"
+""
+1 240 520 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+253 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.8209327162691318 0 0.76 776.99539525022 153.7000449762321 0 E 240 520 293 545
+0 2 2 "0s" 0 0 0 64 0 0  240 520 1
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 4 1000
+LANG:10027 4 1000
+6 2437
+"RECTANGLE65"
+""
+1 942 34 E E E 1 E 1 E N {0,0,0} E N "STD_valve_open" E E
+ E E
+356 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.212121212121212 0 1.038461538461539 -171.0442176822378 460.411961884931 1 E 942 34 1140 60
+2 1241
+"PRIMITIVE_TEXT58"
+""
+1 250 450 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+252 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.9494965024458407 0 1 741.5206779374817 47.71965419262335 0 E 250 450 490 480
+0 2 2 "0s" 0 0 0 64 0 0  250 450 1
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 47 Обороты двигателя, об/мин:
+LANG:10027 60 Регулировака оборотов двигателя
+2 644
+"PRIMITIVE_TEXT24"
+""
+1 980.7211291402164 58.24747567965206 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+139 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 980.7211291402164 58.24747567965206 1058 76
+0 2 2 "0s" 0 0 0 192 0 0  980.7211291402164 58.24747567965206 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 17 Конвейер:
+LANG:10027 3 >10
+2 833
+"PRIMITIVE_TEXT39"
+""
+1 1138.541443987502 69.65475389969549 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+178 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 1138.541443987502 69.65475389969549 1182 109
+0 2 2 "0s" 0 0 0 192 0 0  1138.541443987502 69.65475389969549 2
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 8 Вкл./
+LANG:10027 3 >10
+2
+LANG:10001 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0 2
+LANG:10001 9 Выкл.
+LANG:10027 0 
+2 1450
+"PRIMITIVE_TEXT62"
+""
+1 290 300 E E E 1 E 0 E N "STD_inputfield_text" E N "_Window" E E
+ E E
+276 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7635386946867476 0 0.5 750.2861342707625 -31.78034580737665 0 E 290 300 590 360
+0 2 2 "0s" 0 0 0 64 0 0  290 300 1
+2
+LANG:10001 56 MS Shell Dlg 2,-1,16,5,75,0,0,0,0,0,Полужирный
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 4 text
+LANG:10027 4 text
+2 2571
+"PRIMITIVE_TEXT79"
+""
+1 290 300 E E E 1 E 1 E N "STD_inputfield_text" E N "_Window" E E
+ E E
+357 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 0.7015764087020882 0 0.5 786.9678075736808 288.2196541926233 0 E 290 300 590 360
+0 2 2 "0s" 0 0 0 64 0 0  290 300 1
+2
+LANG:10001 56 MS Shell Dlg 2,-1,16,5,75,0,0,0,0,0,Полужирный
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0 2
+LANG:10001 4 text
+LANG:10027 4 text
+6 2705
+"RECTANGLE66"
+""
+1 942 34 E E E 1 E 1 E N {0,0,0} E N "STD_valve_open" E E
+ E E
+358 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1 0 1 -839.2441098831492 321.9786580706626 1 E 942 34 1140 60
+2 2706
+"PRIMITIVE_TEXT80"
+""
+1 201.4189174128566 359.9288300133485 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+359 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 115 359.9288300133485 287 378
+0 2 2 "0s" 0 0 0 193 0 0  201.4189174128566 359.9288300133485 1
+2
+LANG:10001 56 MS Shell Dlg 2,-1,16,5,75,0,0,0,0,0,Полужирный
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 33 Панель оповещений
+LANG:10027 8 Весы
+0
+LAYER, 1 
+2
+LANG:10001 0 
+LANG:10027 0 
+13 674
+"PUSH_BUTTON8"
+""
+1 1045.780732133704 2155.377553938796 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+158 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 56 MS Shell Dlg 2,-1,12,5,75,0,0,0,0,0,Полужирный
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  2032.096312455229 2017.05931032135 2165.096312455228 2060.05931032135
+
+T 
+2
+LANG:10001 18 Настройки
+LANG:10027 12 PUSH_BUTTON4
+E E E E
+1 2710 5 "" 0
+0
+1 2722 7 "" 0
+0
+1 2728 8 "" 0
+0
+1 2734 9 "" 0
+0
+1 2748 10 "" 1
+0
+1 2749 11 "" 0
+0
+1 2763 12 "" 0
+0
+1 2777 13 "" 0
+0
+1 2791 14 "" 0
+0
+1 2820 16 "" 0
+0
+1 2826 18 "" 0
+0
+1 2716 6 "" 0
+0
+1 2805 15 "" 0
+0
+6 933
+"RECTANGLE26"
+""
+1 770 50 E E E 1 E 1 E N {0,0,0} E N "White" E E
+ E E
+226 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.150261606937077 0 1.465277777777778 -41.41733745192066 1.906608831504059 1 E 770 50 854.3286426452954 178
+0
+LAYER, 2 
+2
+LANG:10001 0 
+LANG:10027 0 
+2 904
+"PRIMITIVE_TEXT46"
+""
+1 316.7796946572224 260.3689287689572 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+223 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 293 260.3689287689572 341 277
+0 2 2 "0s" 0 0 0 193 0 0  316.7796946572224 260.3689287689572 1
+2
+LANG:10001 37 Noto Sans,-1,13,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 7 Scanner
+LANG:10027 8 Весы
+2 934
+"PRIMITIVE_TEXT49"
+""
+1 893.9360377399837 97.8414198633227 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+227 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 865 97.8414198633227 923 152
+0 2 2 "0s" 0 0 0 193 0 0  893.9360377399837 97.8414198633227 3
+2
+LANG:10001 37 Noto Sans,-1,12,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 16 Котейнер
+LANG:10027 19 Контейнер 
+2
+LANG:10001 37 Noto Sans,-1,12,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 11  брака
+LANG:10027 10 брака
+2
+LANG:10001 37 Noto Sans,-1,12,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+29 90
+"LCD4"
+""
+1 877.5875271892925 135.1376906564335 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  854.2840998896287 148.9482754981707 931.2840998896287 188.9482754981707
+19 NUMLED.NumLEDCtrl.1
+0
+E29 95
+"LCD1"
+""
+1 282.0971587627128 140.3489791312841 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+74 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,21,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,16,5,50,0,0,0,0,0
+0  271.7185922572865 138.5927275205692 340.7185922572864 188.5927275205692
+19 NUMLED.NumLEDCtrl.1
+0
+E6 2161
+"RECTANGLE58"
+""
+1 780 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+346 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1 0 1 92.98022418891787 -52.77974982015178 2  1 0  "pictures/QCMm1vkiRQJK-4Oy1R5L9aO858AiaxGIkhdup23O4av9PupelsSdR8lZkMmTTmuWNJPVXReaqg1XVXyDUHjCNKHm.jpg" 4294967295 E 780 260 819 299
+0
+LAYER, 3 
+2
+LANG:10001 0 
+LANG:10027 0 
+6 2009
+"RECTANGLE48"
+""
+1 190 260 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+327 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.250000000000001 0 0.9749999999999999 46.6108408558645 -33.75030812625556 2  1 0  "pictures/hlh67V5uSsON0PozOjQtBUDkBuJ84g5SF_x4Uq7kfw85xOMS_-nVYBpGh_Z1o8ho8gO1MsQuMvMSg7t8rTB-LuQ9.jpg" 4294967295 E 190 260 230 300
+0
+LAYER, 4 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 6 
+2
+LANG:10001 0 
+LANG:10027 0 
+6 840
+"RECTANGLE25"
+""
+1 0 40 E E E 1 E 1 E N {0,0,0} E N "WF_TableAlternatingRowColor_2" E E
+ E E
+185 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1.158777266582876 0 0.6365628006253004 37.23608199229839 93.28717984873236 1 E 0 40 74 194
+0
+LAYER, 7 
+2
+LANG:10001 0 
+LANG:10027 0 
+2 841
+"PRIMITIVE_TEXT45"
+""
+1 80.21713251700244 138.6161386469319 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+186 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 42 138.6161386469319 118 193
+0 2 2 "0s" 0 0 0 193 0 0  80.21713251700244 138.6161386469319 3
+2
+LANG:10001 37 Noto Sans,-1,12,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 10 Место
+LANG:10027 10 Место
+2
+LANG:10001 37 Noto Sans,-1,12,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 22 поступления
+LANG:10027 22 поступления
+2
+LANG:10001 37 Noto Sans,-1,12,5,50,1,0,0,0,0,Italic
+LANG:10027 29 Noto Sans,-1,9,5,50,0,0,0,0,0
+0 2
+LANG:10001 12 товара
+LANG:10027 12 товара
+13 1292
+"PUSH_BUTTON21"
+""
+1 92.86848901798612 79.97845004367906 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+261 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 38 Noto Sans,-1,16,5,50,0,0,0,0,0,Regular
+LANG:10027 30 Noto Sans,-1,24,5,50,0,0,0,0,0
+0  90.96280472120101 87.74969187374438 124.9855997194312 120.7496918737444
+
+P 
+4294967295
+"pictures/wf/buttons/revision_on.png"
+2
+LANG:10001 13 PUSH_BUTTON15
+LANG:10027 13 PUSH_BUTTON15
+"main(mapping event)
+{
+dpSet(\"System1:A_source1.alert.mechanicalDamage\", false);
+
+    for (int i = 1; i <= dynlen(threadNames); i++) {
+      if(threadNames[i] == \"Sour\"){
+      dynRemove(threadNames, i);
+    }
+    }
+
+    if(dynlen(threadNames)==0){
+      ToggleSwitch_ewo1.enabled(true);
+ToggleSwitch_ewo1.checked(true);
+    }
+
+  setValue(\"PUSH_BUTTON21\", \"visible\", false);
+}
+" 0
+ E E E
+0
+3 2 "PANEL_REF3" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"gedi/Piston.pnl" 725.6255127153404 106 T 65 1 0 1 -74.5962574978128 -46.25727612752743
+0
+3 3 "PANEL_REF4" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"gedi/Piston.pnl" 820.75 106 T 66 1 0 1 -36.79678221624917 -45.96510697683044
+0
+3 5 "PANEL_REF6" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 100.75 108.5121951219512 T 170 0.6168446280686409 0 0.638479437020795 54.57066868893156 23.28922970453775
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""System1:conveyor_dp.command.isEnabled"
+"$s_ColOff""STD_value_not_ok"
+"$s_ColOn""STD_led_On"
+3 6 "PANEL_REF7" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 169 34 T 171 0.6161054637026016 0 0.6161054637026027 212.9367399410824 70.17460203283346
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""System1:weighter_dp.command.isEnabled"
+"$s_ColOff""STD_value_not_ok"
+"$s_ColOn""STD_value_ok"
+3 7 "PANEL_REF8" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 477.8520992190616 -1.000000000000011 T 172 0.616105463702596 0 0.616105463702603 234.2897457409671 38.57543564451923
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""System1:pusher1.command.push"
+"$s_ColOff""STD_value_not_ok"
+"$s_ColOn""STD_led_On"
+3 8 "PANEL_REF9" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 477.8520992190616 -1.000000000000011 T 173 0.632061306169621 0 0.6161054637026029 359.3531099756312 38.58200589269002
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""System1:pusher2.command.push"
+"$s_ColOff""STD_value_not_ok"
+"$s_ColOn""STD_led_On"
+3 9 "PANEL_REF10" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 169 34 T 238 0.6194797339541535 0 0.5974182068842939 90.76920468836715 252.0272783760175
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""System1:A_motor1.command.isEnabled"
+"$s_ColOff""STD_value_not_ok"
+"$s_ColOn""STD_led_On"
+3 10 "PANEL_REF17" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"vision/aes/AEScreen.pnl" 96.53258648087427 1993 T 244 1.108464045475659 0 1.135162885805874 1440.221574083572 -545.8471801084424
+3
+"$ACTION""$ACTION"
+"$FILENAME""$FILENAME"
+"$SCREENTYPE""$SCREENTYPE"
+3 11 "PANEL_REF18" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 468 27 T 270 0.8 0 0.7647058823529412 102.7011515116629 20.94860622541377
+5
+"$b_IBit""TRUE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""System1:pusher1.command.push"
+"$dpe_value_On""System1:pusher1.command.push"
+"$dpe_value_Rm""System1:pusher1.command.push"
+3 12 "PANEL_REF19" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 681.2067591103337 31.0277777777778 T 271 0.8 0 0.7647058823529412 66.03459271173307 18.27287581699344
+5
+"$b_IBit""TRUE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""System1:pusher2.command.push"
+"$dpe_value_On""System1:pusher2.command.push"
+"$dpe_value_Rm""System1:pusher2.command.push"
+3 13 "PANEL_REF20" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 294.7067591103333 67.05555555555539 T 272 0.9666666666666667 0 0.9607843137254902 -21.34778175896227 -5.284077189436299
+5
+"$b_IBit""TRUE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""System1:weighter_dp.command.isEnabled"
+"$dpe_value_On""System1:weighter_dp.command.isEnabled"
+"$dpe_value_Rm""System1:weighter_dp.command.isEnabled"
+3 14 "PANEL_REF21" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 171.7067591103333 30.4999999999999 T 273 0.9666666666666667 0 0.9607843137254902 -52.67492012048336 183.5537287378719
+5
+"$b_IBit""TRUE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""System1:A_motor1.command.isEnabled"
+"$dpe_value_On""System1:A_motor1.command.isEnabled"
+"$dpe_value_Rm""System1:A_motor1.command.isEnabled"
+3 15 "PANEL_REF22" -1
+"maximumSize" "0 0"
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 294.7067591103333 67.05555555555539 T 274 0.9666666666666667 0 0.9607843137254902 -257.3137851476905 -4.284077189436278
+5
+"$b_IBit""TRUE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""System1:conveyor_dp.command.isEnabled"
+"$dpe_value_On""System1:conveyor_dp.command.isEnabled"
+"$dpe_value_Rm""System1:conveyor_dp.command.isEnabled"
+3 16 "PANEL_REF23" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 477.8520992190616 -1.000000000000011 T 278 0.632061306169621 0 0.6161054637026029 494.5110233821428 39.57543564451925
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""System1:pusher3.command.push"
+"$s_ColOff""STD_value_not_ok"
+"$s_ColOn""STD_led_On"
+3 17 "PANEL_REF5" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"gedi/Piston.pnl" 820.75 106 T 279 1 0 1 97.901793973366 -45.07495412005038
+0
+3 18 "PANEL_REF25" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 681.2067591103337 31.0277777777778 T 280 0.8 0 0.7647058823529412 200.034592711733 18.27287581699344
+5
+"$b_IBit""TRUE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""System1:pusher3.command.push"
+"$dpe_value_On""System1:pusher3.command.push"
+"$dpe_value_Rm""System1:pusher3.command.push"
+0

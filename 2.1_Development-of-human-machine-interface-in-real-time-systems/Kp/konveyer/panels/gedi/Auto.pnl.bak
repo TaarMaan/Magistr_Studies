@@ -1,0 +1,268 @@
+V 14
+2
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 400 400 N "_3DFace" 0
+E E E E E 1 -1 -1 0  80 104
+""0  1
+E E 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 0 
+LANG:10027 0 
+30 1
+"FRAME1"
+""
+1 80 104 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+0 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 1 0 1 0 6 0 E 80 104 311 281
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 22 Авторизация
+LANG:10027 11 Frame Title
+13 2
+"PUSH_BUTTON1"
+""
+1 120 260 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+1 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  118 249 272 283
+
+T 
+2
+LANG:10001 18 Применить
+LANG:10027 12 PUSH_BUTTON1
+"main(mapping event)
+{
+ time t = getCurrentTime(); 
+  string checkPassword;
+  uint checkLogin;
+ 
+  getValue (\"TEXT_FIELD1\",\"text\",checkPassword);
+  getValue (\"RADIO_BOX1\",\"number\",checkLogin);
+  
+  if(checkPassword == \"qqq\" && checkLogin == 0){
+    PRIMITIVE_TEXT38.text(\"Вы вошли, как администратор\");
+/*    PANEL_REF10.visible(true);
+    PANEL_REF9.visible(true);
+    PANEL_REF8.visible(true);
+    PANEL_REF7.visible(true);
+    PANEL_REF6.visible(true);
+    LCD1.visible(true);
+    RECTANGLE8.visible(true);
+    RECTANGLE9.visible(true);
+    RECTANGLE10.visible(true);
+    RECTANGLE11.visible(true);
+    RECTANGLE12.visible(true);
+    RECTANGLE13.visible(true);
+    RECTANGLE14.visible(true);
+    */
+    //panelOff();
+    ChildPanelOnModuleCheckPos(\"gedi/MainPanel\",\"System\", myModuleName(),makeDynString(\"$p1:1\"),0,0);
+    //ChildPanelOnModuleCheckPos(\"gedi/MainPanel\",\"System\").PRIMITIVE_TEXT38.text(\"Вы вошли, как администратор\");
+    panelOff();
+    //stop();
+  }else if(checkPassword == \"q\" && checkLogin == 1){
+//    mainPanel.PUSH_BUTTON7.enabled(false);
+   // gedi/MainPanel.PRIMITIVE_TEXT38.text(\"Вы вошли, как пользователь\");
+    //PUSH_BUTTON8.enabled(false);
+    //PUSH_BUTTON8.visible(false);
+    //setValue(\"gedi/MainPanel.pnl/PUSH_BUTTON8\", \"visible\", false);
+    
+    //PUSH_BUTTON10.enabled(false);
+    //PUSH_BUTTON10.visible(false);
+    //setValue(\"gedi/MainPanel1.pnl/PUSH_BUTTON10\", \"visible\", false);
+    
+    
+    //ChildPanelOnModuleCheckPos(\"gedi/MainPanel\",\"System\",PUSH_BUTTON8.visible(false));
+    ChildPanelOnModuleCheckPos(\"gedi/MainPanel1\",\"System\", myModuleName(),0,0,0);
+    stop();
+    panelOff();
+    //panelOff(\"Auto\");
+  }else{
+   // TABLE1.appendLine(\"Error\", \"Ошибка\", \"Description\", \"Пользователя не существует\", \"Data\", t);
+    PRIMITIVE_TEXT2.text(\"Неверный пароль\");
+    //messageBoxText = \"Неверный пароль\";
+     // setValue(\"TEXT_EDIT1\",\"text\", messageBoxText);
+       table.appendLine(\"Дата и время\", localTime, \"Событие\", messageBoxText);
+     }}" 0
+ E E E
+2 3
+"PRIMITIVE_TEXT1"
+""
+1 100.5 221 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 100.5 221 143 233
+0 2 2 "0s" 0 0 0 192 0 0  100.5 221 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 13 Пароль:
+LANG:10027 12 Пароль
+19 4
+"RADIO_BOX1"
+""
+1 100 130 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  98 128 222 202
+2
+T 
+2
+LANG:10001 26 Администратор
+LANG:10027 3 ???
+
+1 
+2
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+2
+LANG:10001 16 Оператор
+LANG:10027 3 ???
+
+0 
+2
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+14 6
+"TEXT_FIELD1"
+""
+1 160 220 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  158 213 267 238
+3 "0s" 0 0 0 0 0 -1  E E E
+2 7
+"PRIMITIVE_TEXT2"
+""
+1 160 300 E E E 1 E 1 E N "STD_value_not_ok" E N "_Window" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 160 300 162 312
+0 2 2 "0s" 0 0 0 192 0 0  160 300 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 1 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 2 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 3 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 4 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 6 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 7 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+0

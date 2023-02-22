@@ -1,0 +1,61 @@
+V 14
+3
+LANG:10001 9 infoPanel
+LANG:10027 20 Инфопанель
+LANG:10000 9 InfoPanel
+PANEL,-1 -1 26 23 N {233,236,237} 0
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  350 60
+""0  1
+E E 4
+"CBRef" "0"
+"EClose" E
+"dpi" "96"
+"pdpi" "96"
+2 0 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+2
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+2
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+2
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+2
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+2
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+2
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

@@ -1,0 +1,976 @@
+V 14
+3
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+LANG:10000 8 (NoName)
+PANEL,-1 -1 1024 84 N "_3DFace" 0
+"main()
+{
+  aes_initBoth();
+
+  //
+  bool b_aesAutoRestart = 0;
+  bool b_firstAnswerReceived = 0;
+
+  DebugFTN(\"aesDist\",__LINE__,__FUNCTION__,\"set b_aesAutoRestart\",b_aesAutoRestart,g_propDpName);
+  DebugFTN(\"aesDist\",__LINE__,__FUNCTION__,\"set b_firstAnswerReceived\",b_firstAnswerReceived,g_propDpName);
+
+  mAESAutoRestart[g_propDpName] = b_aesAutoRestart;
+  mFirstAnswerReceived[g_propDpName] = b_firstAnswerReceived;
+
+  aes_doStop( g_propDpName );
+  aes_doStart( g_propDpName );
+
+/* delete if ok
+  string panelName, rootName, oldName;
+
+  string tc, ts, ta;
+
+  g_tabType=aes_getTBNum( getDollarValue(AESREGDOLLAR_TABTYPE) );
+  g_propDpName=getDollarValue(AESREGDOLLAR_PROPDP);
+  g_balPropDpName=getDollarValue(AESREGDOLLAR_BALPROPDP);
+
+// geht nicht bei panel => nur bei object
+  rootName=getDollarValue(AESREGDOLLAR_TABNAME) + \".\";
+
+  // we have to update the following object names to access them unequivocal from outside
+  cb_config.name=rootName + cb_config.name;
+  pb_singleAck.name=rootName + pb_singleAck.name;
+  pb_allAck.name=rootName + pb_allAck.name;
+  te_settings.name=rootName + te_settings.name;
+//  te_screenType.name=rootName + te_screenType.name;
+  te_rows.name=rootName + te_rows.name;
+  te_mode.name=rootName + te_mode.name;
+*/
+
+}" 0
+ E E E E 1 -1 -1 0  10 10
+""0  1
+E "string g_propDpName;
+string g_balPropDpName;
+unsigned g_tabType;
+unsigned g_screenType;
+
+int g_busyThread=-1;
+int g_oldVal=0;" 0
+ 5
+"CBRef" "1"
+"EClose" E
+"LangSwitchMode" "1"
+"dpi" "96"
+"pdpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 9
+"Text2"
+""
+1 349.5 -2 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+4
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 351.5 -2 397 13
+0 2 2 "0s" 0 0 0 192 0 0  351.5 -2 1
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10001 8 Config :
+LANG:10027 15 Конфиг. :
+LANG:10000 8 Konfig.:
+2 17
+"Text4"
+""
+1 185 -7 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+4
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 187 -7 229 8
+0 2 2 "0s" 0 0 0 192 0 0  187 -7 1
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10001 6 Mode :
+LANG:10027 11 Режим:
+LANG:10000 6 Modus:
+10 34
+"Polyline3"
+""
+1 101 9 E E E 0 E 1 E N "_Window" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 100 10
+100 32
+10 32
+ 0
+10 35
+"Polyline4"
+""
+1 10 33 E E E 0 E 1 E N "_ButtonShadow" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 10 33
+10 11
+100 11
+ 0
+6 36
+"busySize"
+""
+1 14 14 E E E 0 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 14 14 95 29
+6 37
+"busyFlag"
+""
+1 17 14 E E E 0 E 0 E N {0,0,153} E N {0,0,153} E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 17 14 30 28
+10 52
+"Polyline1"
+""
+1 609 49 E E E 0 E 0 E N "_Window" E N "_Transparent" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1 0 1 39 -59 0 E 3 609 51
+609 69
+521 69
+ 0
+10 53
+"Polyline2"
+""
+1 520 73 E E E 0 E 0 E N "_ButtonShadow" E N "_Transparent" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1 0 1 39 -59 0 E 3 520 73
+520 51
+610 51
+ 0
+6 54
+"Border1"
+""
+1 525 55 E E E 0 E 0 E N "_3DFace" E N "_Transparent" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 -45 -60 0 E 525 55 605 70
+6 55
+"Border2"
+""
+1 527 55 E E E 0 E 0 E N {0,0,153} E N {0,0,153} E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 -45 -60 1 E 527 55 540 68
+14 38
+"te_mode"
+""
+1 378.5 -6 E E E 0 E 0 E N "_WindowText" E N "_3DFace" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  377.5 -7 481.5 20
+2 "0s" 0 0 0 0 0 -1  E "main()
+{
+}" 0
+ E
+13 3
+"pb_interval"
+""
+1 731 -5 E E E 0 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  729 -6 757 22
+
+P 
+13160660
+"pictures/StandardIcons/Clock_20.png"
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+"main()
+{
+  int    ok;
+  time   tPara;
+  float  f;
+  dyn_string sPara;
+
+  getValue(\"_original___value\",\"text\",f);
+  tPara=intervalToTime(f);
+  sPara[1]=tPara;
+  paChildPanelOn(\"para/timeInterval.pnl\",          //string fileName
+                 \"TimeInterval _original.._value\", //string panelName
+                 \"\",                               //string parentName
+                 \"\",                               //string moduleName
+                 true,                             //bool modal
+                 true,                             //bool ret
+                 -1,-1,                            //int posX,int posY
+                 sPara,                            //dyn_string &sPara
+                 ok);                              //int &ok
+  if (ok==1)
+  {
+    tPara=sPara[1];
+    setValue(\"_original___value\",\"text\",timeToInterval(tPara));
+  }
+}
+" 0
+ E E E
+22 10
+"cb_config"
+""
+1 -5.948051948051955 -2 E E E 1 E 0 E N {0,0,0} E N "_Window" E E
+ E E
+9 0 0 0 0 0
+"main()
+{
+  int screenType;
+
+  aes_getScreenType( g_propDpName, screenType );
+  aes_treatOldConfigs( screenType, this.name );
+
+}" 0
+ E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  -6.000000000000007 -3 148 23
+1
+3
+LANG:10001 1  
+LANG:10027 1  
+LANG:10000 1  
+
+0
+
+E
+"main()
+{
+  aes_treatPropConfigChange( g_propDpName, this.text );
+
+
+}" 0
+
+E
+ 0 0
+13 12
+"buRun1"
+""
+1 11.5 48 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 27 Старт/Обновить
+LANG:10000 19 Start/Aktualisieren
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 32 Arial,-1,14,5,87,0,0,0,0,0,Black
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  9.5 47 152 75
+
+T 
+2
+LANG:10001 26 Перезагрузить
+LANG:10027 0 
+"main()
+{
+  // set variables to define that a manual start was made
+  bool b_aesAutoRestart = 0;
+  bool b_firstAnswerReceived = 0;
+
+  DebugFTN(\"aesDist\",__LINE__,__FUNCTION__,\"set b_aesAutoRestart\",b_aesAutoRestart,g_propDpName);
+  DebugFTN(\"aesDist\",__LINE__,__FUNCTION__,\"set b_firstAnswerReceived\",b_firstAnswerReceived,g_propDpName);
+
+  mAESAutoRestart[g_propDpName] = b_aesAutoRestart;
+  mFirstAnswerReceived[g_propDpName] = b_firstAnswerReceived;
+
+  aes_doStop( g_propDpName );
+  aes_doStart( g_propDpName );
+}
+" 0
+ E E "main()
+{
+  dpConnect(\"triggerRefresh_WorkCb\", FALSE, \"_DistManager.State.SystemNums\", \"_DistManager_2.State.SystemNums\");
+}
+triggerRefresh_WorkCb(string dp1, dyn_int di1,
+                      string dp2, dyn_int di2)
+{
+  this.color(\"STD_state\");
+}" 0
+
+13 13
+"Button3"
+""
+1 464.5 -7 E E E 0 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+0  462.5 -7 490.5 21
+
+P 
+4294967295
+"pictures/pause.png"
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+"main()
+{
+  aes_doPause( g_propDpName );
+}
+" 0
+ E E E
+13 14
+"buStop"
+""
+1 184.75 49 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 4 Stop
+LANG:10027 8 Стоп
+LANG:10000 4 Stop
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  182.75 48 351.75 76
+
+T 
+2
+LANG:10001 41 Остановить обновление
+LANG:10027 0 
+"main()
+{
+  // set variables to define that a manual stop was made
+  bool b_aesAutoRestart = 0;
+  bool b_firstAnswerReceived = 0;
+
+  DebugFTN(\"aesDist\",__LINE__,__FUNCTION__,\"set b_aesAutoRestart\",b_aesAutoRestart,g_propDpName);
+  DebugFTN(\"aesDist\",__LINE__,__FUNCTION__,\"set b_firstAnswerReceived\",b_firstAnswerReceived,g_propDpName);
+
+  mAESAutoRestart[g_propDpName] = b_aesAutoRestart;
+  mFirstAnswerReceived[g_propDpName] = b_firstAnswerReceived;
+
+  aes_doStop( g_propDpName );
+}
+" 0
+ E E E
+14 30
+"te_settings"
+""
+1 94.50331125827815 9 E E E 0 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  108 8 1012 34
+2 "0s" 0 0 0 0 0 -1  E "main()
+{
+
+}" 0
+ E
+14 33
+"te_rows"
+""
+1 10 9 E E E 0 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  8 8 102 34
+2 "0s" 0 0 0 0 0 -1  E E E
+13 44
+"buProperties"
+""
+1 161 -2 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 10 Properties
+LANG:10027 18 Настройка
+LANG:10000 13 Eigenschaften
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  159 -4 187 24
+
+P 
+13434828
+"pictures/StandardIcons/Config_params_20.png"
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+"main()
+{
+  aes_doPropDialog( g_propDpName );
+  //aes_propertyDialog( g_tabType, false );
+/*
+  shape sConfig;
+  string configName;
+
+  dyn_string newConfigList;
+  unsigned newSelPos;
+  string pre, app;
+
+  aes_getPreApp4TabType( g_tabType, pre, app );
+  sConfig=getShape( pre + \"cb_config\" ); 
+
+  configName=sConfig.text;
+  aes_doPropertyChild( g_propDpName, g_balPropDpName, configName, g_tabType, newConfigList, newSelPos );
+
+  // write back new config information
+  sConfig.items=newConfigList;
+  if( newSelPos >= 0 )
+    sConfig.selectedPos=newSelPos;
+
+  aes_changed( g_propDpName, AES_CHANGED_PROPCONFIG );
+*/
+}" 0
+ E E E
+13 45
+"drucken"
+""
+1 775 1 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 5 Print
+LANG:10027 12 Печать
+LANG:10000 7 Drucken
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  899 -6 987 22
+
+T 
+3
+LANG:10001 5 Print
+LANG:10027 12 Печать
+LANG:10000 7 Drucken
+"main()
+{
+  aes_doPrintTable( g_propDpName );
+  //aes_as_printTable( g_propDpName );
+}" 0
+ E E "main()
+{
+  dyn_string ds = getPrinterNames();
+  this.enabled = (dynlen(ds)>=1);
+}" 0
+
+13 47
+"pb_singleAck"
+""
+1 721 -5 E E E 0 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 17 Confirm one table
+LANG:10027 51 Квитировать по всей таблице
+LANG:10000 39 Einzelquittieren einer gesamten Tabelle
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  794 -6 822 22
+
+P 
+4294967295
+"pictures/singcon.png"
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+"main()
+{
+  aes_doAckVisible( g_propDpName );
+}
+" 0
+ E E E
+13 48
+"pb_allAck"
+""
+1 751 -5 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 14 Common confirm
+LANG:10027 42 Квитировать все алармы
+LANG:10000 41 Gesamtquittieren aller anstehenden Alarme
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  824 -6 852 22
+
+P 
+4294967295
+"pictures/concom.png"
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+"main()
+{
+  //§§§ neues Icon/ \"A\" quittiert alle ALarme des Objektes
+  // und _NICHT_ alle sichtbaren Alarme aller Objekte !!!
+  //aes_doAckAll( g_propDpName );
+
+  // fuer beta
+  aes_doAckVisible( g_propDpName );
+  
+  
+  string s = this.name;
+  s= substr(s, 0,strpos(s,\".\"));
+  strreplace(s, \"tab_\", \"table_\"); 
+  setInputFocus(myModuleName(), myPanelName(), s); 
+ }
+" 0
+ E E E
+13 49
+"pb_saveToFile"
+""
+1 836 0 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 4 Save
+LANG:10027 18 Сохранить
+LANG:10000 9 Speichern
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  869 -6 897 22
+
+P 
+13160660
+"pictures/StandardIcons/Save_20.png"
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+"main()
+{
+  aes_doSaveTable( g_propDpName );
+  //aes_as_tableToFile( g_propDpName );
+}" 0
+ E E E
+13 50
+"pb_intervalInc"
+""
+1 299.5 -6 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 18 Next time interval
+LANG:10027 54 Следующий временной интервал
+LANG:10000 23 Nächstes Zeitintervall
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  297.5 -7 325.5 21
+
+T 
+3
+LANG:10001 1 +
+LANG:10027 1 +
+LANG:10000 1 +
+"main()
+{
+  aes_doIntervalChange( g_propDpName, true, g_tabType );
+}" 0
+ E E E
+13 51
+"pb_intervalDec"
+""
+1 269.5 -5 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 22 Previous time interval
+LANG:10027 56 Предыдущий временной интервал
+LANG:10000 24 Vorheriges Zeitintervall
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  267.5 -7 295.5 21
+
+T 
+3
+LANG:10001 1 -
+LANG:10027 1 -
+LANG:10000 1 -
+"main()
+{
+  aes_doIntervalChange( g_propDpName, false, g_tabType );
+}" 0
+ E E E
+14 56
+"TextField1"
+""
+1 559 -10 E E E 0 E 0 E N "_WindowText" E N "_3DFace" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  557 -11 651 15
+2 "0s" 0 0 0 0 0 -1  E E E
+14 57
+"te_system"
+""
+1 354.5 -5 E E E 1 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  352.5 -6 466.5 20
+2 "0s" 0 0 0 0 0 -1  E "main()
+{
+
+}" 0
+ E
+13 59
+"pb_distInfo"
+""
+1 467.5 -6 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 18 System information
+LANG:10027 39 Системная информация
+LANG:10000 31 Detailinformation aller Systeme
+
+1
+"layoutAlignment" "AlignCenter"
+3
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+0  462.5 -7 490.5 21
+
+T 
+3
+LANG:10001 3 ...
+LANG:10027 3 ...
+LANG:10000 3 ...
+"main()
+{
+  string fileName=\"vision/aes/AESDistInfo.pnl\";
+  dyn_string dynParam;  
+  string val, pre, app;
+  unsigned runMode, propMode;
+  
+  aes_getRunMode( g_propDpName, runMode );
+  aes_getPropMode( g_propDpName, propMode );
+
+  if( runMode != AES_RUNMODE_RUNNING )
+    return;
+    
+  aes_getPreApp4TabType( g_tabType, pre, app );
+  
+//  getValue( pre + \"te_hidden\", \"text\", val );
+  dynParam[1]=val;
+  dynParam[2]=g_propDpName;
+  dynParam[3]=g_tabType;
+    
+  ChildPanelOnCentralModal( fileName, \"\", dynParam );
+}" 0
+ E E E
+0
+LAYER, 1 
+2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+2
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+2
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+2
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+2
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+2
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+2
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

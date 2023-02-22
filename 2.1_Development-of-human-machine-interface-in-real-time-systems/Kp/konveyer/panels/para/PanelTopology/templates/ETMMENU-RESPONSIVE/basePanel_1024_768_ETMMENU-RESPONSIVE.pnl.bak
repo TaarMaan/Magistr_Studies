@@ -1,0 +1,213 @@
+V 14
+3
+LANG:10001 9 Basepanel
+LANG:10027 29 Основная панель
+LANG:10000 10 Basispanel
+PANEL,-1 -1 922 823 N {233,236,237} 3
+"$Node"
+"$Number"
+"$Screen"
+"main()
+{
+  string strTitle;
+  int iItem = 0;
+
+  //new
+
+  float  factor = 1.5;
+  string moduleName = myModuleName();
+  getZoomFactor(factor, moduleName);
+    panelZoomIn(moduleName);
+    //
+
+  if(!isDollarDefined(\"$Screen\") || !isDollarDefined(\"$Number\"))
+  {
+    pt_openBasePanel(\"3_3\");
+  }
+  else
+  {
+    // Set the appropriate module names
+    naviModule.ModuleName = ptms_BuildModuleName(\"naviModule\",$Screen);
+    mainModule.ModuleName = ptms_BuildModuleName(\"mainModule\",$Screen);
+    infoModule.ModuleName = ptms_BuildModuleName(\"infoModule\",$Screen);
+
+    ptms_LoadInitPanel($Number,$Screen, isDollarDefined(\"$Node\") ? $Node : 0);
+  }
+
+  string strFile = getPath( PICTURES_REL_PATH,  + \"Logo\" + \".bmp\" );
+
+  // When you find a bitmap in pictures\\KickStart_ETM\\<title>.bmp
+  // then load this picture
+  if( strlen( strFile ))
+  {
+    LOGO.fill = \"[pattern,[tile,bmp,\" + strFile + \"]]\";
+    LOGO.visible = true;
+  }
+
+  string strServer = getSystemName();
+  strreplace(strServer, \":\", \"\");
+
+  for( int t = 1; t <= dynlen( ptnavi_navigation[ strServer ][ ptnavi_NODENAME ] ) ; t++)
+  {
+    // add Button for StartPanel
+    // and look for nodes that have the StartPanel as parent
+    if( (t == 1) || (ptnavi_navigation[ strServer ][ ptnavi_PARENTNUMBER ][t] == 1) )
+    {
+      addSymbol(
+        myModuleName(),
+        myPanelName(),
+        \"objects/STD_PANELS/PT_menuItem.pnl\",
+        \"MENUITEM\" + t,
+        makeDynString( \"$TEXT:\" + ptnavi_navigation[ strServer ][ ptnavi_NODENAME ][t], \"$TOPOINDEX:\" + t ),
+        20 + (iItem * 80 ) , 110,                 // Position, IM 88515: y-pos had to be changed because of smaller header
+        0.0,                    // Rotation
+        1.0, 1.0 );             // Scaling
+
+      iItem++;
+    }
+  }
+
+}
+
+" 0
+ E E E E 1 -1 -1 0  10 100
+""0  1
+E "dyn_string     fileName;
+dyn_langString nodeName;" 0
+ 4
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+"pdpi" "96"
+1 1 0 0 0 0 1 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 57
+"RECTANGLE6"
+""
+1 640 110 E E E 1 E 1 E N {191,213,219} E N {191,213,219} E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+6
+"minimumSize" "-1 22"
+"maximumSize" "-1 22"
+"sizePolicy" "Preferred Fixed"
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.4285714285714295 0 1.045454545454544 345.7142857142851 -4.999999999999858 1 E 640 110 780 130
+6 56
+"RECTANGLE5"
+""
+1 640 110 E E E 1 E 1 E N {3,113,137} E N {3,113,137} E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+6
+"minimumSize" "-1 81"
+"maximumSize" "-1 81"
+"sizePolicy" "Preferred Fixed"
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 2 1 E 0.4285714285714292 0 4.000000000000004 335.7142857142853 -410.9090909090913 1 E 640 110 780 130
+29 1
+"mainModule"
+""
+1 0 133 E E E 1 E 1 E N "_3DText" E N {255,255,255} E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10001 0 
+LANG:10027 0 
+LANG:10000 0 
+
+9
+"vScrollBarMode" "enum 0"
+"frameShape" "enum 0"
+"layoutDirection" "enum 0"
+"windowModality" "enum 0"
+"frameShadow" "enum 48"
+"contextMenuPolicy" "enum 1"
+"hScrollBarMode" "enum 0"
+"sizePolicy" "Preferred Preferred"
+"layoutAlignment" "AlignNone"
+3
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10000 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  0 133 1190 730
+15 Canvas.Canvas.1
+0
+"main()
+{
+  float  factor = 1;
+  string moduleName = myModuleName();
+  getZoomFactor(factor, moduleName);
+    panelZoomIn(moduleName);
+  setScaleStyle(SCALE_ZOOM,myModuleName());
+}" 0
+0
+LAYER, 1 
+2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+2
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+2
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+2
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+2
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+2
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+2
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+4 8 "LAYOUT_GROUP8" -1
+1 0 
+1 
+
+"S 1" "0 0 1 1"
+"" ""
+0 2 0 1 0
+0

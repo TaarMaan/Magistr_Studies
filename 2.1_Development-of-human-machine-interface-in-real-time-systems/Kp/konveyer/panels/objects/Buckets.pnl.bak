@@ -1,0 +1,261 @@
+V 14
+2
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 601 400 N "White" 0
+"main()
+{
+    int mass1, mass2, mass3, mass4;
+    
+      
+  dpGet(\"System1:A_bucket1.max_value\", mass1);
+  dpGet(\"System1:A_bucket2.max_value\", mass2);
+  dpGet(\"System1:A_bucket3.max_value\", mass3);
+  dpGet(\"System1:A_bucket4.max_value\", mass4);
+  
+  setValue(\"SPIN_BUTTON2\", \"value\", mass1);
+  setValue(\"SPIN_BUTTON3\", \"value\", mass2);
+  setValue(\"SPIN_BUTTON4\", \"value\", mass3);
+  setValue(\"SPIN_BUTTON5\", \"value\", mass4);
+
+}" 0
+ E E E E 1 -1 -1 0  23.74447869243885 24.04819623161762
+""0  1
+E E 4
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+"pdpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+2
+LANG:10001 0 
+LANG:10027 0 
+2 1
+"PRIMITIVE_TEXT6"
+""
+1 25.68828408964774 26.20204238546377 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.486234318207046 0 1 -12.1059099156234 -3.991278324731354 0 E 25.68828408964774 26.20204238546377 75.68828408964769 46.20204238546377
+0 2 2 "0s" 0 0 0 64 0 0  25.68828408964774 26.20204238546377 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 22 Корзина 1, шт
+LANG:10027 2 m1
+2 2
+"PRIMITIVE_TEXT7"
+""
+1 168.4367863847465 25.76563383766964 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.431264272305071 0 1 -51.8715373403916 -3.55486977693722 0 E 168.4367863847465 25.76563383766964 218.4367863847465 45.76563383766963
+0 2 2 "0s" 0 0 0 64 0 0  168.4367863847465 25.76563383766964 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 22 Корзина 2, шт
+LANG:10027 2 m1
+2 3
+"PRIMITIVE_TEXT8"
+""
+1 331.5041762178679 25.20576746323529 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.569916475642642 0 1 -165.3863881852358 -2.990006805005741 0 E 331.5041762178679 25.20576746323529 381.5041762178679 45.20576746323529
+0 2 2 "0s" 0 0 0 64 0 0  331.5041762178679 25.20576746323529 1
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0 2
+LANG:10001 22 Корзина 3, шт
+LANG:10027 2 m1
+21 5
+"SPIN_BUTTON2"
+""
+1 52.14579894852621 24.95041846365941 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  107.5384615384615 17.93307011807118 180.5384615384615 43.93307011807118
+0
+
+E
+E
+E
+
+N 0 100 1 1 1 1
+21 6
+"SPIN_BUTTON3"
+""
+1 271.7047542050979 23.82157407734721 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  269.7047542050979 17.9006181949942 342.3846153846154 44.11936819499431
+0
+
+E
+E
+E
+
+N 0 100 1 3 1 1
+21 7
+"SPIN_BUTTON4"
+""
+1 223.3159836162226 26.02734154058248 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  435.4615384615385 18.00999319499426 508.4615384615385 44.00999319499426
+0
+
+E
+E
+E
+
+N 0 100 1 6 1 1
+13 9
+"PUSH_BUTTON2"
+""
+1 207.4324118076696 75.04366361177883 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+8 0 0 0 0 0
+E E E
+8
+2
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"layoutAlignment" "AlignNone"
+2
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  205.4324118076696 66.26917553379521 337.8108039358899 100.0769230769231
+
+T 
+2
+LANG:10001 18 Применить
+LANG:10027 12 PUSH_BUTTON2
+"main(mapping event)
+{
+  int mass1, mass2, mass3, mass4;
+  getValue(\"SPIN_BUTTON2\", \"value\", mass1);
+  getValue(\"SPIN_BUTTON3\", \"value\", mass2);
+  getValue(\"SPIN_BUTTON4\", \"value\", mass3);
+  getValue(\"SPIN_BUTTON5\", \"value\", mass4);
+  
+  dpSet(\"System1:A_bucket1.max_value\", mass1);
+  dpSet(\"System1:A_bucket2.max_value\", mass2);
+  dpSet(\"System1:A_bucket3.max_value\", mass3);
+  dpSet(\"System1:A_bucket4.max_value\", mass4);
+
+}
+" 0
+ E E E
+0
+LAYER, 1 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 2 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 3 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 4 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 6 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 7 
+2
+LANG:10001 0 
+LANG:10027 0 
+0
+0
